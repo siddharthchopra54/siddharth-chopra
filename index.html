@@ -3,266 +3,1103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EasyMedStudy: clear CBSE Class 11 and 12 Physics, Chemistry and Biology notes with chapter-wise MCQ practice for NEET.">
-<title>EasyMedStudy | Chapter Notes & MCQs</title>
+<meta name="description" content="EasyMedStudy - Free CBSE Class 11 and 12 PCB notes and NEET practice quizzes.">
+<title>EasyMedStudy | Learn Easy. Think Smart.</title>
+
 <style>
-:root{--blue:#155eef;--navy:#102a56;--pale:#eef5ff;--ink:#182230;--muted:#5c6678;--line:#dce5f2;--green:#137547;--red:#b42318}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f7faff;line-height:1.6}
-header{background:linear-gradient(120deg,#103c91,#1769e8);color:white;padding:28px 18px 24px}
-.wrap{max-width:1120px;margin:auto;padding:0 16px}.brand{font-size:1.7rem;font-weight:800;letter-spacing:.2px}.tag{opacity:.95;margin-top:3px}.hero{padding:18px 0 4px}.hero h1{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:8px 0}.hero p{max-width:720px;margin:8px 0 0}
-nav{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.navin{display:flex;gap:8px;overflow:auto;padding:10px 0}.navin button{border:0;background:transparent;padding:9px 13px;border-radius:9px;font-weight:700;color:#334155;cursor:pointer;white-space:nowrap}.navin button.active,.navin button:hover{background:var(--pale);color:var(--blue)}
-main{padding:25px 0 45px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.toolbar input,.toolbar select{padding:12px;border:1px solid #cbd5e1;border-radius:10px;background:white;font-size:1rem}.toolbar input{flex:1;min-width:220px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:0 4px 16px #102a5608}.pill{display:inline-block;background:var(--pale);color:var(--blue);padding:3px 9px;border-radius:99px;font-size:.78rem;font-weight:700}.card h3{margin:10px 0 5px;line-height:1.3}.card p{color:var(--muted);margin:0 0 14px}.btn{display:inline-block;background:var(--blue);color:white;border:0;padding:10px 14px;border-radius:9px;font-weight:700;cursor:pointer;text-decoration:none}.btn.secondary{background:#eaf1ff;color:var(--blue)}.btn:disabled{opacity:.5;cursor:not-allowed}
-#reader{display:none}.back{margin-bottom:15px}.readerhead{background:white;padding:22px;border:1px solid var(--line);border-radius:16px;margin-bottom:16px}.readerhead h2{margin:7px 0}.readerhead p{color:var(--muted);margin:0}.contentbox{background:white;border:1px solid var(--line);border-radius:15px;padding:20px;margin:15px 0}.contentbox h3{color:var(--navy);margin-top:0}.contentbox h4{margin-bottom:3px;color:#1d4ed8}.contentbox p{margin-top:5px}.contentbox li{margin:5px 0}.formula{background:#f0f6ff;border-left:4px solid var(--blue);padding:11px 14px;border-radius:6px;margin:10px 0;font-weight:600;overflow-wrap:anywhere}.note{background:#fff8e7;border-left:4px solid #e5a000;padding:11px 14px;border-radius:6px}
-.quiztop{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}.progress{height:8px;background:#e7edf7;border-radius:99px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;width:0;background:var(--blue);transition:width .2s}.question{font-size:1.12rem;font-weight:700;margin:15px 0}.options{display:grid;gap:9px}.option{display:block;width:100%;text-align:left;border:1px solid #cbd5e1;background:white;border-radius:10px;padding:12px 14px;cursor:pointer;color:var(--ink);font-size:1rem}.option:hover:not(:disabled){border-color:var(--blue);background:#f6f9ff}.option.correct{border-color:#16a34a;background:#effcf4}.option.wrong{border-color:#dc2626;background:#fff1f0}.feedback{margin-top:12px;padding:12px;border-radius:9px;display:none}.feedback.show{display:block}.feedback.good{background:#effcf4;color:#14532d}.feedback.bad{background:#fff1f0;color:#7f1d1d}.quizactions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.result{display:none;text-align:center;padding:25px}.score{font-size:2.5rem;font-weight:800;color:var(--blue)}.review{margin-top:20px;text-align:left}.reviewitem{padding:12px 0;border-top:1px solid var(--line)}.muted{color:var(--muted)}footer{background:#102a56;color:white;text-align:center;padding:24px 15px}footer p{margin:5px}
-@media(max-width:600px){.contentbox{padding:15px}.brand{font-size:1.45rem}.hero{padding-top:10px}}
+:root {
+  --blue: #155eef;
+  --dark: #12315b;
+  --light: #eef5ff;
+  --white: #ffffff;
+  --text: #26364b;
+  --muted: #64748b;
+  --green: #15803d;
+  --red: #b91c1c;
+  --border: #dbe5f2;
+  --shadow: 0 8px 25px rgba(15, 50, 100, .08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7faff;
+  color: var(--text);
+  line-height: 1.65;
+}
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav {
+  max-width: 1180px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.logo { font-size: 23px; font-weight: 800; color: var(--blue); }
+.logo span { color: var(--dark); }
+.nav button, button {
+  border: 0;
+  cursor: pointer;
+  border-radius: 9px;
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.primary { background: var(--blue); color: white; }
+.secondary { background: #e8f0ff; color: var(--blue); }
+.hero {
+  background: linear-gradient(135deg, #eaf2ff, #ffffff 65%, #dceaff);
+  padding: 65px 20px;
+}
+.hero-inner { max-width: 1100px; margin: auto; }
+.hero h1 {
+  color: var(--dark);
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+.hero h1 span { color: var(--blue); }
+.hero p { max-width: 690px; font-size: 18px; color: #53657d; }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+.container { max-width: 1180px; margin: auto; padding: 32px 20px; }
+.section-title { color: var(--dark); margin-bottom: 6px; font-size: 28px; }
+.muted { color: var(--muted); }
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+input, select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd7e7;
+  border-radius: 9px;
+  background: white;
+  color: var(--text);
+  font-size: 15px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: white;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.card h3 { margin: 9px 0; color: var(--dark); }
+.card p { color: var(--muted); }
+.badge {
+  display: inline-block;
+  background: #eaf1ff;
+  color: #1749a5;
+  border-radius: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  align-self: flex-start;
+}
+.card button { margin-top: auto; }
+.subject-icon { font-size: 30px; }
+.panel {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-top: 22px;
+}
+.hidden { display: none !important; }
+#chapterView h1 { color: var(--dark); line-height: 1.25; }
+#notesContent h2 { color: var(--blue); margin-top: 30px; }
+#notesContent h3 { color: var(--dark); }
+#notesContent li { margin-bottom: 7px; }
+.note-box {
+  background: #eef5ff;
+  border-left: 4px solid var(--blue);
+  padding: 14px 16px;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+.warning-box {
+  background: #fff7ed;
+  border-left: 4px solid #ea580c;
+  padding: 14px 16px;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+.formula {
+  display: block;
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.quiz-question {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.quiz-question h3 { font-size: 17px; }
+.option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #f7faff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  margin: 8px 0;
+  font-weight: normal;
+}
+.option:hover { border-color: var(--blue); }
+.option.correct { background: #dcfce7; border-color: #16a34a; }
+.option.incorrect { background: #fee2e2; border-color: #dc2626; }
+.feedback { font-weight: bold; margin-top: 7px; }
+footer {
+  margin-top: 40px;
+  background: var(--dark);
+  color: white;
+  padding: 28px 20px;
+  text-align: center;
+}
+.small { font-size: 13px; }
+@media(max-width:600px) {
+  .hero { padding: 45px 18px; }
+  .container { padding: 24px 15px; }
+  .panel { padding: 17px; }
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap"><div class="brand">EasyMedStudy</div><div class="tag">Learn Easy. Think Smart. Achieve More.</div><section class="hero"><h1>Study smarter, one chapter at a time.</h1><p>Clear chapter notes and practice questions for CBSE Classes 11–12 and NEET foundation. Learn the concept first, then test your understanding.</p></section></div></header>
-<nav><div class="wrap navin"><button class="active" id="homeNav" onclick="showHome()">Home</button><button onclick="filterQuick('Class 11')">Class 11</button><button onclick="filterQuick('Class 12')">Class 12</button><button onclick="filterQuick('Physics')">Physics</button><button onclick="filterQuick('Chemistry')">Chemistry</button><button onclick="filterQuick('Biology')">Biology</button></div></nav>
-<main class="wrap">
-<section id="home">
-<div class="toolbar"><input id="search" type="search" placeholder="Search a chapter or topic..." oninput="renderCards()"><select id="classFilter" onchange="renderCards()"><option value="">All classes</option><option>Class 11</option><option>Class 12</option></select><select id="subjectFilter" onchange="renderCards()"><option value="">All subjects</option><option>Physics</option><option>Chemistry</option><option>Biology</option></select></div>
-<div id="cards" class="grid"></div>
+<header>
+  <div class="nav">
+    <div class="logo">EasyMed<span>Study</span></div>
+    <button class="secondary" onclick="goHome()">Home</button>
+  </div>
+</header>
+
+<section id="homePage">
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Learn Easy.<br><span>Think Smart. Achieve More.</span></h1>
+      <p>
+        Your learning space for CBSE Class 11 and 12 Physics, Chemistry
+        and Biology. Study chapter notes, revise key concepts and practise MCQs.
+      </p>
+      <div class="hero-actions">
+        <button class="primary" onclick="scrollToChapters()">Explore Chapters</button>
+        <button class="secondary" onclick="openSampleQuiz()">Try Sample Quiz</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section>
+      <h2 class="section-title">Start Learning</h2>
+      <p class="muted">Choose a chapter and start studying at your own pace.</p>
+
+      <div class="grid">
+        <article class="card">
+          <span class="badge">FREE SAMPLE</span>
+          <h3>📘 Sample Notes</h3>
+          <p>Try a short revision lesson before opening a complete chapter.</p>
+          <button class="primary" onclick="openSampleNotes()">Open Sample Notes</button>
+        </article>
+        <article class="card">
+          <span class="badge">QUICK PRACTICE</span>
+          <h3>🧠 Sample Quiz</h3>
+          <p>Test your understanding with three quick science questions.</p>
+          <button class="primary" onclick="openSampleQuiz()">Start Sample Quiz</button>
+        </article>
+        <article class="card">
+          <span class="badge">CHAPTER LIBRARY</span>
+          <h3>📚 Chapter-wise Study</h3>
+          <p>Find notes and practice questions for six selected chapters.</p>
+          <button class="primary" onclick="scrollToChapters()">Browse Chapters</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="chapterLibrary" style="margin-top:45px">
+      <h2 class="section-title">Chapter Library</h2>
+      <p class="muted">Search by chapter, class or subject.</p>
+
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="Search chapters..."
+               oninput="renderChapters()">
+        <select id="classFilter" onchange="renderChapters()">
+          <option value="all">All Classes</option>
+          <option value="11">Class 11</option>
+          <option value="12">Class 12</option>
+        </select>
+        <select id="subjectFilter" onchange="renderChapters()">
+          <option value="all">All Subjects</option>
+          <option value="Physics">Physics</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Biology">Biology</option>
+        </select>
+      </div>
+      <div id="chapterGrid" class="grid"></div>
+      <p id="noResults" class="muted hidden">No matching chapters found. Try another search.</p>
+    </section>
+
+    <section id="sampleArea" class="panel hidden">
+      <button class="secondary" onclick="closeSample()">← Back to Home</button>
+      <div id="sampleContent"></div>
+    </section>
+  </main>
 </section>
-<section id="reader">
-<button class="btn secondary back" onclick="showHome()">← All chapters</button>
-<div id="chapterHeader" class="readerhead"></div>
-<div id="notes"></div>
-<div class="contentbox" id="quizBox">
-<div class="quiztop"><div><h3 style="margin:0">Chapter MCQ Practice</h3><div class="muted">20 questions · Easy and medium mix</div></div><button class="btn secondary" onclick="restartQuiz()">Restart quiz</button></div>
-<div id="quizPlay"><div class="progress"><span id="progressBar"></span></div><div class="quiztop"><strong id="qCount">Question 1 of 20</strong><span id="liveScore" class="muted">Answered: 0</span></div><div id="question" class="question"></div><div id="options" class="options"></div><div id="feedback" class="feedback"></div><div class="quizactions"><button id="nextBtn" class="btn" onclick="nextQuestion()" disabled>Next question →</button></div></div>
-<div id="result" class="result"><h3>Quiz complete!</h3><div id="score" class="score"></div><p id="scoreMessage"></p><button class="btn" onclick="restartQuiz()">Try again</button><div id="review" class="review"></div></div>
-</div>
-</section>
+
+<main id="chapterView" class="container hidden">
+  <button class="secondary" onclick="goHome()">← Back to Chapter Library</button>
+  <div class="panel">
+    <span id="chapterBadge" class="badge"></span>
+    <h1 id="chapterTitle"></h1>
+    <p id="chapterIntro" class="muted"></p>
+    <div id="notesContent"></div>
+  </div>
+  <div class="panel">
+    <h2 class="section-title">Chapter Practice Quiz</h2>
+    <p class="muted">Select an answer to receive immediate feedback.</p>
+    <div id="quizContent"></div>
+    <div id="quizResult" class="note-box hidden"></div>
+    <button id="submitQuizButton" class="primary" onclick="finishQuiz()">Finish Quiz</button>
+    <button class="secondary" onclick="restartQuiz()">Try Again</button>
+  </div>
 </main>
-<footer><p><strong>EasyMedStudy</strong> — Learn Easy. Think Smart. Achieve More.</p><p>Study support for learning and revision. Always cross-check your syllabus with the latest official CBSE/NCERT materials.</p></footer>
+
+<footer>
+  <strong>EasyMedStudy</strong>
+  <p>Learn Easy. Think Smart. Achieve More.</p>
+  <p class="small">Educational resource. Always check your current NCERT textbook and official syllabus.</p>
+</footer>
+
 <script>
+"use strict";
+
+/*
+  IMPORTANT:
+  Each chapter stores its notes and questions in one data object.
+  Chapter cards are generated from this data, so clicking a card opens
+  the correct chapter automatically.
+*/
+
 const chapters = [
 {
-id:"c1",cls:"Class 11",subject:"Physics",title:"Units and Measurements",desc:"SI units, dimensions, significant figures, errors and measuring instruments.",
-notes:`<h3>1. Physical quantities and units</h3>
-<p>A <b>physical quantity</b> is a property that can be measured and expressed as a number with a unit. Examples include length, mass, time, speed and temperature. A measurement is written as numerical value × unit.</p>
-<p><b>Fundamental quantities</b> are independent quantities. The seven SI base quantities and units are:</p>
-<ul><li>Length — metre (m)</li><li>Mass — kilogram (kg)</li><li>Time — second (s)</li><li>Electric current — ampere (A)</li><li>Thermodynamic temperature — kelvin (K)</li><li>Amount of substance — mole (mol)</li><li>Luminous intensity — candela (cd)</li></ul>
-<p><b>Derived quantities</b> are built from base quantities, e.g. speed (m s⁻¹), force (kg m s⁻²) and density (kg m⁻³).</p>
-<h3>2. Scientific notation and prefixes</h3><p>Write very large or small values as a × 10ⁿ, where 1 ≤ |a| &lt; 10. Common prefixes: kilo (k) = 10³, centi (c) = 10⁻², milli (m) = 10⁻³, micro (μ) = 10⁻⁶, nano (n) = 10⁻⁹.</p>
-<div class="formula">1 km = 10³ m · 1 cm = 10⁻² m · 1 μm = 10⁻⁶ m</div>
-<h3>3. Dimensions and dimensional analysis</h3><p>Dimensions express a derived quantity in terms of base dimensions. In mechanics, M = mass, L = length and T = time. For example:</p>
-<div class="formula">Speed: [LT⁻¹] · Acceleration: [LT⁻²] · Force: [MLT⁻²] · Work/Energy: [ML²T⁻²] · Pressure: [ML⁻¹T⁻²] · Density: [ML⁻³]</div>
-<p>Dimensional analysis can check dimensional consistency, derive possible relations (up to dimensionless constants), and convert units. It cannot determine pure numerical constants or prove an equation is fully correct.</p>
-<h3>4. Significant figures</h3><ul><li>All non-zero digits are significant.</li><li>Zeros between non-zero digits are significant.</li><li>Leading zeros are not significant: 0.0042 has 2 significant figures.</li><li>Trailing zeros after a decimal point are significant: 2.300 has 4 significant figures.</li><li>For multiplication/division, the result generally has as many significant figures as the input with the fewest.</li><li>For addition/subtraction, round to the least precise decimal place.</li></ul>
-<h3>5. Errors in measurement</h3><p>Absolute error is the magnitude of the difference between a measured value and the accepted/mean value. Mean absolute error is the average of absolute errors. Relative error = mean absolute error / mean value; percentage error = relative error × 100%.</p>
-<div class="formula">For z = x ± y: maximum absolute error Δz = Δx + Δy<br>For z = xy or x/y: maximum fractional error Δz/|z| ≈ Δx/|x| + Δy/|y|<br>For z = xⁿ: fractional error Δz/|z| ≈ |n| Δx/|x|</div>
-<h3>6. Measuring instruments</h3><p><b>Least count</b> is the smallest measurement an instrument can resolve. For a vernier caliper, least count is often 1 main-scale division minus 1 vernier-scale division. For a screw gauge, least count = pitch / number of circular-scale divisions. Apply zero correction when the instrument has a zero error.</p>
-<div class="note"><b>Common exam traps:</b> A dimensionally correct equation may still be physically wrong. Keep units with numerical answers. Do not confuse precision (repeatability) with accuracy (closeness to the accepted value).</div>`,
-questions:[
-["The SI base unit of thermodynamic temperature is:","kelvin","degree Celsius","joule","fahrenheit",0,"Kelvin (K) is the SI base unit for thermodynamic temperature."],
-["The dimensions of velocity are:","[LT⁻¹]","[LT⁻²]","[L²T⁻¹]","[MLT⁻¹]",0,"Velocity is displacement divided by time, so its dimensions are L T⁻¹."],
-["Which is a derived SI unit?","kilogram","second","newton","kelvin",2,"The newton is derived: 1 N = 1 kg m s⁻²."],
-["How many significant figures are in 0.00560?","2","3","4","5",1,"Leading zeros are not significant; 5, 6 and the trailing decimal zero are significant."],
-["The dimensions of force are:","[MLT⁻²]","[ML²T⁻²]","[ML⁻¹T⁻²]","[LT⁻¹]",0,"Force = mass × acceleration, giving M × LT⁻² = MLT⁻²."],
-["One micrometre equals:","10⁻³ m","10⁻⁶ m","10⁻⁹ m","10⁶ m",1,"The SI prefix micro (μ) represents 10⁻⁶."],
-["Which pair has the same dimensions?","work and torque","force and pressure","power and energy","momentum and force",0,"Both work and torque have dimensions ML²T⁻², though they are different physical quantities."],
-["The dimensional formula of density is:","[ML⁻³]","[ML³]","[M⁻¹L³]","[ML⁻²T⁻¹]",0,"Density = mass/volume, so dimensions are M/L³."],
-["If length is measured as 2.0 m, its stated significant figures are:","1","2","3","4",1,"The digits 2 and the trailing decimal zero in 2.0 are significant."],
-["Percentage error is equal to:","relative error × 100","absolute error ÷ 100","mean value × 100","relative error ÷ 100",0,"Percentage error = (absolute or mean absolute error / reference value) × 100, according to the defined error."],
-["A quantity has dimensions [ML²T⁻²]. It may represent:","pressure","energy","power","speed",1,"Energy/work has dimensions force × distance = ML²T⁻²."],
-["The SI unit of amount of substance is:","mole","candela","ampere","kelvin",0,"Mole (mol) is the SI base unit of amount of substance."],
-["If z = x³ and x has a small fractional error of 2%, the approximate fractional error in z is:","2%","3%","6%","9%",2,"For z = xⁿ, fractional error is approximately |n| times the fractional error in x: 3 × 2% = 6%."],
-["Which statement about dimensional analysis is correct?","It always gives numerical constants","It can test dimensional consistency","It proves every correct equation","It determines all vector directions",1,"Dimensional analysis checks consistency but cannot prove an equation is fully correct or determine all constants."],
-["The SI unit of pressure is:","newton","joule","pascal","watt",2,"Pressure = force/area; its SI unit is N m⁻², called the pascal."],
-["If 1 main-scale division is 1 mm and 1 vernier division is 0.9 mm, the vernier least count is:","0.1 mm","0.9 mm","1.0 mm","1.9 mm",0,"Least count = 1.0 mm − 0.9 mm = 0.1 mm."],
-["The number 3.40 × 10² has how many significant figures?","2","3","4","5",1,"The coefficient 3.40 has three significant figures; the power of ten does not change that count."],
-["For a sum z = x + y, the maximum absolute error is approximately:","Δx − Δy","Δx + Δy","Δx × Δy","Δx/Δy",1,"For addition, the maximum absolute errors add: Δz = Δx + Δy."],
-["Which prefix represents 10⁻⁹?","nano","micro","milli","kilo",0,"Nano (n) means 10⁻⁹."],
-["The dimensional formula of power is:","[ML²T⁻²]","[ML²T⁻³]","[MLT⁻²]","[ML⁻¹T⁻²]",1,"Power = work/time, so dimensions are ML²T⁻² divided by T = ML²T⁻³."]
-]},
+ id:"c11physics",
+ cls:"11",
+ subject:"Physics",
+ icon:"📏",
+ title:"Units and Measurements",
+ intro:"Class 11 Physics — measurement, SI units, dimensions, errors and significant figures.",
+ notes:`
+ <h2>1. Physical Quantities and Measurement</h2>
+ <p>A <b>physical quantity</b> is a property that can be measured and expressed by a number and a unit. For example, 5 metres, 3 seconds and 2 kilograms.</p>
+ <p>Every measurement has two parts: a numerical value and a unit. A measurement without a suitable unit is generally incomplete.</p>
+ <h3>Fundamental and derived quantities</h3>
+ <ul>
+ <li><b>Fundamental quantities:</b> quantities defined independently, such as length, mass and time.</li>
+ <li><b>Derived quantities:</b> quantities expressed using fundamental quantities, such as speed, force, density and energy.</li>
+ </ul>
+
+ <h2>2. SI Base Units</h2>
+ <p>The International System of Units (SI) uses seven base quantities and their units.</p>
+ <ul>
+ <li>Length — metre (m)</li><li>Mass — kilogram (kg)</li>
+ <li>Time — second (s)</li><li>Electric current — ampere (A)</li>
+ <li>Thermodynamic temperature — kelvin (K)</li>
+ <li>Amount of substance — mole (mol)</li>
+ <li>Luminous intensity — candela (cd)</li>
+ </ul>
+ <div class="note-box">Remember: force is measured in newtons, energy in joules and power in watts. These are derived units, not SI base units.</div>
+
+ <h2>3. Scientific Notation and Prefixes</h2>
+ <p>Scientific notation expresses a number as <b>a × 10ⁿ</b>, where 1 ≤ |a| &lt; 10. It is useful for very large or very small measurements.</p>
+ <ul>
+ <li>kilo (k) = 10³</li><li>centi (c) = 10⁻²</li><li>milli (m) = 10⁻³</li>
+ <li>micro (μ) = 10⁻⁶</li><li>nano (n) = 10⁻⁹</li>
+ </ul>
+ <p>Example: 0.00045 m = 4.5 × 10⁻⁴ m.</p>
+
+ <h2>4. Dimensions and Dimensional Formulae</h2>
+ <p>Dimensions describe how a physical quantity depends on base quantities. In mechanics, common symbols are M for mass, L for length and T for time.</p>
+ <div class="formula">Velocity: [LT⁻¹]</div>
+ <div class="formula">Acceleration: [LT⁻²]</div>
+ <div class="formula">Force = mass × acceleration: [MLT⁻²]</div>
+ <div class="formula">Work or energy: [ML²T⁻²]</div>
+ <div class="formula">Power: [ML²T⁻³]</div>
+ <div class="formula">Density: [ML⁻³]</div>
+ <p>Dimensional analysis can help check whether an equation is dimensionally consistent, derive relations up to a dimensionless constant, and convert units.</p>
+ <div class="warning-box"><b>Limitation:</b> dimensional analysis cannot determine pure numerical constants such as 2 or π, and it cannot distinguish quantities with identical dimensions, such as work and torque.</div>
+
+ <h2>5. Significant Figures</h2>
+ <p>Significant figures indicate the meaningful digits in a measured value.</p>
+ <ul>
+ <li>All non-zero digits are significant.</li>
+ <li>Zeros between non-zero digits are significant.</li>
+ <li>Leading zeros are not significant: 0.0042 has two significant figures.</li>
+ <li>Trailing zeros after a decimal point are significant: 2.500 has four significant figures.</li>
+ </ul>
+ <p>For multiplication and division, the result is usually reported with the same number of significant figures as the least precise input. For addition and subtraction, round according to the least precise decimal place.</p>
+
+ <h2>6. Errors in Measurement</h2>
+ <ul>
+ <li><b>Systematic errors:</b> consistent errors caused by calibration, method or environment.</li>
+ <li><b>Random errors:</b> unpredictable variations between measurements.</li>
+ <li><b>Absolute error:</b> magnitude of the difference between a measured value and the accepted or mean value.</li>
+ <li><b>Relative error:</b> absolute error divided by the relevant value.</li>
+ <li><b>Percentage error:</b> relative error × 100%.</li>
+ </ul>
+ <div class="formula">Percentage error = (absolute error / measured or mean value) × 100%</div>
+ <p>If z = x + y or z = x − y, the maximum absolute errors add. For products and quotients, fractional errors add approximately when errors are small.</p>
+ <div class="formula">If z = xᵃyᵇ, then Δz/z ≈ |a|Δx/x + |b|Δy/y</div>
+
+ <h2>7. Measuring Instruments</h2>
+ <p><b>Least count</b> is the smallest measurement an instrument can resolve. Smaller least count generally allows finer measurements, though accuracy also depends on calibration and technique.</p>
+ <p>A vernier caliper can measure external/internal dimensions and depth. A screw gauge is useful for small diameters or thicknesses. Check for zero error before taking readings.</p>
+
+ <h2>Quick Revision</h2>
+ <ul>
+ <li>Always write units with physical quantities.</li>
+ <li>Check dimensions on both sides of an equation.</li>
+ <li>Do not confuse precision with accuracy.</li>
+ <li>Accuracy concerns closeness to the accepted value; precision concerns agreement among repeated measurements.</li>
+ </ul>`,
+ questions:[
+  {q:"Which of the following is an SI base unit?",o:["Newton","Joule","Kilogram","Watt"],a:2,e:"Kilogram is the SI base unit of mass. Newton, joule and watt are derived units."},
+  {q:"The dimensional formula of velocity is:",o:["[LT⁻¹]","[LT⁻²]","[MLT⁻²]","[L²T⁻¹]"],a:0,e:"Velocity = displacement/time, so its dimension is L T⁻¹."},
+  {q:"How many significant figures are in 0.00450?",o:["2","3","4","5"],a:1,e:"Leading zeros are not significant. The digits 4, 5 and the final zero are significant."},
+  {q:"The dimensional formula of force is:",o:["[MLT⁻¹]","[MLT⁻²]","[ML²T⁻²]","[MT⁻²]"],a:1,e:"Force = mass × acceleration = M × LT⁻²."},
+  {q:"The SI unit of amount of substance is:",o:["Gram","Mole","Kilogram","Candela"],a:1,e:"The mole is the SI base unit of amount of substance."},
+  {q:"Which is a derived quantity?",o:["Length","Time","Thermodynamic temperature","Density"],a:3,e:"Density is mass divided by volume, so it is derived."},
+  {q:"The dimensional formula of work is:",o:["[ML²T⁻²]","[MLT⁻²]","[ML²T⁻³]","[LT⁻¹]"],a:0,e:"Work = force × displacement = [MLT⁻²][L] = [ML²T⁻²]."},
+  {q:"Which error may vary unpredictably from one reading to another?",o:["Random error","Fixed zero error","Calibration offset","Constant scale error"],a:0,e:"Random errors fluctuate unpredictably between repeated measurements."},
+  {q:"One micrometre equals:",o:["10⁻³ m","10⁻⁶ m","10⁻⁹ m","10³ m"],a:1,e:"The prefix micro (μ) means 10⁻⁶."},
+  {q:"Dimensional analysis cannot determine:",o:["Dimensions of velocity","Dimensions of force","A pure numerical constant","Whether units are needed"],a:2,e:"Dimensional analysis cannot normally determine dimensionless numerical constants such as 2 or π."}
+ ]
+},
 {
-id:"c2",cls:"Class 11",subject:"Chemistry",title:"Some Basic Concepts of Chemistry",desc:"Mole concept, molar mass, stoichiometry, concentration and chemical laws.",
-notes:`<h3>1. Matter and chemical combination</h3><p>Matter has mass and occupies space. Chemical reactions follow conservation of mass: in a closed system, total mass of reactants equals total mass of products. The law of definite proportions states that a pure compound always contains the same elements in the same fixed proportion by mass. The law of multiple proportions applies when two elements form more than one compound.</p>
-<h3>2. Atomic mass, molecular mass and formula mass</h3><p>One unified atomic mass unit (u) is defined as one-twelfth of the mass of a carbon-12 atom. Relative molecular mass is the sum of the relative atomic masses of atoms in a molecule. For ionic compounds, use formula mass rather than molecular mass.</p>
-<h3>3. The mole concept</h3><div class="formula">1 mol = 6.02214076 × 10²³ specified entities (Avogadro constant)<br>Number of moles n = mass (g) / molar mass (g mol⁻¹)<br>Number of entities N = n × Nₐ</div><p>Always specify the entities: atoms, molecules, ions or formula units. Molar mass has units g mol⁻¹ when mass is measured in grams.</p>
-<h3>4. Percentage composition and empirical formula</h3><p>Mass percentage of an element = (mass of that element in one mole of compound / molar mass of compound) × 100. To obtain an empirical formula from percentage data, assume 100 g, convert each element's mass to moles, divide by the smallest mole value and scale to whole-number ratios. The molecular formula is an integer multiple of the empirical formula.</p>
-<div class="formula">Molecular formula = (Empirical formula)ₙ, where n = molar mass / empirical-formula mass</div>
-<h3>5. Chemical equations and stoichiometry</h3><p>Balance an equation before calculating. Balanced coefficients give mole ratios, not mass ratios. Convert known quantities to moles, use the coefficient ratio, then convert to the requested unit. The limiting reagent is consumed first and determines the maximum product formed; other reactants are in excess.</p>
-<h3>6. Concentration of solutions</h3><div class="formula">Mass % = (mass of solute / mass of solution) × 100<br>Mole fraction xᵢ = moles of component i / total moles of all components<br>Molarity (M) = moles of solute / volume of solution in litres<br>Molality (m) = moles of solute / mass of solvent in kg</div><p>Molarity can change with temperature because solution volume changes. Molality and mole fraction are based on mass or mole amounts and generally do not change with temperature.</p>
-<h3>7. Significant figures in calculations</h3><p>Keep extra digits during intermediate calculations and round the final answer appropriately. For multiplication/division, use the least number of significant figures among the measured inputs; for addition/subtraction, use the least precise decimal place.</p>
-<div class="note"><b>Common exam traps:</b> Molarity uses volume of the whole solution, while molality uses mass of the solvent. A mole is an amount of substance, not a mass. Balance the chemical equation before applying mole ratios.</div>`,
-questions:[
-["The Avogadro constant is approximately:","6.022 × 10²³ mol⁻¹","6.022 × 10²² mol⁻¹","3.011 × 10²³ mol⁻¹","1.602 × 10⁻¹⁹ mol⁻¹",0,"One mole contains approximately 6.022 × 10²³ specified entities."],
-["The number of moles in 18 g of water (molar mass 18 g mol⁻¹) is:","0.5 mol","1 mol","2 mol","18 mol",1,"n = mass/molar mass = 18/18 = 1 mol."],
-["Molarity is defined using the:","mass of solvent in kg","volume of solution in litres","mass of solution in grams only","number of solvent molecules only",1,"Molarity is moles of solute per litre of solution."],
-["Which law says a pure compound has a fixed mass ratio of its elements?","Conservation of mass","Definite proportions","Multiple proportions","Avogadro's law",1,"The law of definite proportions states that a compound contains its elements in a fixed proportion by mass."],
-["The molar mass of CO₂ is approximately:","28 g mol⁻¹","32 g mol⁻¹","44 g mol⁻¹","46 g mol⁻¹",2,"CO₂: 12 + 2(16) = 44 g mol⁻¹."],
-["How many molecules are present in 2 mol of a molecular substance?","Nₐ/2","Nₐ","2Nₐ","4Nₐ",2,"Number of entities = moles × Nₐ = 2Nₐ."],
-["The formula mass of NaCl is approximately:","23 u","35.5 u","58.5 u","46 u",2,"NaCl formula mass = 23.0 + 35.5 = 58.5 u."],
-["Molality is moles of solute per:","litre of solution","kilogram of solvent","kilogram of solution","litre of solvent",1,"Molality uses kilograms of solvent in the denominator."],
-["Which concentration unit can change with temperature because it uses solution volume?","Mole fraction","Molality","Molarity","Mass percentage by mass",2,"Solution volume can expand or contract with temperature, changing molarity."],
-["For 2H₂ + O₂ → 2H₂O, the mole ratio H₂:O₂ is:","1:2","2:1","1:1","2:3",1,"Balanced coefficients show 2 moles H₂ react with 1 mole O₂."],
-["The limiting reagent is the reactant that:","has the greatest molar mass","is left over in greatest amount","is consumed first and limits product","always has the smallest coefficient",2,"The limiting reagent is consumed first and sets the maximum amount of product."],
-["If 10 g solute is present in 100 g solution, its mass percentage is:","5%","10%","20%","90%",1,"Mass percentage = (10/100) × 100 = 10%."],
-["The empirical formula gives the:","actual number of atoms in one molecule","simplest whole-number ratio of atoms","molecular mass only","number of moles in a sample",1,"An empirical formula shows the simplest whole-number ratio of atoms."],
-["A sample contains 0.5 mol of particles. Its number of particles is approximately:","3.011 × 10²³","6.022 × 10²³","1.204 × 10²⁴","0.5 × 10²²",0,"N = 0.5 × 6.022 × 10²³ = 3.011 × 10²³."],
-["Which quantity is dimensionless?","Molarity","Molality","Mole fraction","Molar mass",2,"Mole fraction is a ratio of moles to total moles, so it has no unit."],
-["The molar mass of CaCO₃ (Ca=40, C=12, O=16) is:","68 g mol⁻¹","84 g mol⁻¹","100 g mol⁻¹","116 g mol⁻¹",2,"40 + 12 + 3(16) = 100 g mol⁻¹."],
-["In a balanced chemical equation, coefficients represent ratios of:","masses only","moles of entities","densities","atomic numbers",1,"Stoichiometric coefficients give mole ratios for the balanced reaction."],
-["How many moles are in 5.85 g NaCl if its molar mass is 58.5 g mol⁻¹?","0.01 mol","0.1 mol","1 mol","10 mol",1,"n = 5.85/58.5 = 0.10 mol."],
-["For an ideal mixture, the sum of mole fractions of all components is:","0","0.5","1","equal to molarity",2,"Each component's mole fraction is its moles divided by total moles, so the fractions sum to 1."],
-["Which is the best first step in a stoichiometry calculation?","Use unbalanced coefficients","Balance the chemical equation","Convert all quantities to litres","Ignore units",1,"A balanced equation is required for valid mole ratios."]
-]},
+ id:"c11chemistry",
+ cls:"11",
+ subject:"Chemistry",
+ icon:"⚗️",
+ title:"Some Basic Concepts of Chemistry",
+ intro:"Class 11 Chemistry — laws of chemical combination, mole concept, formulae and stoichiometry.",
+ notes:`
+ <h2>1. Nature of Matter</h2>
+ <p>Matter has mass and occupies space. It may be classified as a pure substance or a mixture. Elements contain one type of atom; compounds contain elements chemically combined in fixed proportions. Mixtures have variable compositions and can often be separated physically.</p>
+
+ <h2>2. Laws of Chemical Combination</h2>
+ <ul>
+ <li><b>Law of conservation of mass:</b> mass is conserved in a chemical reaction in a closed system.</li>
+ <li><b>Law of definite proportions:</b> a pure compound contains its elements in a fixed proportion by mass.</li>
+ <li><b>Law of multiple proportions:</b> when two elements form more than one compound, the masses of one element combining with a fixed mass of the other are in simple whole-number ratios.</li>
+ </ul>
+
+ <h2>3. Atomic and Molecular Mass</h2>
+ <p>Atomic mass is expressed relative to one-twelfth of the mass of a carbon-12 atom. Molecular mass is the sum of the atomic masses of all atoms in a molecule.</p>
+ <p>Example: H₂O has approximate molecular mass 2(1) + 16 = 18 u.</p>
+ <p>Formula mass is commonly used for ionic compounds, which do not consist of discrete molecules in the same way molecular substances do.</p>
+
+ <h2>4. The Mole Concept</h2>
+ <p>One mole contains approximately 6.022 × 10²³ specified entities. These entities may be atoms, molecules, ions or formula units, depending on the substance.</p>
+ <div class="formula">Number of entities = moles × Nₐ</div>
+ <div class="formula">Moles (n) = given mass (m) / molar mass (M)</div>
+ <p>Molar mass is the mass of one mole of a substance, usually expressed in g mol⁻¹. Always identify what the entities are: one mole of oxygen atoms is not the same as one mole of O₂ molecules.</p>
+
+ <h2>5. Percentage Composition</h2>
+ <div class="formula">% by mass of an element = (mass of that element in one mole of compound / molar mass of compound) × 100</div>
+ <p>For water, the approximate mass percentage of hydrogen is (2/18) × 100 ≈ 11.1%, while oxygen is about 88.9%.</p>
+
+ <h2>6. Empirical and Molecular Formula</h2>
+ <p>The <b>empirical formula</b> gives the simplest whole-number ratio of atoms. The <b>molecular formula</b> gives the actual number of each type of atom in a molecule.</p>
+ <p>To find an empirical formula from percentage composition: assume a convenient sample mass, convert each element's mass to moles, divide each mole value by the smallest, then convert to a simple whole-number ratio.</p>
+ <div class="formula">Molecular formula = (Empirical formula)ₙ</div>
+ <div class="formula">n = molar mass / empirical formula mass</div>
+ <p>The value of n should be a whole number for a valid molecular formula.</p>
+
+ <h2>7. Chemical Equations and Stoichiometry</h2>
+ <p>A balanced chemical equation follows conservation of atoms. Coefficients represent mole ratios, not mass ratios. Balance the equation before using it in calculations.</p>
+ <p>For aA + bB → products, the stoichiometric ratio between A and B is a:b. Convert given masses to moles, use the equation's ratio, then convert to the required quantity.</p>
+ <p>The <b>limiting reagent</b> is consumed first and determines the maximum amount of product. The excess reagent remains after the limiting reagent is used up.</p>
+
+ <h2>8. Concentration of Solutions</h2>
+ <div class="formula">Mass % = (mass of solute / mass of solution) × 100</div>
+ <div class="formula">Molarity (M) = moles of solute / volume of solution in litres</div>
+ <div class="formula">Molality (m) = moles of solute / mass of solvent in kg</div>
+ <p>Molarity depends on solution volume and can change with temperature. Molality uses solvent mass and is generally not affected by temperature in the same way.</p>
+
+ <h2>9. Accuracy in Calculations</h2>
+ <ul>
+ <li>Use consistent units.</li>
+ <li>Balance chemical equations before stoichiometry.</li>
+ <li>Distinguish mass of solute from mass of solution.</li>
+ <li>Distinguish molarity from molality.</li>
+ <li>Use appropriate significant figures in the final answer.</li>
+ </ul>`,
+ questions:[
+  {q:"One mole contains approximately:",o:["6.022 × 10²³ entities","3.00 × 10⁸ entities","9.8 × 10² entities","1.0 × 10⁻²³ entities"],a:0,e:"The Avogadro constant is approximately 6.022 × 10²³ mol⁻¹."},
+  {q:"The molar mass of water is approximately:",o:["16 g mol⁻¹","17 g mol⁻¹","18 g mol⁻¹","20 g mol⁻¹"],a:2,e:"H₂O: 2 × 1 + 16 = 18 g mol⁻¹ approximately."},
+  {q:"Which law states that mass is conserved in a chemical reaction?",o:["Law of definite proportions","Law of conservation of mass","Law of multiple proportions","Boyle's law"],a:1,e:"In a closed system, total mass remains conserved during a chemical reaction."},
+  {q:"Molarity is defined as:",o:["Moles per kg of solvent","Mass per litre only","Moles of solute per litre of solution","Moles of solvent per litre"],a:2,e:"Molarity is moles of solute divided by the volume of solution in litres."},
+  {q:"The simplest whole-number ratio of atoms is shown by the:",o:["Molecular formula","Empirical formula","Structural diagram only","Balanced coefficient"],a:1,e:"An empirical formula gives the simplest whole-number ratio of atoms."},
+  {q:"The reagent that is consumed first is the:",o:["Catalyst","Solvent","Limiting reagent","Excess reagent"],a:2,e:"The limiting reagent is consumed first and limits product formation."},
+  {q:"Which quantity is used in molality?",o:["Volume of solution","Mass of solvent in kg","Mass of solution only","Volume of solvent only"],a:1,e:"Molality is moles of solute per kilogram of solvent."},
+  {q:"The molecular mass of CO₂ is approximately:",o:["28 u","32 u","40 u","44 u"],a:3,e:"CO₂: 12 + 2(16) = 44 u approximately."},
+  {q:"A balanced chemical equation obeys conservation of:",o:["Atoms of each element","Number of molecules in every case","Volume in every reaction","Temperature"],a:0,e:"The number of atoms of each element must be equal on both sides."},
+  {q:"Molarity may change with temperature mainly because:",o:["Moles always change","Solution volume may change","Atomic masses change","Solute identity changes"],a:1,e:"Molarity depends on solution volume, which can change with temperature."}
+ ]
+},
 {
-id:"c3",cls:"Class 11",subject:"Biology",title:"Cell: The Unit of Life",desc:"Cell theory, prokaryotic and eukaryotic cells, organelles and membranes.",
-notes:`<h3>1. Cell theory</h3><p>Cells are the basic structural and functional units of living organisms. Cell theory, in its modern form, states that living organisms are made of cells, the cell is the basic unit of life, and new cells arise from pre-existing cells.</p>
-<h3>2. Prokaryotic and eukaryotic cells</h3><p><b>Prokaryotic cells</b> (such as bacteria) lack a membrane-bound nucleus and typical membrane-bound organelles. Their DNA lies in a nucleoid region. <b>Eukaryotic cells</b> have a membrane-bound nucleus and membrane-bound organelles, including mitochondria and endoplasmic reticulum. Prokaryotes are not simply “without DNA”; they contain genetic material.</p>
-<h3>3. Plasma membrane</h3><p>The plasma membrane is mainly a phospholipid bilayer with proteins. The fluid mosaic model describes proteins embedded in or associated with a fluid lipid bilayer. The membrane is selectively permeable, helping regulate movement of substances into and out of the cell. Diffusion and osmosis are passive processes; active transport requires energy, directly or indirectly.</p>
-<h3>4. Cell wall and nucleus</h3><p>Plant cell walls are primarily cellulose; bacterial cell walls typically contain peptidoglycan. The nucleus contains most of a eukaryotic cell's genetic material. Its envelope has two membranes and nuclear pores. The nucleolus is associated with ribosomal RNA production and ribosome subunit assembly.</p>
-<h3>5. Cell organelles</h3><ul><li><b>Mitochondria:</b> aerobic respiration and much ATP production; contain their own DNA and ribosomes.</li><li><b>Endoplasmic reticulum (ER):</b> rough ER has ribosomes and supports synthesis/processing of many proteins; smooth ER participates in lipid synthesis and detoxification.</li><li><b>Golgi apparatus:</b> modifies, sorts and packages proteins and lipids.</li><li><b>Lysosomes:</b> contain hydrolytic enzymes for intracellular digestion and recycling.</li><li><b>Ribosomes:</b> sites of protein synthesis; present in both prokaryotes and eukaryotes.</li><li><b>Chloroplasts:</b> photosynthesis in plants and many algae; contain chlorophyll, DNA and ribosomes.</li><li><b>Vacuoles:</b> storage and water balance; large central vacuoles help maintain plant-cell turgor.</li><li><b>Cytoskeleton:</b> supports cell shape, movement and intracellular transport.</li></ul>
-<h3>6. Endomembrane system</h3><p>The ER, Golgi apparatus, lysosomes and vacuoles work in a coordinated system for synthesis, processing, packaging, transport and digestion. Mitochondria and chloroplasts are generally not included in the endomembrane system because their functions and membrane organization are distinct.</p>
-<h3>7. Plant and animal cells</h3><p>Plant cells commonly have a cellulose cell wall, plastids and a large central vacuole. Animal cells lack a cell wall and plastids; centrioles are commonly present in animal cells. These are general patterns, with exceptions among different cell types.</p>
-<div class="note"><b>Memory aid:</b> Ribosome = protein synthesis; Golgi = modify/package; mitochondrion = ATP production; chloroplast = photosynthesis; lysosome = digestion/recycling.</div>`,
-questions:[
-["The basic structural and functional unit of life is the:","organ","tissue","cell","organ system",2,"Cells are the basic structural and functional units of living organisms."],
-["Which structure is absent as a membrane-bound organelle in prokaryotes?","Ribosome","Nucleoid DNA","Membrane-bound nucleus","Plasma membrane",2,"Prokaryotes have DNA in a nucleoid region but lack a membrane-bound nucleus."],
-["The fluid mosaic model describes the structure of the:","cell wall","plasma membrane","nucleolus","chromosome",1,"It describes proteins associated with a fluid phospholipid bilayer."],
-["The main site of protein synthesis is the:","ribosome","lysosome","Golgi apparatus","vacuole",0,"Ribosomes translate mRNA to build polypeptides."],
-["Which organelle is strongly associated with aerobic respiration and ATP production?","Golgi apparatus","Mitochondrion","Lysosome","Nucleolus",1,"Mitochondria are major sites of aerobic respiration and ATP production in eukaryotic cells."],
-["The main component of a typical plant cell wall is:","chitin","cellulose","peptidoglycan","glycogen",1,"Plant cell walls are primarily made of cellulose."],
-["Which organelle modifies, sorts and packages many proteins?","Golgi apparatus","Ribosome","Nucleoid","Centromere",0,"The Golgi apparatus modifies and sorts molecules and packages them for transport."],
-["Rough endoplasmic reticulum appears rough because it has:","chlorophyll","ribosomes","DNA loops","cellulose fibres",1,"Ribosomes attached to the cytosolic surface give rough ER its appearance."],
-["Which statement about ribosomes is correct?","They occur only in animals","They are found in prokaryotes and eukaryotes","They store genetic information as their main role","They are surrounded by a double membrane",1,"Ribosomes occur in both prokaryotic and eukaryotic cells and synthesize proteins."],
-["The nucleolus is primarily involved in:","photosynthesis","ribosome subunit production","lipid digestion","ATP hydrolysis only",1,"The nucleolus produces rRNA and participates in ribosomal subunit assembly."],
-["Which organelle contains hydrolytic enzymes for intracellular digestion?","Lysosome","Chloroplast","Centrosome","Smooth ER",0,"Lysosomes contain enzymes that digest and recycle cellular material."],
-["Chloroplasts are the main site of:","photosynthesis","DNA translation only","cellular digestion","protein packaging",0,"Chloroplasts carry out photosynthesis in plants and many algae."],
-["Osmosis is the net movement of:","solute particles through any solid","water across a selectively permeable membrane","proteins using ATP only","DNA out of the nucleus",1,"Osmosis is the net movement of water across a selectively permeable membrane in response to water potential differences."],
-["Which organelle is generally excluded from the endomembrane system?","Golgi apparatus","Lysosome","Endoplasmic reticulum","Mitochondrion",3,"Mitochondria are not usually considered part of the endomembrane system."],
-["Bacterial cell walls typically contain:","cellulose","peptidoglycan","chitin","lignin",1,"Most bacterial cell walls contain peptidoglycan, though some bacteria have unusual wall structures."],
-["A large central vacuole in a plant cell helps maintain:","turgor pressure","ribosome sequence","chromosome number","membrane protein code",0,"Water in the central vacuole contributes to turgor pressure and cell rigidity."],
-["Which is a feature of eukaryotic cells?","No genetic material","A membrane-bound nucleus","No ribosomes","Always no plasma membrane",1,"Eukaryotic cells have a membrane-bound nucleus."],
-["Smooth ER is particularly associated with:","lipid synthesis","translation on attached ribosomes","chromosome segregation only","cellulose digestion",0,"Smooth ER participates in lipid synthesis and in some cells detoxification."],
-["The plasma membrane is described as selectively permeable because it:","allows every substance through equally","controls passage of substances","is made only of cellulose","contains no proteins",1,"Its structure and transport proteins regulate which substances cross and how."],
-["Which pair is correctly matched?","Golgi apparatus — photosynthesis","Ribosome — protein synthesis","Lysosome — light absorption","Chloroplast — intracellular digestion",1,"Ribosomes are the cellular structures responsible for protein synthesis."]
-]},
+ id:"c11biology",
+ cls:"11",
+ subject:"Biology",
+ icon:"🔬",
+ title:"Cell: The Unit of Life",
+ intro:"Class 11 Biology — cell theory, prokaryotic and eukaryotic cells, organelles and membranes.",
+ notes:`
+ <h2>1. Cell: The Basic Unit of Life</h2>
+ <p>The cell is the basic structural and functional unit of life. Organisms may be unicellular, such as many bacteria, or multicellular, such as plants and animals.</p>
+ <h3>Cell theory</h3>
+ <ul>
+ <li>All living organisms are made of cells and cell products.</li>
+ <li>The cell is the basic unit of life.</li>
+ <li>New cells arise from pre-existing cells.</li>
+ </ul>
+
+ <h2>2. Prokaryotic and Eukaryotic Cells</h2>
+ <p><b>Prokaryotic cells</b>, such as bacteria, lack a membrane-bound nucleus. Their genetic material is located in a nucleoid region. They also lack typical membrane-bound organelles such as mitochondria.</p>
+ <p><b>Eukaryotic cells</b> have a membrane-bound nucleus and membrane-bound organelles. Plants, animals, fungi and protists are eukaryotes.</p>
+ <ul>
+ <li>Bacterial ribosomes are generally 70S.</li>
+ <li>Cytoplasmic ribosomes in eukaryotic cells are generally 80S.</li>
+ <li>70S and 80S are sedimentation values, not simple measurements of size.</li>
+ </ul>
+
+ <h2>3. Plasma Membrane</h2>
+ <p>The plasma membrane forms a boundary around the cell. It is mainly a phospholipid bilayer with proteins and other components. The fluid mosaic model describes the membrane as a dynamic structure with proteins embedded in or associated with the lipid bilayer.</p>
+ <p>The membrane is selectively permeable: some substances cross more readily than others. Transport may be passive, such as diffusion and osmosis, or active, requiring energy in many cases.</p>
+ <ul>
+ <li><b>Diffusion:</b> net movement down a concentration gradient.</li>
+ <li><b>Osmosis:</b> movement of water across a selectively permeable membrane.</li>
+ <li><b>Active transport:</b> transport that uses energy to move substances against a gradient.</li>
+ </ul>
+
+ <h2>4. Cell Wall</h2>
+ <p>Plant cell walls contain cellulose and provide support and protection. Fungal cell walls mainly contain chitin, while bacterial cell walls commonly contain peptidoglycan. Animal cells do not have a cell wall.</p>
+
+ <h2>5. Nucleus</h2>
+ <p>The nucleus contains most of a eukaryotic cell's genetic material. It is surrounded by a double membrane called the nuclear envelope, which has nuclear pores. The nucleolus is involved in ribosomal RNA production and ribosome assembly.</p>
+
+ <h2>6. Endomembrane System</h2>
+ <ul>
+ <li><b>Endoplasmic reticulum (ER):</b> rough ER has ribosomes and is involved in synthesis and processing of many proteins; smooth ER is involved in lipid synthesis and other functions.</li>
+ <li><b>Golgi apparatus:</b> modifies, sorts and packages molecules for transport.</li>
+ <li><b>Lysosomes:</b> contain digestive enzymes and help break down materials inside cells.</li>
+ <li><b>Vacuoles:</b> storage compartments; the large central vacuole in many plant cells helps maintain turgor.</li>
+ </ul>
+ <p>These components work together in the synthesis, processing and transport of many cellular materials.</p>
+
+ <h2>7. Mitochondria and Plastids</h2>
+ <p><b>Mitochondria</b> are sites of much aerobic cellular respiration and ATP production. They have two membranes and their own DNA and ribosomes.</p>
+ <p><b>Chloroplasts</b> are plastids in photosynthetic plant cells and contain chlorophyll. Their internal thylakoid membranes are organised into stacks called grana; the surrounding fluid matrix is the stroma.</p>
+ <div class="note-box">Mitochondria and chloroplasts are called semi-autonomous organelles because they contain some of their own genetic and protein-synthesis machinery, but still depend on nuclear genes and the rest of the cell.</div>
+
+ <h2>8. Ribosomes, Cytoskeleton and Centrosome</h2>
+ <ul>
+ <li><b>Ribosomes:</b> sites of protein synthesis.</li>
+ <li><b>Cytoskeleton:</b> protein filaments that help maintain shape, organise the cell and support movement.</li>
+ <li><b>Centrosome/centrioles:</b> in many animal cells, help organise microtubules and participate in spindle formation during cell division.</li>
+ <li><b>Cilia and flagella:</b> structures involved in movement or moving material across cell surfaces. Many eukaryotic cilia and flagella have a 9+2 microtubule arrangement.</li>
+ </ul>
+
+ <h2>9. Quick Comparisons</h2>
+ <ul>
+ <li>Plant cells typically have a cellulose wall, chloroplasts in photosynthetic tissues and a large central vacuole.</li>
+ <li>Animal cells lack a cell wall and chloroplasts.</li>
+ <li>Prokaryotes lack a membrane-bound nucleus; eukaryotes possess one.</li>
+ <li>Ribosomes synthesise proteins; mitochondria are central to aerobic ATP production; Golgi apparatus modifies and packages materials.</li>
+ </ul>`,
+ questions:[
+  {q:"The basic structural and functional unit of life is the:",o:["Tissue","Organ","Cell","Organ system"],a:2,e:"The cell is the basic structural and functional unit of life."},
+  {q:"Which structure is absent in prokaryotic cells?",o:["Plasma membrane","Ribosomes","Membrane-bound nucleus","Cytoplasm"],a:2,e:"Prokaryotes lack a membrane-bound nucleus; their DNA is in a nucleoid region."},
+  {q:"Which organelle is a major site of aerobic ATP production?",o:["Golgi apparatus","Mitochondrion","Lysosome","Nucleolus"],a:1,e:"Mitochondria are central to aerobic respiration and ATP production."},
+  {q:"Ribosomes are primarily responsible for:",o:["Protein synthesis","Lipid storage","Photosynthesis in all cells","DNA packaging only"],a:0,e:"Ribosomes translate messenger RNA to make proteins."},
+  {q:"The main structural material of a plant cell wall is:",o:["Chitin","Cellulose","Peptidoglycan","Glycogen"],a:1,e:"Cellulose is the major structural component of plant cell walls."},
+  {q:"Which organelle modifies and packages many cellular products?",o:["Golgi apparatus","Ribosome","Nucleoid","Centromere"],a:0,e:"The Golgi apparatus modifies, sorts and packages molecules."},
+  {q:"The fluid mosaic model describes the:",o:["Cell wall only","Plasma membrane","Nucleus only","Ribosome"],a:1,e:"It describes the dynamic phospholipid bilayer with associated proteins."},
+  {q:"Chlorophyll in chloroplasts is associated with:",o:["Thylakoid membranes","Nuclear pores","Lysosomes","Cell wall cellulose"],a:0,e:"Chlorophyll is located in the thylakoid membranes of chloroplasts."},
+  {q:"The nucleolus is involved in:",o:["Ribosome assembly","Lipid digestion","ATP use only","Cell wall formation"],a:0,e:"The nucleolus is involved in rRNA production and ribosome assembly."},
+  {q:"Which organelle contains digestive enzymes?",o:["Lysosome","Chloroplast","Centrosome","Nucleolus"],a:0,e:"Lysosomes contain enzymes that digest cellular material."}
+ ]
+},
 {
-id:"c4",cls:"Class 12",subject:"Physics",title:"Electric Charges and Fields",desc:"Charge, Coulomb's law, electric field, field lines, dipoles and Gauss's law.",
-notes:`<h3>1. Electric charge</h3><p>Electric charge is a basic property of matter. There are two kinds, positive and negative. Like charges repel and unlike charges attract. Charge is conserved, additive and quantised.</p>
-<div class="formula">q = ne, where n is an integer and e ≈ 1.602 × 10⁻¹⁹ C<br>SI unit of charge: coulomb (C)</div>
-<p>In ordinary isolated systems, net charge remains constant. A body becomes charged by transfer of electrons; protons are normally bound in nuclei.</p>
-<h3>2. Coulomb's law</h3><div class="formula">F = (1 / 4πε₀) |q₁q₂| / r² = k |q₁q₂| / r²<br>k ≈ 8.99 × 10⁹ N m² C⁻² in vacuum</div><p>The force acts along the line joining two point charges. It is repulsive for like charges and attractive for unlike charges. In a medium, the force depends on the medium's permittivity.</p>
-<h3>3. Principle of superposition</h3><p>The net electrostatic force or electric field due to several charges is the vector sum of the individual contributions. Add components carefully; electric field is a vector, not a scalar.</p>
-<h3>4. Electric field</h3><div class="formula">E = F/q₀ for a small positive test charge q₀<br>Point charge: E = (1 / 4πε₀) |q|/r²<br>SI unit: N C⁻¹ (equivalent to V m⁻¹)</div><p>The field direction is the direction of force on a positive test charge: away from a positive source charge and toward a negative source charge.</p>
-<h3>5. Electric field lines</h3><ul><li>They start on positive charges and end on negative charges, or extend to infinity.</li><li>The tangent at a point gives the field direction.</li><li>Closer lines indicate a stronger field qualitatively.</li><li>Field lines never cross, because the field cannot have two directions at one point.</li><li>Electrostatic field lines do not form closed loops.</li></ul>
-<h3>6. Electric dipole</h3><p>An electric dipole consists of equal and opposite charges separated by a small distance. Dipole moment points from negative to positive charge.</p>
-<div class="formula">p = q × (separation vector from −q to +q); magnitude p = qd<br>SI unit: C m</div><p>In a uniform electric field, a dipole experiences torque τ = pE sin θ. The net force on an ideal dipole in a uniform field is zero, though the torque may be non-zero.</p>
-<h3>7. Electric flux and Gauss's law</h3><div class="formula">ΦE = ∫ E · dA; for a uniform field over a flat surface: ΦE = EA cos θ<br>Gauss's law: ∮ E · dA = Q enclosed / ε₀</div><p>Flux is a scalar. θ is the angle between the electric field and the area vector (normal to the surface), not the surface itself. Gauss's law is always true for a closed surface, but symmetry is what makes it especially useful for calculating E.</p>
-<h3>8. Standard symmetric results</h3><p>For a point charge, E = k|q|/r². For an ideal infinite line of charge, E = |λ|/(2πε₀r). For an ideal infinite non-conducting sheet with surface charge density σ, E = |σ|/(2ε₀) on either side. These results assume the idealised charge distributions stated.</p>
-<div class="note"><b>Common exam traps:</b> Use the area vector for flux angle. Field direction is defined using a positive test charge. Charge is quantised in integer multiples of e for isolated bodies.</div>`,
-questions:[
-["The SI unit of electric charge is:","ampere","coulomb","volt","ohm",1,"Charge is measured in coulombs (C)."],
-["The elementary charge magnitude is approximately:","1.602 × 10⁻¹⁹ C","9.11 × 10⁻³¹ C","6.022 × 10²³ C","8.99 × 10⁹ C",0,"The elementary charge magnitude is about 1.602 × 10⁻¹⁹ C."],
-["Two like point charges exert a force that is:","attractive","repulsive","always zero","perpendicular to their joining line",1,"Like charges repel along the line joining them."],
-["If the separation between two point charges doubles, the Coulomb force magnitude becomes:","twice as large","four times as large","half as large","one-fourth as large",3,"Coulomb force varies as 1/r², so doubling r makes the force one-fourth."],
-["The direction of electric field at a point is the direction of force on a:","negative test charge","positive test charge","neutral object","proton and electron simultaneously",1,"Electric field direction is defined as the force direction on a positive test charge."],
-["Electric field due to a positive point charge points:","toward the charge","away from the charge","in circles around the charge","in no definite direction",1,"A positive test charge is repelled by a positive source charge, so E points outward."],
-["The SI unit N/C is equivalent to:","C/N","V/m","C·m","N·m",1,"Electric field units N/C and V/m are equivalent."],
-["Electric field lines never cross because:","charges cannot move","the field has a unique direction at each point","the field is always zero","all charges are positive",1,"Crossing lines would imply two different field directions at the same point."],
-["The electric dipole moment direction is conventionally from:","positive to negative charge","negative to positive charge","the midpoint outward in all directions","the larger charge to the smaller charge",1,"The dipole moment vector points from negative to positive charge."],
-["The magnitude of dipole moment for charges ±q separated by distance d is:","q/d","qd","q²d","d/q",1,"Dipole moment magnitude p = qd."],
-["Electric flux through a flat surface in a uniform field is:","EA sin θ, with θ from area vector","EA cos θ, with θ from area vector","E/A","A/E",1,"Flux is E·A = EA cos θ when θ is between E and the area vector."],
-["Gauss's law relates total flux through a closed surface to:","total charge outside only","enclosed charge divided by ε₀","surface area only","the mass inside",1,"The net electric flux through a closed surface is Q_enclosed/ε₀."],
-["If the net charge enclosed by a closed surface is zero, the net electric flux is:","always positive","always negative","zero","infinite",2,"Gauss's law gives net flux = 0/ε₀ = 0, even if local field is non-zero."],
-["The Coulomb constant k in vacuum is approximately:","8.99 × 10⁹ N m² C⁻²","9.11 × 10⁻³¹ N m² C⁻²","6.67 × 10⁻¹¹ N m² kg⁻²","1.60 × 10⁻¹⁹ N/C",0,"k = 1/(4πε₀) ≈ 8.99 × 10⁹ N m² C⁻²."],
-["For a dipole in a uniform electric field, torque magnitude is:","pE cos θ","pE sin θ","p/E","E/p",1,"Torque magnitude is τ = pE sin θ, where θ is between p and E."],
-["The net force on an ideal dipole in a uniform electric field is:","always non-zero","zero","equal to pE","infinite",1,"The equal and opposite forces on the two charges cancel in a uniform field."],
-["For an ideal infinite line charge, the electric field magnitude varies with distance r as:","r²","1/r","1/r²","constant for all r",1,"The field of an infinite line charge is proportional to 1/r."],
-["A positive test charge placed in an electric field experiences force:","opposite to E","along E","always perpendicular to E","only if E is uniform",1,"By definition, force on a positive test charge is F = qE, in the direction of E."],
-["Charge quantisation is represented by:","q = n e","q = e/n for every isolated body","q = n²/e","q = 1/r²",0,"Charge is quantised in integer multiples q = ne, with integer n."],
-["The area vector of a flat surface is directed:","parallel to the surface","normal to the surface","along the electric field in every case","toward the nearest charge",1,"The area vector is perpendicular (normal) to the surface."]
-]},
+ id:"c12physics",
+ cls:"12",
+ subject:"Physics",
+ icon:"⚡",
+ title:"Electric Charges and Fields",
+ intro:"Class 12 Physics — charge, Coulomb's law, electric field, dipoles and Gauss's law.",
+ notes:`
+ <h2>1. Electric Charge</h2>
+ <p>Electric charge is a fundamental property of matter. There are two types: positive and negative. Like charges repel and unlike charges attract.</p>
+ <ul>
+ <li><b>Additivity:</b> total charge is the algebraic sum of individual charges.</li>
+ <li><b>Conservation:</b> total charge of an isolated system remains constant.</li>
+ <li><b>Quantisation:</b> charge on an object is expressed as q = ne, where n is an integer and e ≈ 1.602 × 10⁻¹⁹ C.</li>
+ </ul>
+ <p>Electrons carry negative charge; protons carry positive charge. Neutrons have zero net electric charge.</p>
+
+ <h2>2. Conductors and Insulators</h2>
+ <p>Conductors allow charges to move relatively freely; metals are common examples. Insulators do not allow charge to move freely through the material. Charging may occur by friction, conduction or induction.</p>
+
+ <h2>3. Coulomb's Law</h2>
+ <p>The electrostatic force between two point charges acts along the line joining them. Its magnitude in vacuum is proportional to the product of charge magnitudes and inversely proportional to the square of their separation.</p>
+ <div class="formula">F = (1 / 4πε₀) × |q₁q₂| / r²</div>
+ <p>The constant 1/(4πε₀) is approximately 8.99 × 10⁹ N m² C⁻² in vacuum. The force is repulsive for like charges and attractive for unlike charges.</p>
+ <p>In a medium, the force also depends on the medium's permittivity. Coulomb's law is a vector relationship: direction matters when combining forces.</p>
+
+ <h2>4. Principle of Superposition</h2>
+ <p>When several charges act on one charge, the net electrostatic force is the vector sum of the forces due to each other charge considered separately. Electric fields also obey superposition.</p>
+
+ <h2>5. Electric Field</h2>
+ <p>The electric field at a point is the force experienced per unit positive test charge placed at that point, in the limit that the test charge does not disturb the source distribution appreciably.</p>
+ <div class="formula">E = F / q₀</div>
+ <p>The SI unit is N C⁻¹, equivalent to V m⁻¹. The field of a point charge has magnitude:</p>
+ <div class="formula">E = (1 / 4πε₀) × |q| / r²</div>
+ <p>The direction is away from a positive source charge and toward a negative source charge.</p>
+
+ <h2>6. Electric Field Lines</h2>
+ <ul>
+ <li>They begin on positive charges and end on negative charges, or extend to infinity.</li>
+ <li>The tangent to a field line gives the field direction at a point.</li>
+ <li>Field lines never cross, because the electric field cannot have two directions at one point.</li>
+ <li>Closer field lines indicate a stronger field in a diagram.</li>
+ <li>In electrostatic equilibrium, field lines meet the surface of a conductor perpendicularly.</li>
+ </ul>
+
+ <h2>7. Electric Dipole</h2>
+ <p>An electric dipole consists of two equal and opposite charges separated by a small distance. Its dipole moment has magnitude p = q × separation and points from negative to positive charge.</p>
+ <div class="formula">p = q(2a) for charges ±q separated by 2a</div>
+ <p>The SI unit of dipole moment is C m. In a uniform electric field, the net force on an ideal dipole is zero, but a torque may act to align it with the field.</p>
+ <div class="formula">τ = pE sin θ</div>
+
+ <h2>8. Electric Flux</h2>
+ <p>Electric flux through a flat surface in a uniform field measures the component of the field passing through the surface.</p>
+ <div class="formula">Φ = EA cos θ</div>
+ <p>Here θ is the angle between the electric field and the area vector, which is perpendicular to the surface. SI unit: N m² C⁻¹.</p>
+
+ <h2>9. Gauss's Law</h2>
+ <p>The net electric flux through a closed surface equals the net charge enclosed divided by the permittivity of free space.</p>
+ <div class="formula">∮ E · dA = Q(enclosed) / ε₀</div>
+ <p>Gauss's law is especially useful for charge distributions with high symmetry, such as spherical, cylindrical or planar symmetry. The choice of Gaussian surface is mathematical; it need not be a physical surface.</p>
+
+ <h2>10. Common Applications and Exam Traps</h2>
+ <ul>
+ <li>Outside a spherically symmetric charged object, the field behaves as if the total charge were concentrated at the centre.</li>
+ <li>Inside an ideal conductor in electrostatic equilibrium, the electric field is zero.</li>
+ <li>Flux depends on the enclosed net charge for a closed surface, not on the location of the charge inside it.</li>
+ <li>A zero net flux does not necessarily mean the electric field is zero everywhere on the surface.</li>
+ <li>Always distinguish field direction from force direction: a negative test charge feels force opposite to the field.</li>
+ </ul>`,
+ questions:[
+  {q:"The SI unit of electric charge is:",o:["Ampere","Coulomb","Volt","Ohm"],a:1,e:"Electric charge is measured in coulombs (C)."},
+  {q:"Like electric charges:",o:["Always attract","Always repel","Have no interaction","Become neutral automatically"],a:1,e:"Like charges repel, while unlike charges attract."},
+  {q:"Coulomb force varies with separation r as:",o:["r","r²","1/r","1/r²"],a:3,e:"The magnitude follows the inverse-square law."},
+  {q:"The direction of the electric field is the direction of force on a:",o:["Positive test charge","Negative test charge","Neutron","Magnetic pole"],a:0,e:"Electric field direction is defined by the force direction on a positive test charge."},
+  {q:"The SI unit of electric field is:",o:["C N","N C⁻¹","C m","N m²"],a:1,e:"Electric field = force/charge, so its unit is N C⁻¹."},
+  {q:"The electric dipole moment points from:",o:["Positive to negative","Negative to positive","Centre to infinity","Either direction always"],a:1,e:"By convention, dipole moment points from negative charge to positive charge."},
+  {q:"Electric field lines never cross because:",o:["Charges cannot move","The field has one direction at a point","All fields are uniform","Flux is always zero"],a:1,e:"Crossing lines would imply two field directions at the same point."},
+  {q:"Gauss's law relates closed-surface flux to:",o:["Total mass inside","Net enclosed charge","Surface colour","Only external charge"],a:1,e:"Net flux equals enclosed net charge divided by ε₀."},
+  {q:"Electric flux through a flat area is EA cos θ, where θ is between:",o:["E and the area vector","E and the surface itself in all conventions","Force and charge","Mass and acceleration"],a:0,e:"The angle is measured between the electric field and the area vector."},
+  {q:"In electrostatic equilibrium, the electric field inside an ideal conductor is:",o:["Infinite","Zero","Always 1 N/C","Always equal to ε₀"],a:1,e:"Free charges rearrange until the electrostatic field inside the conductor is zero."}
+ ]
+},
 {
-id:"c5",cls:"Class 12",subject:"Chemistry",title:"Solutions",desc:"Types of solutions, concentration, solubility, Raoult's law and colligative properties.",
-notes:`<h3>1. What is a solution?</h3><p>A solution is a homogeneous mixture of two or more components. The component present in the larger amount is commonly called the solvent, and the other component(s) are solute(s). Solutions can be gaseous, liquid or solid.</p>
-<h3>2. Expressing concentration</h3><div class="formula">Mass percentage = (mass solute / mass solution) × 100<br>Mole fraction xᵢ = nᵢ / Σn<br>Molarity M = moles solute / volume solution (L)<br>Molality m = moles solute / mass solvent (kg)<br>ppm ≈ mass fraction × 10⁶ for dilute mass-based cases</div><p>Read the denominator carefully. Molarity uses total solution volume; molality uses solvent mass. Mole fractions of all components sum to 1.</p>
-<h3>3. Solubility</h3><p>Solubility depends on the nature of solute and solvent, temperature and, for gases, pressure. For many solid solutes, solubility increases with temperature, but this is not universal. Gas solubility in liquids generally increases with gas pressure and often decreases as temperature rises.</p>
-<h3>4. Henry's law</h3><p>At a fixed temperature, the partial pressure of a gas above a solution is proportional to the mole fraction of dissolved gas in the liquid:</p><div class="formula">p = Kₕ x</div><p>Here Kₕ depends on the gas-solvent pair and temperature. This form is useful for dilute gas solutions under suitable conditions.</p>
-<h3>5. Raoult's law and ideal solutions</h3><div class="formula">For a volatile component A: pA = xA pA°<br>For a binary ideal solution: Ptotal = xA pA° + xB pB°</div><p>Raoult's law relates a component's partial vapour pressure to its mole fraction in the liquid and the vapour pressure of the pure component. An ideal solution follows Raoult's law over the full composition range and has no enthalpy or volume change of mixing in the ideal model.</p>
-<p>For a non-volatile solute in a volatile solvent, the vapour pressure of the solvent is lowered relative to the pure solvent.</p>
-<h3>6. Colligative properties</h3><p>For sufficiently dilute solutions, colligative properties depend on the number of dissolved solute particles rather than their chemical identity. The four standard properties are relative lowering of vapour pressure, elevation of boiling point, depression of freezing point and osmotic pressure.</p>
-<div class="formula">Relative lowering of vapour pressure = (p° − p)/p° ≈ xsolute for a dilute solution with a non-volatile solute<br>ΔTb = i Kb m<br>ΔTf = i Kf m<br>π = i C R T</div>
-<p>Kb is the ebullioscopic constant, Kf is the cryoscopic constant, m is molality, C is molar concentration, T is absolute temperature and i is the van't Hoff factor. Use i when solute particles dissociate or associate; ideal non-electrolytes often have i ≈ 1.</p>
-<h3>7. Abnormal molar mass</h3><p>Association reduces the number of independently moving particles; dissociation increases it. This changes measured colligative effects and can make the apparent molar mass differ from the formula-based molar mass. Interpret i with the type and extent of association/dissociation.</p>
-<div class="note"><b>Common exam traps:</b> Use kelvin in π = CRT. Molality is moles per kg of solvent. Colligative equations are usually applied to dilute solutions and may need the van't Hoff factor.</div>`,
-questions:[
-["A solution is best described as a:","heterogeneous mixture","homogeneous mixture","pure element","single compound only",1,"A solution is a homogeneous mixture of two or more components."],
-["Molarity is moles of solute divided by:","kilograms of solvent","litres of solution","kilograms of solution","moles of solvent",1,"Molarity is based on the volume of the entire solution in litres."],
-["Molality is expressed in:","mol L⁻¹","mol kg⁻¹ of solvent","g L⁻¹ only","kg mol⁻¹ only",1,"Molality is moles of solute per kilogram of solvent."],
-["The sum of mole fractions of all components in a solution is:","0","1","100","dependent on temperature only",1,"Each mole fraction is a component's moles divided by total moles, so they sum to 1."],
-["Henry's law for a dilute gas solution can be written as:","p = Kₕx","pV = nRT only","ΔTb = Kbm","p = x/Kₕ in the stated convention",0,"In the common form used here, gas partial pressure p = Kₕx."],
-["For an ideal solution, the components obey:","Boyle's law","Raoult's law over the composition range","only Henry's law","Newton's law",1,"An ideal solution follows Raoult's law for each volatile component over the full composition range."],
-["Which is a colligative property?","Colour of solution","Boiling-point elevation","Chemical identity of solute","Molar mass alone",1,"Boiling-point elevation depends on the number of dissolved particles in a dilute solution."],
-["The formula for boiling-point elevation for a dilute solution is:","ΔTb = iKbm","ΔTb = Kb/m","ΔTb = iKb/m²","ΔTb = CRT",0,"Boiling-point elevation is ΔTb = i Kb m."],
-["In π = CRT, temperature T must be in:","degrees Celsius","kelvin","fahrenheit","any scale without conversion",1,"Gas-law expressions require absolute temperature, measured in kelvin."],
-["A non-volatile solute generally causes solvent vapour pressure to:","increase","decrease","become infinite","remain identical in every case",1,"The solute lowers the solvent's mole fraction and hence its vapour pressure in the usual dilute-solution model."],
-["The van't Hoff factor i accounts for:","solution colour","association or dissociation of solute particles","container size","only solvent mass",1,"Association and dissociation change the effective number of solute particles."],
-["For a dilute ideal non-electrolyte solution with no association, i is approximately:","0","1","2","10",1,"Such a solute remains as one particle per formula unit, so i is approximately 1."],
-["Freezing-point depression is given by:","ΔTf = iKfm","ΔTf = iKb m","ΔTf = CRT","ΔTf = m/Kf²",0,"The standard dilute-solution relation is ΔTf = i Kf m."],
-["Which factor generally increases gas solubility in a liquid at fixed temperature?","Lowering gas partial pressure","Increasing gas partial pressure","Removing all solvent","Increasing the liquid's volume only",1,"Henry's law predicts dissolved gas concentration/mole fraction increases with gas partial pressure under its applicable conditions."],
-["A solution contains 1 mol solute in 2 kg solvent. Its molality is:","0.5 mol kg⁻¹","1 mol kg⁻¹","2 mol kg⁻¹","3 mol kg⁻¹",0,"Molality = 1 mol / 2 kg = 0.5 mol kg⁻¹."],
-["For a binary ideal solution of volatile A and B, total vapour pressure equals:","xA + xB only","xA pA° + xB pB°","pA° × pB°","pA° − pB° in every case",1,"The total pressure is the sum of partial pressures given by Raoult's law."],
-["Which pair consists of colligative properties?","Density and colour","Osmotic pressure and freezing-point depression","Viscosity and refractive index","Molecular shape and odour",1,"Osmotic pressure and freezing-point depression depend on the number of solute particles in dilute solutions."],
-["Relative lowering of vapour pressure for a dilute solution with a non-volatile solute is approximately the:","mole fraction of solute","molar mass of solvent","volume fraction of gas only","temperature in kelvin",0,"For a dilute solution, (p°−p)/p° ≈ xsolute."],
-["A solute dissociates into more particles in solution. Compared with i = 1, its ideal van't Hoff factor is generally:","less than 1","greater than 1","always exactly 1","always zero",1,"Dissociation increases the number of particles, so i is generally greater than 1."],
-["Which concentration measure is usually independent of temperature for a fixed composition?","Molarity","Molality","Volume percentage","Moles per litre",1,"Molality uses masses, which do not change with temperature in ordinary conditions; molarity uses volume."]
-]},
+ id:"c12chemistry",
+ cls:"12",
+ subject:"Chemistry",
+ icon:"🧪",
+ title:"Solutions",
+ intro:"Class 12 Chemistry — concentration, solubility, vapour pressure and colligative properties.",
+ notes:`
+ <h2>1. What Is a Solution?</h2>
+ <p>A solution is a homogeneous mixture of two or more components. The component present in a larger amount is often called the solvent; the other component or components are solutes. These labels depend on the system and context.</p>
+ <p>Solutions can be gaseous, liquid or solid. Examples include air, salt water and alloys.</p>
+
+ <h2>2. Ways to Express Concentration</h2>
+ <div class="formula">Mass percentage = (mass of component / total mass of solution) × 100</div>
+ <div class="formula">Volume percentage = (volume of component / total solution volume) × 100</div>
+ <div class="formula">Molarity (M) = moles of solute / volume of solution in litres</div>
+ <div class="formula">Molality (m) = moles of solute / mass of solvent in kg</div>
+ <div class="formula">Mole fraction xᵢ = moles of component i / total moles of all components</div>
+ <p>The sum of mole fractions of all components is 1. Molarity depends on volume and can change with temperature; molality and mole fraction are generally independent of temperature when composition remains unchanged.</p>
+
+ <h2>3. Solubility</h2>
+ <p>Solubility is the amount of solute that can dissolve in a given amount of solvent under specified conditions. It depends on the nature of the solute and solvent, temperature, and for gases, pressure.</p>
+ <p>For many solid solutes in liquids, solubility increases with temperature, but this is not a universal rule. Gas solubility in liquids generally decreases as temperature increases.</p>
+
+ <h2>4. Henry's Law</h2>
+ <p>For a dilute solution of a gas in a liquid at a fixed temperature, Henry's law relates the partial pressure of the gas above the solution to its mole fraction in solution.</p>
+ <div class="formula">p = Kₕ x</div>
+ <p>Here p is the gas's partial pressure, x its mole fraction in the solution, and Kₕ is Henry's law constant under the chosen convention. The exact units depend on the convention used.</p>
+ <p>Higher gas pressure generally increases the amount of gas dissolved. This helps explain why sealed carbonated drinks retain dissolved carbon dioxide.</p>
+
+ <h2>5. Vapour Pressure and Raoult's Law</h2>
+ <p>In an ideal solution containing volatile components, Raoult's law states that the partial vapour pressure of a component equals its mole fraction in the liquid multiplied by the vapour pressure of the pure component.</p>
+ <div class="formula">pᵢ = xᵢ pᵢ°</div>
+ <p>For a solution with two volatile components, total vapour pressure is the sum of their partial pressures.</p>
+ <p>A non-volatile solute generally lowers the vapour pressure of the solvent. Real solutions may show positive or negative deviations from ideal behaviour due to differences in intermolecular interactions.</p>
+
+ <h2>6. Ideal and Non-Ideal Solutions</h2>
+ <p>An ideal solution obeys Raoult's law throughout the composition range. For an ideal solution, mixing enthalpy is approximately zero and mixing volume change is approximately zero.</p>
+ <p>Non-ideal solutions deviate from Raoult's law. Positive deviation means vapour pressure is higher than ideal prediction; negative deviation means it is lower.</p>
+
+ <h2>7. Colligative Properties</h2>
+ <p>Colligative properties depend on the number of dissolved solute particles relative to solvent, rather than the chemical identity of those particles, for sufficiently dilute solutions.</p>
+ <ul>
+ <li>Relative lowering of vapour pressure.</li>
+ <li>Elevation of boiling point.</li>
+ <li>Depression of freezing point.</li>
+ <li>Osmotic pressure.</li>
+ </ul>
+ <div class="formula">Elevation in boiling point: ΔTᵦ = i Kᵦ m</div>
+ <div class="formula">Depression in freezing point: ΔT𝒇 = i K𝒇 m</div>
+ <div class="formula">Osmotic pressure: π = i C R T</div>
+ <p>Here i is the van't Hoff factor, Kᵦ and K𝒇 are solvent constants, m is molality, C is molar concentration, R is the gas constant and T is absolute temperature. Use consistent units.</p>
+
+ <h2>8. Osmosis and Osmotic Pressure</h2>
+ <p>Osmosis is the net movement of solvent through a selectively permeable membrane from a region of higher solvent chemical potential toward lower solvent chemical potential. For dilute solutions, osmotic pressure can be approximated by π = CRT for a non-electrolyte.</p>
+ <p>Osmotic pressure measurements can help determine molar masses of large molecules because they can be measured at relatively low concentrations.</p>
+
+ <h2>9. Abnormal Molar Mass and van't Hoff Factor</h2>
+ <p>Solute particles may dissociate into ions or associate into larger units. This changes the number of particles and can make experimentally inferred molar mass differ from the expected value.</p>
+ <p>The van't Hoff factor i accounts for the effective number of solute particles compared with the amount originally dissolved. In simple ideal cases, dissociation often gives i &gt; 1 and association often gives i &lt; 1.</p>
+
+ <h2>10. Exam Checklist</h2>
+ <ul>
+ <li>Convert temperature to kelvin for gas-law and osmotic-pressure calculations.</li>
+ <li>Do not confuse molarity with molality.</li>
+ <li>Use the solvent's Kᵦ or K𝒇, not the solute's.</li>
+ <li>Include the van't Hoff factor when the problem requires it.</li>
+ <li>Check whether the question refers to partial pressure or total vapour pressure.</li>
+ </ul>`,
+ questions:[
+  {q:"A solution is a:",o:["Heterogeneous mixture only","Homogeneous mixture","Pure element","Single atom"],a:1,e:"A solution is a homogeneous mixture of its components."},
+  {q:"Molarity is moles of solute per:",o:["Kilogram of solvent","Litre of solution","Litre of solvent only","Kilogram of solution"],a:1,e:"Molarity uses the total solution volume in litres."},
+  {q:"Which concentration unit is generally independent of temperature?",o:["Molarity","Molality","Volume percentage in every case","Volume concentration only"],a:1,e:"Molality uses solvent mass rather than solution volume."},
+  {q:"For a dilute gas solution, Henry's law is commonly written as:",o:["p = Kₕx","pV = nRT only","F = ma","π = 0 always"],a:0,e:"Under the common convention, gas partial pressure is proportional to its mole fraction in solution."},
+  {q:"Which is a colligative property?",o:["Colour","Boiling-point elevation","Odour","Viscosity in every case"],a:1,e:"Boiling-point elevation depends on the number of dissolved particles in dilute solutions."},
+  {q:"The freezing point of a dilute solution with a non-volatile solute is generally:",o:["Higher than pure solvent","Lower than pure solvent","Always unchanged","Always 100°C"],a:1,e:"Dissolved non-volatile solute generally depresses the solvent's freezing point."},
+  {q:"Raoult's law for an ideal volatile component is:",o:["pᵢ = xᵢpᵢ°","pᵢ = mRT","pᵢ = qv","pᵢ = 1/xᵢ always"],a:0,e:"The component's partial vapour pressure is its liquid mole fraction times pure-component vapour pressure."},
+  {q:"The sum of mole fractions in a mixture is:",o:["0","0.5","1","100"],a:2,e:"Mole fractions represent each component's share of total moles, so they sum to 1."},
+  {q:"The approximate osmotic pressure equation for a dilute non-electrolyte solution is:",o:["π = CRT","π = C/R","π = R/T","π = 0"],a:0,e:"For a dilute solution, π = CRT, using consistent units and absolute temperature."},
+  {q:"A van't Hoff factor greater than 1 may result from:",o:["Dissociation into more particles","Association into fewer particles","No dissolved particles","A change in colour only"],a:0,e:"Dissociation increases the number of effective particles and often gives i greater than 1."}
+ ]
+},
 {
-id:"c6",cls:"Class 12",subject:"Biology",title:"Principles of Inheritance and Variation",desc:"Mendelian genetics, crosses, dominance, segregation, linkage and inheritance patterns.",
-notes:`<h3>1. Key terms</h3><p>A <b>gene</b> is a DNA sequence contributing to a functional product or trait. Alleles are alternative forms of a gene at a locus. An organism's <b>genotype</b> is its genetic constitution for the trait(s); its <b>phenotype</b> is the observable outcome influenced by genotype and environment. Homozygous individuals have two identical alleles at a locus (AA or aa); heterozygous individuals have two different alleles (Aa).</p>
-<h3>2. Mendel's monohybrid cross</h3><p>For a simple single-gene trait with complete dominance, crossing two heterozygotes Aa × Aa gives genotypes AA, Aa, Aa, aa.</p>
-<div class="formula">Genotypic ratio = 1 AA : 2 Aa : 1 aa<br>Phenotypic ratio = 3 dominant : 1 recessive (under complete dominance)</div>
-<p>The law of segregation says the two alleles of a gene separate during gamete formation, so each gamete receives one allele. Fertilisation restores the pair.</p>
-<h3>3. Test cross</h3><p>A test cross mates an individual with a dominant phenotype but unknown genotype with a homozygous recessive individual. For a single gene with complete dominance, Aa × aa gives a 1:1 dominant:recessive phenotype ratio, while AA × aa gives all dominant-phenotype offspring.</p>
-<h3>4. Dihybrid cross and independent assortment</h3><p>For two genes that assort independently with complete dominance, AaBb × AaBb gives a 9:3:3:1 phenotypic ratio. This is a standard expectation when the genes are unlinked (or sufficiently far apart) and the assumptions of the model hold. Each heterozygote forms AB, Ab, aB and ab gametes in equal proportions under independent assortment.</p>
-<h3>5. Incomplete dominance and codominance</h3><p>In <b>incomplete dominance</b>, the heterozygote has an intermediate phenotype; the F₂ phenotypic ratio can be 1:2:1. In <b>codominance</b>, both alleles are expressed in the heterozygote. Human ABO blood groups are an example: Iᴬ and Iᴮ are codominant, while i is recessive to both.</p>
-<h3>6. Chromosomal basis and sex determination</h3><p>Genes are located on chromosomes. Meiosis explains segregation of alleles and, for unlinked genes, independent assortment. In the common human XX/XY system, most females are XX and most males are XY; ova carry X, while sperm usually carry X or Y, so the sperm's sex chromosome determines whether the zygote is XX or XY.</p>
-<h3>7. Linkage and recombination</h3><p>Genes located close together on the same chromosome tend to be inherited together; this is linkage. Crossing over during meiosis can create recombinant combinations. Recombination frequency generally increases with distance between loci, but its measured value does not exceed 50% for standard two-point mapping.</p>
-<h3>8. Inheritance patterns and variation</h3><p>Pedigree analysis traces a trait through generations. Autosomal dominant traits often appear in successive generations, while autosomal recessive traits may appear in children of unaffected carrier parents. These are clues, not absolute rules; family size, penetrance and other factors matter. Mutation and recombination generate genetic variation; environment can also influence phenotype.</p>
-<div class="note"><b>Common exam traps:</b> A dominant allele does not have to be more common or “stronger.” The 3:1 phenotypic ratio assumes complete dominance and a standard Aa × Aa cross. Do not confuse genotype ratio (1:2:1) with phenotype ratio (3:1).</div>`,
-questions:[
-["An organism with genotype Aa is:","homozygous dominant","homozygous recessive","heterozygous","haploid by definition",2,"Aa contains two different alleles, so it is heterozygous."],
-["For Aa × Aa with complete dominance, the genotypic ratio is:","3:1","1:2:1","9:3:3:1","1:1",1,"The offspring genotypes are AA, Aa, Aa and aa, giving 1:2:1."],
-["For Aa × Aa with complete dominance, the expected phenotypic ratio is:","1:2:1","1:1","3:1","9:3:3:1",2,"AA and Aa show the dominant phenotype, while aa shows recessive: 3:1."],
-["The law of segregation states that:","alleles of a gene separate during gamete formation","all genes are linked","acquired traits are inherited","dominant alleles always increase in frequency",0,"The two alleles of a gene segregate so each gamete receives one allele."],
-["A test cross for an individual with dominant phenotype uses a:","homozygous dominant individual","homozygous recessive individual","heterozygous individual only","haploid individual of any genotype",1,"Crossing with a homozygous recessive individual reveals the unknown genotype in the standard model."],
-["For Aa × aa, assuming complete dominance, the expected phenotype ratio is:","3:1","1:2:1","1:1","all dominant",2,"Aa produces A and a gametes; aa produces only a, giving half Aa and half aa."],
-["The standard F₂ phenotypic ratio for an independently assorting dihybrid cross AaBb × AaBb is:","1:1","3:1","9:3:3:1","1:2:1",2,"With independent assortment and complete dominance at both loci, the classic ratio is 9:3:3:1."],
-["In incomplete dominance, the heterozygote typically shows:","only the dominant parent's phenotype","an intermediate phenotype","no phenotype","both phenotypes always fully separate",1,"Incomplete dominance produces an intermediate heterozygous phenotype."],
-["AB blood group is an example of:","complete recessiveness of Iᴬ","codominance of Iᴬ and Iᴮ","incomplete dominance of i only","sex-linked inheritance",1,"Both Iᴬ and Iᴮ are expressed in an AB individual."],
-["Which genotype is homozygous recessive?","AA","Aa","aA","aa",3,"Homozygous recessive means two recessive alleles: aa."],
-["Under independent assortment, a dihybrid AaBb can form which gamete types?","AB only","AB and ab only","AB, Ab, aB and ab","AA, Aa, BB and Bb",2,"Each gamete gets one allele from each gene, giving four combinations under independent assortment."],
-["In humans, an ovum typically carries which sex chromosome?","X","Y","Both X and Y","Neither X nor Y",0,"Human ova normally carry an X chromosome; sperm carry X or Y."],
-["Genes close together on the same chromosome tend to show:","complete independent assortment in every case","linkage","no inheritance","only mutation",1,"Close loci are more likely to be inherited together, a phenomenon called linkage."],
-["Crossing over occurs during:","meiosis","translation","DNA digestion in lysosomes","fertilisation only",0,"Crossing over between homologous chromosomes occurs during prophase I of meiosis."],
-["A dominant allele is necessarily more common in a population. This statement is:","true in all populations","false; dominance does not determine allele frequency","true only for humans","true when the allele is capitalised",1,"Dominance describes heterozygous expression, not how common an allele is."],
-["If a trait is autosomal recessive, two unaffected carrier parents (Aa × Aa) can have an affected child with probability:","0","1/4","1/2","3/4",1,"The offspring genotypes are 1 AA : 2 Aa : 1 aa, so the affected aa probability is 1/4."],
-["Which is the phenotype?","The allele pair Aa","The observable trait","The DNA sequence only","The chromosome number only",1,"Phenotype is the observable characteristic, influenced by genotype and environment."],
-["For an Aa parent, the probability that a gamete carries allele a is:","0","1/4","1/2","1",2,"Segregation means each allele has a 50% chance of entering a gamete."],
-["A recombination frequency in standard two-point genetic mapping is at most:","25%","50%","75%","100%",1,"Recombination frequency cannot exceed 50%; at that point loci behave as if unlinked in the mapping test."],
-["Which process generates new combinations of existing alleles during meiosis?","Crossing over","Mitosis only","Translation","Osmosis",0,"Crossing over exchanges DNA between homologous chromosomes and creates recombinant combinations."]
-]}
+ id:"c12biology",
+ cls:"12",
+ subject:"Biology",
+ icon:"🧬",
+ title:"Principles of Inheritance and Variation",
+ intro:"Class 12 Biology — Mendelian genetics, crosses, inheritance patterns and chromosome theory.",
+ notes:`
+ <h2>1. Basic Genetic Terms</h2>
+ <ul>
+ <li><b>Gene:</b> a DNA sequence that contributes to a functional product or trait.</li>
+ <li><b>Alleles:</b> alternative forms of a gene at the same locus.</li>
+ <li><b>Genotype:</b> genetic constitution being considered, such as AA, Aa or aa.</li>
+ <li><b>Phenotype:</b> observable characteristics produced by genotype and environment.</li>
+ <li><b>Homozygous:</b> two identical alleles, such as AA or aa.</li>
+ <li><b>Heterozygous:</b> two different alleles, such as Aa.</li>
+ </ul>
+ <p>In simple Mendelian examples, a dominant allele may mask the effect of a recessive allele in a heterozygote. Dominance does not mean that an allele is more common or more beneficial.</p>
+
+ <h2>2. Mendel's Experiments</h2>
+ <p>Gregor Mendel studied inheritance in pea plants, choosing traits that could be followed across generations. His experiments led to important principles of inheritance.</p>
+ <ul>
+ <li><b>Law of dominance:</b> in a simple complete-dominance cross, one allele may mask another in the heterozygote.</li>
+ <li><b>Law of segregation:</b> the two alleles of a gene separate during gamete formation; each gamete receives one allele.</li>
+ <li><b>Independent assortment:</b> alleles of different genes assort independently when the genes are unlinked or sufficiently far apart for the simplified model to apply.</li>
+ </ul>
+
+ <h2>3. Monohybrid Cross</h2>
+ <p>Consider a cross between two heterozygotes: Aa × Aa. Each parent produces A and a gametes, each with probability one-half.</p>
+ <div class="formula">Genotype ratio = 1 AA : 2 Aa : 1 aa</div>
+ <div class="formula">Phenotype ratio under complete dominance = 3 dominant : 1 recessive</div>
+ <p>The phenotype ratio assumes a simple single-gene trait with complete dominance, equal gamete probabilities and no relevant viability differences.</p>
+
+ <h2>4. Test Cross</h2>
+ <p>A test cross pairs an individual showing a dominant phenotype but unknown genotype with a homozygous recessive individual. In a simple single-gene case, all dominant offspring may suggest a homozygous dominant parent, while a 1:1 dominant-to-recessive result supports a heterozygous parent. Finite sample sizes mean outcomes are probabilistic, not absolute proof.</p>
+
+ <h2>5. Dihybrid Cross and Independent Assortment</h2>
+ <p>For a standard cross AaBb × AaBb with complete dominance and independent assortment, each heterozygous parent can produce AB, Ab, aB and ab gametes with equal probability.</p>
+ <div class="formula">Expected phenotypic ratio = 9 : 3 : 3 : 1</div>
+ <p>This ratio applies to the classic model: two genes, complete dominance at both loci, independent assortment, and no complications such as epistasis or differential survival.</p>
+
+ <h2>6. Incomplete Dominance and Codominance</h2>
+ <p><b>Incomplete dominance:</b> the heterozygote has an intermediate phenotype. In the classic snapdragon example, red × white may produce pink offspring.</p>
+ <p><b>Codominance:</b> both alleles are expressed in the heterozygote. The AB blood group is a familiar example because both A and B antigens are expressed.</p>
+ <p>For a heterozygote cross in these simple one-gene patterns, the genotype ratio is 1:2:1; the phenotype ratio can also be 1:2:1 when all three genotypes have distinguishable phenotypes.</p>
+
+ <h2>7. Multiple Alleles and ABO Blood Groups</h2>
+ <p>The ABO blood group system involves three common alleles: Iᴬ, Iᴮ and i. Iᴬ and Iᴮ are codominant to each other, and each is dominant over i.</p>
+ <ul>
+ <li>Group A: IᴬIᴬ or Iᴬi</li>
+ <li>Group B: IᴮIᴮ or Iᴮi</li>
+ <li>Group AB: IᴬIᴮ</li>
+ <li>Group O: ii</li>
+ </ul>
+ <p>Blood group inheritance is a classic example of multiple alleles in a population and codominance in the AB phenotype.</p>
+
+ <h2>8. Chromosomal Theory of Inheritance</h2>
+ <p>The chromosomal theory links genes with chromosomes. Chromosomes carry genes, and their behaviour during meiosis helps explain segregation and independent assortment. Genes located close together on the same chromosome may be linked and therefore do not always assort independently.</p>
+
+ <h2>9. Linkage and Recombination</h2>
+ <p><b>Linkage</b> is the tendency of genes on the same chromosome to be inherited together. <b>Recombination</b> can arise through crossing over during meiosis, creating new allele combinations. Recombination frequency is often used to estimate relative gene distances, with important limits for genes far apart.</p>
+
+ <h2>10. Sex Determination and Variation</h2>
+ <p>In humans, the common chromosomal pattern is XX for females and XY for males. Eggs usually carry an X chromosome; sperm carry either X or Y. The fertilising sperm therefore usually determines whether the zygote is XX or XY.</p>
+ <p>Variation can arise from mutation, crossing over, independent assortment and random fertilisation. Variation is important in populations and evolution.</p>
+
+ <h2>11. Common Inheritance Patterns</h2>
+ <ul>
+ <li><b>Autosomal dominant:</b> one copy of a dominant disease-associated allele may be sufficient in a simplified pedigree model.</li>
+ <li><b>Autosomal recessive:</b> a phenotype commonly appears when both alleles are recessive; carriers may be unaffected.</li>
+ <li><b>Sex-linked inheritance:</b> genes on sex chromosomes can show different patterns in males and females.</li>
+ </ul>
+ <p>Real genetic traits can be more complex than simple Mendelian examples. Use the inheritance model stated in each question.</p>
+
+ <h2>Quick Revision</h2>
+ <ul>
+ <li>Aa × Aa gives 1:2:1 genotype ratio.</li>
+ <li>With complete dominance, Aa × Aa gives 3:1 phenotype ratio.</li>
+ <li>Classic independent dihybrid cross: 9:3:3:1 phenotype ratio.</li>
+ <li>AB blood group illustrates codominance.</li>
+ <li>Segregation occurs when allele pairs separate during gamete formation.</li>
+ </ul>`,
+ questions:[
+  {q:"The genetic constitution of an organism is its:",o:["Phenotype","Genotype","Habitat","Population"],a:1,e:"Genotype refers to the genetic constitution being considered."},
+  {q:"In Aa × Aa, the expected genotype ratio is:",o:["3:1","1:1","1:2:1","9:3:3:1"],a:2,e:"The offspring genotypes are AA, Aa, Aa and aa, giving 1:2:1."},
+  {q:"The classic phenotype ratio for Aa × Aa under complete dominance is:",o:["1:2:1","3:1","1:1","9:3:3:1"],a:1,e:"Three offspring combinations show the dominant phenotype for every one recessive combination."},
+  {q:"AB blood group illustrates:",o:["Only incomplete dominance","Codominance","No alleles","Simple recessiveness only"],a:1,e:"Both Iᴬ and Iᴮ are expressed in the AB phenotype."},
+  {q:"The law of segregation states that:",o:["Alleles separate during gamete formation","All genes are on one chromosome","Traits never vary","All alleles are dominant"],a:0,e:"The two alleles of a gene separate so each gamete receives one."},
+  {q:"The classic dihybrid phenotype ratio under independent assortment is:",o:["3:1","1:2:1","9:3:3:1","1:1"],a:2,e:"AaBb × AaBb gives the classic 9:3:3:1 ratio under the stated assumptions."},
+  {q:"An individual with genotype Aa is:",o:["Homozygous dominant","Homozygous recessive","Heterozygous","Without alleles"],a:2,e:"Aa contains two different alleles, so it is heterozygous."},
+  {q:"Which genotype represents blood group O in the basic ABO model?",o:["IᴬIᴮ","Iᴬi","Iᴮi","ii"],a:3,e:"Group O is represented by ii in the basic ABO inheritance model."},
+  {q:"Genes close together on the same chromosome may show:",o:["Linkage","No inheritance","Only codominance","Conservation of mass"],a:0,e:"Linked genes tend to be inherited together more often than unlinked genes."},
+  {q:"In the common human XX/XY pattern, eggs usually carry:",o:["Only Y","Only X","Both X and Y together","Neither sex chromosome"],a:1,e:"In the common pattern, eggs carry X; sperm carry X or Y."}
+ ]
+}
 ];
 
-let activeChapter=null, qi=0, answers=[], locked=false;
-function renderCards(){
- const term=document.getElementById('search').value.toLowerCase(), cf=document.getElementById('classFilter').value, sf=document.getElementById('subjectFilter').value;
- const list=chapters.filter(c=>(!term||(c.title+' '+c.subject+' '+c.desc).toLowerCase().includes(term))&&(!cf||c.cls===cf)&&(!sf||c.subject===sf));
- document.getElementById('cards').innerHTML=list.map(c=>`<article class="card"><span class="pill">${c.cls} · ${c.subject}</span><h3>${c.title}</h3><p>${c.desc}</p><button class="btn" onclick="openChapter('${c.id}')">Read Notes & Start MCQs →</button></article>`).join('')||'<div class="contentbox">No chapters found. Try another search.</div>';
+/* Render chapter cards */
+function renderChapters() {
+  const grid = document.getElementById("chapterGrid");
+  const query = document.getElementById("searchInput").value.trim().toLowerCase();
+  const cls = document.getElementById("classFilter").value;
+  const subject = document.getElementById("subjectFilter").value;
+
+  const filtered = chapters.filter(ch => {
+    const matchesQuery = (ch.title + " " + ch.subject + " class " + ch.cls)
+      .toLowerCase().includes(query);
+    const matchesClass = cls === "all" || ch.cls === cls;
+    const matchesSubject = subject === "all" || ch.subject === subject;
+    return matchesQuery && matchesClass && matchesSubject;
+  });
+
+  grid.innerHTML = "";
+  document.getElementById("noResults").classList.toggle("hidden", filtered.length > 0);
+
+  filtered.forEach(ch => {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <span class="badge">CLASS ${ch.cls} · ${ch.subject.toUpperCase()}</span>
+      <div class="subject-icon">${ch.icon}</div>
+      <h3>${escapeHTML(ch.title)}</h3>
+      <p>${escapeHTML(ch.intro)}</p>
+      <p class="small">${ch.questions.length} practice questions · Notes included</p>
+      <button class="primary" type="button">Open Chapter →</button>
+    `;
+    card.querySelector("button").addEventListener("click", () => openChapter(ch.id));
+    grid.appendChild(card);
+  });
 }
-function filterQuick(value){document.getElementById('search').value='';if(value==='Class 11'||value==='Class 12'){document.getElementById('classFilter').value=value;document.getElementById('subjectFilter').value=''}else{document.getElementById('classFilter').value='';document.getElementById('subjectFilter').value=value}showHome();renderCards();}
-function showHome(){document.getElementById('home').style.display='block';document.getElementById('reader').style.display='none';document.getElementById('homeNav').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
-function openChapter(id){activeChapter=chapters.find(c=>c.id===id);document.getElementById('home').style.display='none';document.getElementById('reader').style.display='block';document.getElementById('chapterHeader').innerHTML=`<span class="pill">${activeChapter.cls} · ${activeChapter.subject}</span><h2>${activeChapter.title}</h2><p>${activeChapter.desc}</p>`;document.getElementById('notes').innerHTML=`<div class="contentbox">${activeChapter.notes}</div>`;restartQuiz();window.scrollTo({top:0,behavior:'smooth'});}
-function restartQuiz(){qi=0;answers=[];locked=false;document.getElementById('quizPlay').style.display='block';document.getElementById('result').style.display='none';document.getElementById('nextBtn').disabled=true;renderQuestion();}
-function renderQuestion(){locked=false;const q=activeChapter.questions[qi];document.getElementById('qCount').textContent=`Question ${qi+1} of ${activeChapter.questions.length}`;document.getElementById('liveScore').textContent=`Answered: ${answers.filter(a=>a!==undefined).length}`;document.getElementById('progressBar').style.width=`${qi/activeChapter.questions.length*100}%`;document.getElementById('question').textContent=q[0];document.getElementById('options').innerHTML=q.slice(1,5).map((o,i)=>`<button class="option" onclick="chooseAnswer(${i})"><b>${String.fromCharCode(65+i)}.</b> ${o}</button>`).join('');const fb=document.getElementById('feedback');fb.className='feedback';fb.textContent='';document.getElementById('nextBtn').disabled=true;document.getElementById('nextBtn').textContent=qi===activeChapter.questions.length-1?'See final result':'Next question →';}
-function chooseAnswer(i){if(locked)return;locked=true;const q=activeChapter.questions[qi],correct=q[5];answers[qi]=i;document.querySelectorAll('.option').forEach((b,j)=>{b.disabled=true;if(j===correct)b.classList.add('correct');if(j===i&&i!==correct)b.classList.add('wrong')});const fb=document.getElementById('feedback');fb.className='feedback show '+(i===correct?'good':'bad');fb.innerHTML=`<b>${i===correct?'Correct!':'Not quite.'}</b> ${q[6]}`;document.getElementById('liveScore').textContent=`Answered: ${answers.length} · Correct so far: ${answers.filter((a,k)=>a===activeChapter.questions[k][5]).length}`;document.getElementById('nextBtn').disabled=false;}
-function nextQuestion(){if(!locked)return;if(qi<activeChapter.questions.length-1){qi++;renderQuestion()}else showResult();}
-function showResult(){document.getElementById('quizPlay').style.display='none';document.getElementById('result').style.display='block';const correct=answers.filter((a,k)=>a===activeChapter.questions[k][5]).length;document.getElementById('score').textContent=`${correct} / ${activeChapter.questions.length}`;const pct=correct/activeChapter.questions.length*100;document.getElementById('scoreMessage').textContent=pct>=85?'Excellent work! Review any missed explanations to strengthen your understanding.':pct>=60?'Good effort! Revisit the notes for the questions you missed, then try again.':'Keep practising. Read the notes once more and retake the quiz after revision.';document.getElementById('progressBar').style.width='100%';document.getElementById('review').innerHTML='<h3>Answer review</h3>'+activeChapter.questions.map((q,k)=>`<div 
+
+/* Prevent chapter text from being treated as HTML in titles */
+function escapeHTML(text) {
+  return String(text).replace(/[&<>"']/g, char => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+  }[char]));
+}
+
+let currentChapter = null;
+let selectedAnswers = {};
+let quizFinished = false;
+
+function openChapter(id) {
+  const ch = chapters.find(item => item.id === id);
+  if (!ch) {
+    alert("Sorry, this chapter could not be found. Please return to the library.");
+    return;
+  }
+
+  currentChapter = ch;
+  selectedAnswers = {};
+  quizFinished = false;
+
+  document.getElementById("homePage").classList.add("hidden");
+  document.getElementById("chapterView").classList.remove("hidden");
+  document.getElementById("chapterBadge").textContent =
+    "CLASS " + ch.cls + " · " + ch.subject.toUpperCase();
+  document.getElementById("chapterTitle").textContent = ch.title;
+  document.getElementById("chapterIntro").textContent = ch.intro;
+  document.getElementById("notesContent").innerHTML = ch.notes;
+  document.getElementById("quizResult").classList.add("hidden");
+  document.getElementById("submitQuizButton").disabled = false;
+
+  renderQuiz(ch.questions);
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function renderQuiz(questions) {
+  const box = document.getElementById("quizContent");
+  box.innerHTML = "";
+
+  questions.forEach((q, index) => {
+    const item = document.createElement("div");
+    item.className = "quiz-question";
+    item.innerHTML = `
+      <h3>${index + 1}. ${escapeHTML(q.q)}</h3>
+      <div class="options"></div>
+      <div class="feedback" id="feedback-${index}" aria-live="polite"></div>
+    `;
+
+    const optionsBox = item.querySelector(".options");
+
+    q.o.forEach((option, optionIndex) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "option";
+      button.textContent = String.fromCharCode(65 + optionIndex) + ". " + option;
+      button.addEventListener("click", () => selectAnswer(index, optionIndex));
+      optionsBox.appendChild(button);
+    });
+
+    box.appendChild(item);
+  });
+}
+
+function selectAnswer(questionIndex, optionIndex) {
+  if (quizFinished) return;
+  selectedAnswers[questionIndex] = optionIndex;
+
+  const questionElement = document.querySelectorAll(".quiz-question")[questionIndex];
+  questionElement.querySelectorAll(".option").forEach((button, i) => {
+    button.classList.remove("correct", "incorrect");
+    if (i === optionIndex) {
+      button.style.borderColor = "#155eef";
+      button.style.background = "#eaf1ff";
+    } else {
+      button.style.borderColor = "";
+      button.style.background = "";
+    }
+  });
+
+  const feedback = document.getElementById("feedback-" + questionIndex);
+  feedback.textContent = "Answer selected. Finish the quiz to see your result and explanations.";
+  feedback.style.color = "#155eef";
+}
+
+function finishQuiz() {
+  if (!currentChapter || quizFinished) return;
+  quizFinished = true;
+
+  let score = 0;
+  currentChapter.questions.forEach((q, index) => {
+    const chosen = selectedAnswers[index];
+    const questionElement = document.querySelectorAll(".quiz-question")[index];
+    const buttons = questionElement.querySelectorAll(".option");
+
+    buttons.forEach((button, optionIndex) => {
+      button.disabled = true;
+      button.style.borderColor = "";
+      button.style.background = "";
+      if (optionIndex === q.a) button.classList.add("correct");
+      if (chosen === optionIndex && chosen !== q.a) button.classList.add("incorrect");
+    });
+
+    if (chosen === q.a) score++;
+
+    const feedback = document.getElementById("feedback-" + index);
+    const correctText = "Correct answer: " + q.o[q.a] + ". " + q.e;
+    if (chosen === q.a) {
+      feedback.textContent = "Correct! " + correctText;
+      feedback.style.color = "#15803d";
+    } else {
+      feedback.textContent = (chosen === undefined ? "Not answered. " : "Incorrect. ") + correctText;
+      feedback.style.color = "#b91c1c";
+    }
+  });
+
+  const result = document.getElementById("quizResult");
+  result.classList.remove("hidden");
+  result.innerHTML = "<h3>Quiz Result</h3><p>You scored <b>" + score +
+    " out of " + currentChapter.questions.length + "</b>.</p><p>" +
+    (score === currentChapter.questions.length
+      ? "Excellent work! Review the notes once more to reinforce your learning."
+      : "Review the explanations above, revisit the notes and try again.") +
+    "</p>";
+
+  document.getElementById("submitQuizButton").disabled = true;
+  result.scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+function restartQuiz() {
+  if (!currentChapter) return;
+  selectedAnswers = {};
+  quizFinished = false;
+  document.getElementById("quizResult").classList.add("hidden");
+  document.getElementById("submitQuizButton").disabled = false;
+  renderQuiz(currentChapter.questions);
+}
+
+function goHome() {
+  currentChapter = null;
+  document.getElementById("chapterView").classList.add("hidden");
+  document.getElementById("homePage").classList.remove("hidden");
+  document.getElementById("sampleArea").classList.add("hidden");
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function scrollToChapters() {
+  document.getElementById("chapterLibrary").scrollIntoView({behavior:"smooth"});
+}
+
+function closeSample() {
+  document.getElementById("sampleArea").classList.add("hidden");
+  document.getElementById("sampleContent").innerHTML = "";
+}
+
+function openSampleNotes() {
+  const area = document.getElementById("sampleArea");
+  const content = document.getElementById("sampleContent");
+  content.innerHTML = `
+    <h2 class="section-title">Sample Notes: Scientific Measurement</h2>
+    <p>A physical quantity is expressed using a numerical value and a unit. For example, 10 m represents a length.</p>
+    <h3>Remember these points</h3>
+    <ul>
+      <li>SI base unit of length: metre (m).</li>
+      <li>SI base unit of mass: kilogram (kg).</li>
+      <li>SI base unit of time: second (s).</li>
+      <li>Velocity has dimensions [LT⁻¹].</li>
+      <li>Acceleration has dimensions [LT⁻²].</li>
+      <li>Force has dimensions [MLT⁻²].</li>
+    </ul>
+    <div class="note-box"><b>Study tip:</b> Learn the meaning of a formula first, then practise substituting values and units.</div>
+    <p>These are introductory sample notes. Open the full chapter for the complete lesson.</p>
+    <button class="primary" onclick="openChapter('c11physics')">Open Full Physics Chapter</button>
+  `;
+  area.classList.remove("hidden");
+  area.scrollIntoView({behavior:"smooth"});
+}
+
+function openSampleQuiz() {
+  const area = document.getElementById("sampleArea");
+  const content = document.getElementById("sampleContent");
+  const questions = [
+    {q:"What is the SI base unit of mass?",o:["Gram","Kilogram","Newton","Joule"],a:1,e:"Kilogram is the SI base unit of mass."},
+    {q:"Which organelle is a major site of aerobic ATP production?",o:["Mitochondrion","Golgi apparatus","Lysosome","Nucleolus"],a:0,e:"Mitochondria are central to aerobic cellular respiration."},
+    {q:"One mole contains approximately how many entities?",o:["6.022 × 10²³","3 × 10⁸","9.8","100"],a:0,e:"One mole contains approximately 6.022 × 10²³ specified entities."}
+  ];
+  let answers = {};
+  let done = false;
+
+  content.innerHTML = `
+    <h2 class="section-title">Sample Science Quiz</h2>
+    <p class="muted">Three quick questions from Physics, Chemistry and Biology.</p>
+    <div id="sampleQuizQuestions"></div>
+    <div id="sampleQuizResult" class="note-box hidden"></div>
+    <button id="sampleSubmit" class="primary">Finish Sample Quiz</button>
+  `;
+
+  const qBox = document.getElementById("sampleQuizQuestions");
+  questions.forEach((q, index) => {
+    const item = document.createElement("div");
+    item.className = "quiz-question";
+    item.innerHTML = "<h3>" + (index + 1) + ". " + escapeHTML(q.q) + "</h3>";
+    q.o.forEach((option, oi) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "option";
+      button.textContent = String.fromCharCode(65 + oi) + ". " + option;
+      button.addEventListener("click", () => {
+        if (done) return;
+        answers[index] = oi;
+        item.querySelectorAll(".option").forEach((b, j) => {
+          b.style.background = j === oi ? "#eaf1ff" : "";
+          b.style.borderColor = j === oi ? "#155eef" : "";
+        });
+      });
+      item.appendChild(button);
+    });
+    qBox.appendChild(item);
+  });
+
+  document.getElementById("sampleSubmit").addEventListener("click", () => {
+    if (done) return;
+    done = true;
+    let score = 0;
+    questions.forEach((q, i) => {
+      const item = qBox.children[i];
+      item.querySelectorAll(".option").forEach((button, j) => {
+        button.disabled = true;
+        button.style.background = "";
+        button.style.borderColor = "";
+        if (j === q.a) button.classList.add("correct");
+        if (answers[i] === j && j !== q.a) button.classList.add("incorrect");
+      });
+      const explanation = document.createElement("p");
+      explanation.className = "feedback";
+      explanation.textContent = (answers[i] === q.a ? "Correct! " :
+        (answers[i] === undefined ? "Not answered. " : "Incorrect. ")) +
+        "Answer: " + q.o[q.a] + ". " + q.e;
+      explanation.style.color = answers[i] === q.a ? "#15803d" : "#b91c1c";
+      item.appendChild(explanation);
+      if (answers[i] === q.a) score++;
+    });
+    const result = document.getElementById("sampleQuizResult");
+    result.classList.remove("hidden");
+    result.innerHTML = "<b>Your score: " + score + " / " + questions.length + "</b>";
+    document.getElementById("sampleSubmit").disabled = true;
+  });
+
+  area.classList.remove("hidden");
+  area.scrollIntoView({behavior:"smooth"});
+}
+
+/* Start the site with chapter cards already visible. */
+renderChapters();
+</script>
+</body>
+</html>
