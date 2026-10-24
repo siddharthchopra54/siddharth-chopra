@@ -1,0 +1,600 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EasyMedStudy | CBSE & NEET Preparation</title>
+
+  <meta name="description"
+    content="Learn Physics, Chemistry and Biology with EasyMedStudy. Explore CBSE Class 11 and 12 notes, NEET MCQs and practice questions.">
+
+  <style>
+    :root {
+      --blue: #1769e0;
+      --dark: #102344;
+      --light: #f3f7ff;
+      --white: #ffffff;
+      --green: #16804a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      padding: 16px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 12px #10234410;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: var(--blue);
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 75px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #e5efff, #ffffff);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dceaff;
+      color: var(--blue);
+      padding: 7px 14px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 55px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #52627b;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 9px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #0d51b7;
+    }
+
+    section {
+      padding: 55px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .section-description {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 30px;
+    }
+
+    .search-box {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      padding: 15px;
+      border: 1px solid #d4deed;
+      border-radius: 10px;
+      font-size: 16px;
+      outline-color: var(--blue);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #e2eaf6;
+      box-shadow: 0 5px 18px #10234408;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #64748b;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      color: var(--blue);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .class-label {
+      display: inline-block;
+      background: #e8f1ff;
+      color: var(--blue);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .quiz-section {
+      background: #e9f1ff;
+    }
+
+    .quiz-box {
+      background: white;
+      max-width: 700px;
+      margin: 25px auto 0;
+      padding: 28px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px #10234410;
+    }
+
+    .quiz-box h3 {
+      margin-bottom: 18px;
+    }
+
+    .option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: white;
+      border: 1px solid #d6dfed;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 10px 0;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .option:hover:not(:disabled) {
+      border-color: var(--blue);
+      background: #f2f7ff;
+    }
+
+    .option:disabled {
+      cursor: default;
+      color: var(--dark);
+    }
+
+    #feedback {
+      margin: 15px 0;
+      font-weight: bold;
+    }
+
+    #explanation {
+      color: #52627b;
+      margin-bottom: 15px;
+    }
+
+    .notice {
+      max-width: 850px;
+      margin: 0 auto;
+      background: white;
+      border-left: 4px solid var(--blue);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 30px 7%;
+    }
+
+    footer p {
+      margin: 6px 0;
+      color: #d5e0f2;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 55px 6%;
+      }
+
+      section {
+        padding: 40px 6%;
+      }
+
+      .quiz-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🩺 EasyMedStudy</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#classes">Classes</a>
+      <a href="#quiz">MCQ Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="badge">CBSE Class 11 & 12 • NEET Preparation</div>
+
+      <h1>Understand Concepts.<br><span>Achieve More.</span></h1>
+
+      <p>
+        Your learning space for Physics, Chemistry and Biology.
+        Strengthen concepts, practise questions and prepare with confidence.
+      </p>
+
+      <a href="#subjects" class="button">Explore Subjects →</a>
+    </section>
+
+    <section id="subjects">
+      <h2 class="section-title">Explore Your Subjects</h2>
+
+      <p class="section-description">
+        Build strong concepts, one chapter at a time.
+      </p>
+
+      <input
+        type="search"
+        id="search"
+        class="search-box"
+        placeholder="Search Physics, Biology, Chemistry, NEET..."
+        aria-label="Search subjects and study resources">
+
+      <div class="grid" id="subjectGrid">
+
+        <article class="card searchable">
+          <div class="icon">⚡</div>
+          <h3>Physics</h3>
+          <p>Understand laws, formulas, numericals and important concepts.</p>
+          <a href="#classes">Explore Physics →</a>
+        </article>
+
+        <article class="card searchable">
+          <div class="icon">🧪</div>
+          <h3>Chemistry</h3>
+          <p>Learn reactions, equations, concepts and numerical problems.</p>
+          <a href="#classes">Explore Chemistry →</a>
+        </article>
+
+        <article class="card searchable">
+          <div class="icon">🧬</div>
+          <h3>Biology</h3>
+          <p>Revise NCERT concepts, diagrams, terminology and MCQs.</p>
+          <a href="#classes">Explore Biology →</a>
+        </article>
+
+        <article class="card searchable">
+          <div class="icon">🎯</div>
+          <h3>NEET Preparation</h3>
+          <p>Practise MCQs and strengthen your entrance-exam preparation.</p>
+          <a href="#quiz">Try a sample quiz →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="classes">
+      <h2 class="section-title">Choose Your Class</h2>
+
+      <p class="section-description">
+        Start learning according to your class and goals.
+      </p>
+
+      <div class="grid">
+
+        <article class="card searchable">
+          <span class="class-label">Class 11</span>
+          <h3>Class 11 PCB</h3>
+          <p>Physics, Chemistry and Biology study resources.</p>
+          <a href="#subjects">Explore Class 11 →</a>
+        </article>
+
+        <article class="card searchable">
+          <span class="class-label">Class 12</span>
+          <h3>Class 12 PCB</h3>
+          <p>Board preparation, revision and practice resources.</p>
+          <a href="#subjects">Explore Class 12 →</a>
+        </article>
+
+        <article class="card searchable">
+          <span class="class-label">Entrance Exam</span>
+          <h3>NEET Practice</h3>
+          <p>Test your understanding with practice questions.</p>
+          <a href="#quiz">Start Sample Quiz →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+      <h2 class="section-title">Try a Sample MCQ</h2>
+
+      <p class="section-description">
+        Test your knowledge with this starter question.
+      </p>
+
+      <div class="quiz-box">
+        <p id="questionNumber">Question 1 of 3</p>
+        <h3 id="question">Loading question...</h3>
+
+        <div id="options"></div>
+
+        <p id="feedback" role="status" aria-live="polite"></p>
+        <p id="explanation"></p>
+
+        <button class="button" id="nextButton" hidden>
+          Next Question →
+        </button>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">Why EasyMedStudy?</h2>
+
+      <p class="section-description">
+        A simple place to learn, practise and revise.
+      </p>
+
+      <div class="notice">
+        <strong>Our goal:</strong>
+        Make science easier to understand through clear explanations,
+        useful practice questions and organised study resources.
+        We aim to support both CBSE board preparation and NEET preparation.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h3>🩺 EasyMedStudy</h3>
+    <p>Learn Easy. Think Smart. Achieve More.</p>
+    <p>Physics • Chemistry • Biology</p>
+    <p>© <span id="year"></span> EasyMedStudy</p>
+    <p>Independent educational project. Not affiliated with CBSE or NTA.</p>
+  </footer>
+
+  <script>
+    // Update the copyright year automatically.
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Search visible subject and class cards.
+    const searchInput = document.getElementById("search");
+    const searchableCards = document.querySelectorAll(".searchable");
+
+    searchInput.addEventListener("input", function () {
+      const term = this.value.toLowerCase().trim();
+
+      searchableCards.forEach(function (card) {
+        card.style.display = card.textContent.toLowerCase().includes(term)
+          ? ""
+          : "none";
+      });
+    });
+
+    // Sample educational quiz.
+    // Add more questions here as the website grows.
+    const questions = [
+      {
+        question: "Which organelle is known as the powerhouse of the cell?",
+        options: ["Nucleus", "Mitochondrion", "Ribosome", "Golgi apparatus"],
+        answer: 1,
+        explanation:
+          "Mitochondria produce most of the ATP used by eukaryotic cells."
+      },
+      {
+        question: "What is the SI unit of electric current?",
+        options: ["Volt", "Ohm", "Ampere", "Watt"],
+        answer: 2,
+        explanation:
+          "The ampere (A) is the SI unit of electric current."
+      },
+      {
+        question: "What is the chemical formula of water?",
+        options: ["CO₂", "O₂", "H₂O", "NaCl"],
+        answer: 2,
+        explanation:
+          "A water molecule contains two hydrogen atoms and one oxygen atom."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let answered = false;
+
+    const questionElement = document.getElementById("question");
+    const questionNumber = document.getElementById("questionNumber");
+    const optionsElement = document.getElementById("options");
+    const feedbackElement = document.getElementById("feedback");
+    const explanationElement = document.getElementById("explanation");
+    const nextButton = document.getElementById("nextButton");
+
+    function showQuestion() {
+      answered = false;
+
+      const item = questions[currentQuestion];
+
+      questionNumber.textContent =
+        `Question ${currentQuestion + 1} of ${questions.length}`;
+
+      questionElement.textContent = item.question;
+      optionsElement.innerHTML = "";
+      feedbackElement.textContent = "";
+      explanationElement.textContent = "";
+      nextButton.hidden = true;
+
+      item.options.forEach(function (option, index) {
+        const button = document.createElement("button");
+
+        button.className = "option";
+        button.textContent =
+          String.fromCharCode(65 + index) + ". " + option;
+
+        button.addEventListener("click", function () {
+          checkAnswer(index);
+        });
+
+        optionsElement.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selectedIndex) {
+      if (answered) return;
+
+      answered = true;
+
+      const item = questions[currentQuestion];
+      const optionButtons = optionsElement.querySelectorAll("button");
+
+      optionButtons.forEach(function (button) {
+        button.disabled = true;
+      });
+
+      if (selectedIndex === item.answer) {
+        feedbackElement.textContent = "Correct! Well done.";
+        feedbackElement.style.color = "#16804a";
+      } else {
+        feedbackElement.textContent =
+          "Not quite. Correct answer: " + item.options[item.answer];
+        feedbackElement.style.color = "#c0392b";
+      }
+
+      explanationElement.textContent = item.explanation;
+
+      nextButton.textContent =
+        currentQuestion === questions.length - 1
+          ? "Finish Quiz"
+          : "Next Question →";
+
+      nextButton.hidden = false;
+    }
+
+    nextButton.addEventListener("click", function () {
+      if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        showQuestion();
+      } else {
+        questionNumber.textContent = "Quiz completed!";
+        questionElement.textContent =
+          "Great work! You completed the sample quiz.";
+        optionsElement.innerHTML = "";
+        feedbackElement.textContent =
+          "This is a starter quiz. More chapter-wise questions can be added.";
+        explanationElement.textContent = "";
+        nextButton.hidden = true;
+
+        const restartButton = document.createElement("button");
+        restartButton.className = "button";
+        restartButton.textContent = "Try Again";
+        restartButton.addEventListener("click", function () {
+          currentQuestion = 0;
+          showQuestion();
+        });
+
+        optionsElement.appendChild(restartButton);
+      }
+    });
+
+    showQuestion();
+  </script>
+
+</body>
+</html>
+```
