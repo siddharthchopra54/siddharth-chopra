@@ -1,168 +1,215 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>EasyMedStudy | CBSE & NEET Preparation</title>
+  <title>EasyMedStudy | CBSE & NEET Learning</title>
 
   <meta name="description"
-    content="Learn Physics, Chemistry and Biology with EasyMedStudy. Explore CBSE Class 11 and 12 notes, NEET MCQs and practice questions.">
+    content="Learn Class 11 and 12 Physics, Chemistry and Biology with EasyMedStudy. Explore study notes and practise NEET-style MCQs.">
+
+  <meta name="theme-color" content="#0756c9">
 
   <style>
     :root {
-      --blue: #1769e0;
-      --dark: #102344;
-      --light: #f3f7ff;
+      --primary: #0756c9;
+      --primary-dark: #063b8f;
+      --light-blue: #eaf3ff;
       --white: #ffffff;
-      --green: #16804a;
+      --text: #172b4d;
+      --muted: #61718a;
+      --border: #dce6f3;
+      --green: #13834b;
+      --shadow: 0 8px 28px rgba(20, 60, 120, 0.09);
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7faff;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button, select {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
     }
 
     header {
       background: var(--white);
-      padding: 16px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 12px #10234410;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
+    }
+
+    .navbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 12px 0;
     }
 
     .logo {
-      color: var(--blue);
-      font-size: 25px;
-      font-weight: bold;
+      color: var(--primary);
+      font-size: 23px;
+      font-weight: 800;
     }
 
-    nav {
+    .nav-links {
       display: flex;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 18px;
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: var(--blue);
+    .nav-links a:hover {
+      color: var(--primary);
     }
 
     .hero {
-      padding: 75px 7%;
-      text-align: center;
-      background: linear-gradient(135deg, #e5efff, #ffffff);
+      background: linear-gradient(135deg, #0756c9, #07377f);
+      color: white;
+      padding: 85px 0;
+    }
+
+    .hero-content {
+      max-width: 760px;
     }
 
     .badge {
       display: inline-block;
-      background: #dceaff;
-      color: var(--blue);
-      padding: 7px 14px;
-      border-radius: 25px;
-      font-size: 14px;
-      font-weight: bold;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 13px;
       margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(34px, 6vw, 55px);
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: var(--blue);
+      font-size: clamp(35px, 6vw, 58px);
+      line-height: 1.15;
+      margin-bottom: 20px;
     }
 
     .hero p {
       max-width: 650px;
-      margin: 0 auto 25px;
-      color: #52627b;
+      color: #e5efff;
       font-size: 17px;
+      margin-bottom: 25px;
     }
 
     .button {
       display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 12px 22px;
+      padding: 12px 19px;
       border-radius: 9px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-      font-weight: bold;
+      border: 0;
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
     }
 
     .button:hover {
-      background: #0d51b7;
+      background: var(--primary-dark);
+    }
+
+    .button-white {
+      background: white;
+      color: var(--primary);
+    }
+
+    .button-white:hover {
+      background: #edf4ff;
     }
 
     section {
-      padding: 55px 7%;
+      padding: 65px 0;
     }
 
-    .section-title {
+    .section-heading {
       text-align: center;
-      font-size: 30px;
-      margin-bottom: 10px;
+      margin-bottom: 32px;
     }
 
-    .section-description {
-      text-align: center;
-      color: #64748b;
-      margin-bottom: 30px;
+    .section-heading h2 {
+      font-size: clamp(27px, 4vw, 36px);
+      margin-bottom: 8px;
     }
 
-    .search-box {
-      display: block;
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      padding: 15px;
-      border: 1px solid #d4deed;
-      border-radius: 10px;
-      font-size: 16px;
-      outline-color: var(--blue);
+    .section-heading p {
+      color: var(--muted);
     }
 
-    .grid {
+    .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: -28px;
+      position: relative;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 22px;
+      border-radius: 13px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 25px;
+      color: var(--primary);
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .subject-grid,
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .card {
       background: white;
-      padding: 25px;
+      border: 1px solid var(--border);
+      padding: 24px;
       border-radius: 15px;
-      border: 1px solid #e2eaf6;
-      box-shadow: 0 5px 18px #10234408;
+      box-shadow: var(--shadow);
       transition: transform 0.2s;
     }
 
@@ -170,129 +217,224 @@
       transform: translateY(-4px);
     }
 
-    .icon {
+    .subject-icon {
       font-size: 35px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .card h3 {
-      margin-bottom: 10px;
+      margin-bottom: 9px;
+      font-size: 20px;
     }
 
     .card p {
-      color: #64748b;
+      color: var(--muted);
+      font-size: 14px;
       margin-bottom: 15px;
     }
 
-    .card a {
-      color: var(--blue);
-      font-weight: bold;
-      text-decoration: none;
+    .text-link {
+      color: var(--primary);
+      font-weight: 700;
     }
 
-    .class-label {
+    .light-section {
+      background: var(--light-blue);
+    }
+
+    .filters {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .filters input,
+    .filters select {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      border-radius: 9px;
+      min-width: 180px;
+      max-width: 100%;
+      color: var(--text);
+    }
+
+    .resource-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card .button {
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    .tag {
       display: inline-block;
-      background: #e8f1ff;
-      color: var(--blue);
-      padding: 4px 10px;
-      border-radius: 6px;
+      background: var(--light-blue);
+      color: var(--primary);
+      padding: 4px 9px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
       margin-bottom: 12px;
-      font-size: 13px;
-      font-weight: bold;
     }
 
-    .quiz-section {
-      background: #e9f1ff;
+    .notes {
+      background: #f4f8ff;
+      border-left: 4px solid var(--primary);
+      padding: 14px;
+      margin: 12px 0 17px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .notes ul {
+      padding-left: 18px;
+    }
+
+    .notes li {
+      margin: 5px 0;
     }
 
     .quiz-box {
+      max-width: 760px;
+      margin: auto;
       background: white;
-      max-width: 700px;
-      margin: 25px auto 0;
-      padding: 28px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px #10234410;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .quiz-progress {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
     }
 
     .quiz-box h3 {
-      margin-bottom: 18px;
+      font-size: 21px;
+      margin-bottom: 20px;
     }
 
-    .option {
-      display: block;
-      width: 100%;
-      text-align: left;
+    .answers {
+      display: grid;
+      gap: 11px;
+    }
+
+    .answer {
+      padding: 13px;
       background: white;
-      border: 1px solid #d6dfed;
-      padding: 12px;
-      border-radius: 8px;
-      margin: 10px 0;
-      cursor: pointer;
-      font-size: 15px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      text-align: left;
+      color: var(--text);
     }
 
-    .option:hover:not(:disabled) {
-      border-color: var(--blue);
-      background: #f2f7ff;
+    .answer:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: var(--light-blue);
     }
 
-    .option:disabled {
-      cursor: default;
-      color: var(--dark);
+    .answer.correct {
+      background: #e8f8ef;
+      border-color: #63bc88;
+    }
+
+    .answer.wrong {
+      background: #fff0f0;
+      border-color: #e39a9a;
     }
 
     #feedback {
-      margin: 15px 0;
-      font-weight: bold;
+      margin: 16px 0;
+      font-weight: 600;
     }
 
-    #explanation {
-      color: #52627b;
-      margin-bottom: 15px;
+    #nextButton {
+      margin-top: 10px;
     }
 
-    .notice {
-      max-width: 850px;
-      margin: 0 auto;
-      background: white;
-      border-left: 4px solid var(--blue);
-      padding: 20px;
-      border-radius: 8px;
+    .empty-message {
+      display: none;
+      text-align: center;
+      color: var(--muted);
+      padding: 25px;
+      grid-column: 1 / -1;
+    }
+
+    .about-box {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      margin-top: 12px;
     }
 
     footer {
-      background: var(--dark);
+      background: #09264f;
       color: white;
+      padding: 35px 0;
       text-align: center;
-      padding: 30px 7%;
     }
 
     footer p {
-      margin: 6px 0;
-      color: #d5e0f2;
+      color: #d5e3f9;
+      font-size: 14px;
+      margin-top: 7px;
     }
 
-    @media (max-width: 600px) {
-      header {
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
         justify-content: center;
-        text-align: center;
       }
 
-      nav {
+      .nav-links {
         justify-content: center;
-        gap: 12px;
+        gap: 13px;
       }
 
       .hero {
-        padding: 55px 6%;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .subject-grid,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
       }
 
       section {
-        padding: 40px 6%;
+        padding: 48px 0;
       }
 
       .quiz-box {
-        padding: 20px;
+        padding: 22px;
       }
     }
   </style>
@@ -300,301 +442,547 @@
 
 <body>
 
-  <header>
-    <div class="logo">🩺 EasyMedStudy</div>
+<header>
+  <div class="container navbar">
+    <a class="logo" href="#home">🩺 EasyMedStudy</a>
 
-    <nav>
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#subjects">Subjects</a>
-      <a href="#classes">Classes</a>
+      <a href="#resources">Study Materials</a>
       <a href="#quiz">MCQ Quiz</a>
+      <a href="#about">About</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="badge">CBSE Class 11 & 12 • NEET Preparation</div>
+<main>
 
-      <h1>Understand Concepts.<br><span>Achieve More.</span></h1>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <span class="badge">CBSE Class 11 & 12 · NEET Preparation</span>
+
+      <h1>Learn Easy.<br>Think Smart.<br>Achieve More.</h1>
 
       <p>
         Your learning space for Physics, Chemistry and Biology.
-        Strengthen concepts, practise questions and prepare with confidence.
+        Understand important concepts, revise your notes and
+        practise science MCQs at your own pace.
       </p>
 
-      <a href="#subjects" class="button">Explore Subjects →</a>
-    </section>
+      <a class="button button-white" href="#resources">
+        Explore Study Materials →
+      </a>
+    </div>
+  </section>
 
-    <section id="subjects">
-      <h2 class="section-title">Explore Your Subjects</h2>
+  <div class="container">
+    <div class="stats">
+      <div class="stat-card">
+        <strong>Class 11</strong>
+        <span>Build your foundations</span>
+      </div>
 
-      <p class="section-description">
-        Build strong concepts, one chapter at a time.
-      </p>
+      <div class="stat-card">
+        <strong>Class 12</strong>
+        <span>Strengthen your concepts</span>
+      </div>
 
-      <input
-        type="search"
-        id="search"
-        class="search-box"
-        placeholder="Search Physics, Biology, Chemistry, NEET..."
-        aria-label="Search subjects and study resources">
+      <div class="stat-card">
+        <strong>NEET</strong>
+        <span>Practise science MCQs</span>
+      </div>
+    </div>
+  </div>
 
-      <div class="grid" id="subjectGrid">
+  <section id="subjects">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Explore Your Subjects</h2>
+        <p>Choose a subject and start learning chapter by chapter.</p>
+      </div>
 
-        <article class="card searchable">
-          <div class="icon">⚡</div>
+      <div class="subject-grid">
+
+        <article class="card">
+          <div class="subject-icon">⚛️</div>
           <h3>Physics</h3>
-          <p>Understand laws, formulas, numericals and important concepts.</p>
-          <a href="#classes">Explore Physics →</a>
+          <p>
+            Explore laws of nature, formulas, derivations and
+            numerical problems.
+          </p>
+          <a class="text-link" href="#resources"
+             onclick="setSubject('Physics')">
+            Explore Physics →
+          </a>
         </article>
 
-        <article class="card searchable">
-          <div class="icon">🧪</div>
+        <article class="card">
+          <div class="subject-icon">🧪</div>
           <h3>Chemistry</h3>
-          <p>Learn reactions, equations, concepts and numerical problems.</p>
-          <a href="#classes">Explore Chemistry →</a>
+          <p>
+            Understand chemical reactions, equations, bonding
+            and important concepts.
+          </p>
+          <a class="text-link" href="#resources"
+             onclick="setSubject('Chemistry')">
+            Explore Chemistry →
+          </a>
         </article>
 
-        <article class="card searchable">
-          <div class="icon">🧬</div>
+        <article class="card">
+          <div class="subject-icon">🧬</div>
           <h3>Biology</h3>
-          <p>Revise NCERT concepts, diagrams, terminology and MCQs.</p>
-          <a href="#classes">Explore Biology →</a>
-        </article>
-
-        <article class="card searchable">
-          <div class="icon">🎯</div>
-          <h3>NEET Preparation</h3>
-          <p>Practise MCQs and strengthen your entrance-exam preparation.</p>
-          <a href="#quiz">Try a sample quiz →</a>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="classes">
-      <h2 class="section-title">Choose Your Class</h2>
-
-      <p class="section-description">
-        Start learning according to your class and goals.
-      </p>
-
-      <div class="grid">
-
-        <article class="card searchable">
-          <span class="class-label">Class 11</span>
-          <h3>Class 11 PCB</h3>
-          <p>Physics, Chemistry and Biology study resources.</p>
-          <a href="#subjects">Explore Class 11 →</a>
-        </article>
-
-        <article class="card searchable">
-          <span class="class-label">Class 12</span>
-          <h3>Class 12 PCB</h3>
-          <p>Board preparation, revision and practice resources.</p>
-          <a href="#subjects">Explore Class 12 →</a>
-        </article>
-
-        <article class="card searchable">
-          <span class="class-label">Entrance Exam</span>
-          <h3>NEET Practice</h3>
-          <p>Test your understanding with practice questions.</p>
-          <a href="#quiz">Start Sample Quiz →</a>
+          <p>
+            Study cells, life processes, genetics and biological
+            concepts with revision notes.
+          </p>
+          <a class="text-link" href="#resources"
+             onclick="setSubject('Biology')">
+            Explore Biology →
+          </a>
         </article>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="quiz-section" id="quiz">
-      <h2 class="section-title">Try a Sample MCQ</h2>
+  <section class="light-section" id="resources">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Study Materials</h2>
+        <p>Search the available sample resources by class or subject.</p>
+      </div>
 
-      <p class="section-description">
-        Test your knowledge with this starter question.
-      </p>
+      <div class="filters">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search chapters or topics..."
+          aria-label="Search study materials"
+        >
+
+        <select id="classFilter" aria-label="Filter by class">
+          <option value="all">All Classes</option>
+          <option value="11">Class 11</option>
+          <option value="12">Class 12</option>
+        </select>
+
+        <select id="subjectFilter" aria-label="Filter by subject">
+          <option value="all">All Subjects</option>
+          <option value="Physics">Physics</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Biology">Biology</option>
+        </select>
+      </div>
+
+      <div class="resource-grid" id="resourceGrid">
+
+        <article class="card resource-card"
+          data-class="11" data-subject="Physics"
+          data-search="class 11 physics units measurements dimensions errors">
+          <span class="tag">CLASS 11 · PHYSICS</span>
+          <h3>Units and Measurements</h3>
+          <p>Learn physical quantities, SI units, dimensions and errors.</p>
+
+          <details>
+            <summary class="text-link">Read Sample Notes</summary>
+            <div class="notes">
+              <ul>
+                <li><strong>Physical quantity:</strong> A measurable property.</li>
+                <li><strong>SI unit of length:</strong> metre (m).</li>
+                <li><strong>SI unit of mass:</strong> kilogram (kg).</li>
+                <li><strong>SI unit of time:</strong> second (s).</li>
+                <li><strong>Dimensional formula:</strong> Expresses a quantity in terms of fundamental dimensions.</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <article class="card resource-card"
+          data-class="11" data-subject="Chemistry"
+          data-search="class 11 chemistry mole concept amount substance molar mass">
+          <span class="tag">CLASS 11 · CHEMISTRY</span>
+          <h3>Some Basic Concepts of Chemistry</h3>
+          <p>Revise the mole concept, molar mass and chemical calculations.</p>
+
+          <details>
+            <summary class="text-link">Read Sample Notes</summary>
+            <div class="notes">
+              <ul>
+                <li><strong>One mole:</strong> Contains approximately 6.022 × 10²³ entities.</li>
+                <li><strong>Avogadro constant:</strong> 6.022 × 10²³ mol⁻¹.</li>
+                <li><strong>Number of moles:</strong> Given mass ÷ molar mass.</li>
+                <li>Always use consistent units in calculations.</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <article class="card resource-card"
+          data-class="11" data-subject="Biology"
+          data-search="class 11 biology cell structure function organelles">
+          <span class="tag">CLASS 11 · BIOLOGY</span>
+          <h3>Cell: The Unit of Life</h3>
+          <p>Explore cell structure and the functions of important organelles.</p>
+
+          <details>
+            <summary class="text-link">Read Sample Notes</summary>
+            <div class="notes">
+              <ul>
+                <li><strong>Nucleus:</strong> Contains most of the cell's genetic material.</li>
+                <li><strong>Mitochondria:</strong> Major site of aerobic respiration and ATP production.</li>
+                <li><strong>Ribosomes:</strong> Sites of protein synthesis.</li>
+                <li><strong>Cell membrane:</strong> Selectively regulates movement of substances.</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <article class="card resource-card"
+          data-class="12" data-subject="Physics"
+          data-search="class 12 physics electrostatics electric charge coulomb law">
+          <span class="tag">CLASS 12 · PHYSICS</span>
+          <h3>Electric Charges and Fields</h3>
+          <p>Study electric charge, Coulomb's law and electric fields.</p>
+
+          <details>
+            <summary class="text-link">Read Sample Notes</summary>
+            <div class="notes">
+              <ul>
+                <li>Like charges repel; unlike charges attract.</li>
+                <li>Charge is conserved in an isolated system.</li>
+                <li><strong>Coulomb's law:</strong> F = k|q₁q₂|/r².</li>
+                <li>The SI unit of charge is the coulomb (C).</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <article class="card resource-card"
+          data-class="12" data-subject="Chemistry"
+          data-search="class 12 chemistry solutions concentration molarity">
+          <span class="tag">CLASS 12 · CHEMISTRY</span>
+          <h3>Solutions</h3>
+          <p>Learn concentration terms and properties of solutions.</p>
+
+          <details>
+            <summary class="text-link">Read Sample Notes</summary>
+            <div class="notes">
+              <ul>
+                <li><strong>Molarity:</strong> Moles of solute per litre of solution.</li>
+                <li><strong>Formula:</strong> M = moles of solute / volume of solution in litres.</li>
+                <li>Temperature can affect volume and therefore molarity.</li>
+                <li>Use the correct units in every numerical problem.</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <article class="card resource-card"
+          data-class="12" data-subject="Biology"
+          data-search="class 12 biology principles inheritance variation genetics">
+          <span class="tag">CLASS 12 · BIOLOGY</span>
+          <h3>Principles of Inheritance</h3>
+          <p>Revise Mendelian genetics, alleles and inheritance patterns.</p>
+
+          <details>
+            <summary class="text-link">Read Sample Notes</summary>
+            <div class="notes">
+              <ul>
+                <li><strong>Gene:</strong> A DNA sequence associated with a functional product.</li>
+                <li><strong>Alleles:</strong> Alternative forms of a gene.</li>
+                <li><strong>Genotype:</strong> Genetic constitution for a trait.</li>
+                <li><strong>Phenotype:</strong> Observable characteristics of an organism.</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <p class="empty-message" id="emptyMessage">
+          No matching resources found. Try another search or filter.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <div class="container">
+      <div class="section-heading">
+        <h2>NEET-Style Practice Quiz</h2>
+        <p>Answer the questions and check your understanding.</p>
+      </div>
 
       <div class="quiz-box">
-        <p id="questionNumber">Question 1 of 3</p>
-        <h3 id="question">Loading question...</h3>
+        <div class="quiz-progress" id="quizProgress">
+          Question 1 of 5
+        </div>
 
-        <div id="options"></div>
+        <h3 id="questionText">
+          Which organelle is a major site of ATP production during aerobic respiration?
+        </h3>
 
-        <p id="feedback" role="status" aria-live="polite"></p>
-        <p id="explanation"></p>
+        <div class="answers" id="answerOptions"></div>
+
+        <p id="feedback" aria-live="polite"></p>
 
         <button class="button" id="nextButton" hidden>
           Next Question →
         </button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about">
-      <h2 class="section-title">Why EasyMedStudy?</h2>
+  <section id="about" class="light-section">
+    <div class="container about-box">
+      <h2>Why EasyMedStudy?</h2>
 
-      <p class="section-description">
-        A simple place to learn, practise and revise.
+      <p>
+        Our goal is to make science easier to understand through
+        clear explanations, useful revision notes and practice questions.
       </p>
 
-      <div class="notice">
-        <strong>Our goal:</strong>
-        Make science easier to understand through clear explanations,
-        useful practice questions and organised study resources.
-        We aim to support both CBSE board preparation and NEET preparation.
-      </div>
-    </section>
-  </main>
+      <p>
+        EasyMedStudy is an independent educational project.
+        Students should also consult their current official syllabus
+        and prescribed textbooks.
+      </p>
+    </div>
+  </section>
 
-  <footer>
-    <h3>🩺 EasyMedStudy</h3>
+</main>
+
+<footer>
+  <div class="container">
+    <h2>🩺 EasyMedStudy</h2>
+
     <p>Learn Easy. Think Smart. Achieve More.</p>
-    <p>Physics • Chemistry • Biology</p>
-    <p>© <span id="year"></span> EasyMedStudy</p>
-    <p>Independent educational project. Not affiliated with CBSE or NTA.</p>
-  </footer>
 
-  <script>
-    // Update the copyright year automatically.
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#resources">Study Materials</a>
+      <a href="#quiz">Practice Quiz</a>
+    </div>
 
-    // Search visible subject and class cards.
-    const searchInput = document.getElementById("search");
-    const searchableCards = document.querySelectorAll(".searchable");
+    <p>
+      © <span id="year"></span> EasyMedStudy.
+      Independent educational project; not affiliated with CBSE or NTA.
+    </p>
+  </div>
+</footer>
 
-    searchInput.addEventListener("input", function () {
-      const term = this.value.toLowerCase().trim();
+<script>
+  // Update the copyright year automatically.
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-      searchableCards.forEach(function (card) {
-        card.style.display = card.textContent.toLowerCase().includes(term)
-          ? ""
-          : "none";
-      });
+  // Search and filters.
+  const searchInput = document.getElementById("searchInput");
+  const classFilter = document.getElementById("classFilter");
+  const subjectFilter = document.getElementById("subjectFilter");
+  const resourceCards = [
+    ...document.querySelectorAll(".resource-card")
+  ];
+  const emptyMessage = document.getElementById("emptyMessage");
+
+  function filterResources() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const selectedClass = classFilter.value;
+    const selectedSubject = subjectFilter.value;
+
+    let visibleCount = 0;
+
+    resourceCards.forEach(card => {
+      const matchesSearch =
+        card.dataset.search.includes(searchTerm) ||
+        card.textContent.toLowerCase().includes(searchTerm);
+
+      const matchesClass =
+        selectedClass === "all" ||
+        card.dataset.class === selectedClass;
+
+      const matchesSubject =
+        selectedSubject === "all" ||
+        card.dataset.subject === selectedSubject;
+
+      const visible =
+        matchesSearch && matchesClass && matchesSubject;
+
+      card.style.display = visible ? "flex" : "none";
+
+      if (visible) visibleCount++;
     });
 
-    // Sample educational quiz.
-    // Add more questions here as the website grows.
-    const questions = [
-      {
-        question: "Which organelle is known as the powerhouse of the cell?",
-        options: ["Nucleus", "Mitochondrion", "Ribosome", "Golgi apparatus"],
-        answer: 1,
-        explanation:
-          "Mitochondria produce most of the ATP used by eukaryotic cells."
-      },
-      {
-        question: "What is the SI unit of electric current?",
-        options: ["Volt", "Ohm", "Ampere", "Watt"],
-        answer: 2,
-        explanation:
-          "The ampere (A) is the SI unit of electric current."
-      },
-      {
-        question: "What is the chemical formula of water?",
-        options: ["CO₂", "O₂", "H₂O", "NaCl"],
-        answer: 2,
-        explanation:
-          "A water molecule contains two hydrogen atoms and one oxygen atom."
-      }
-    ];
+    emptyMessage.style.display =
+      visibleCount === 0 ? "block" : "none";
+  }
 
-    let currentQuestion = 0;
-    let answered = false;
+  searchInput.addEventListener("input", filterResources);
+  classFilter.addEventListener("change", filterResources);
+  subjectFilter.addEventListener("change", filterResources);
 
-    const questionElement = document.getElementById("question");
-    const questionNumber = document.getElementById("questionNumber");
-    const optionsElement = document.getElementById("options");
-    const feedbackElement = document.getElementById("feedback");
-    const explanationElement = document.getElementById("explanation");
-    const nextButton = document.getElementById("nextButton");
+  function setSubject(subject) {
+    subjectFilter.value = subject;
+    filterResources();
+  }
 
-    function showQuestion() {
-      answered = false;
-
-      const item = questions[currentQuestion];
-
-      questionNumber.textContent =
-        `Question ${currentQuestion + 1} of ${questions.length}`;
-
-      questionElement.textContent = item.question;
-      optionsElement.innerHTML = "";
-      feedbackElement.textContent = "";
-      explanationElement.textContent = "";
-      nextButton.hidden = true;
-
-      item.options.forEach(function (option, index) {
-        const button = document.createElement("button");
-
-        button.className = "option";
-        button.textContent =
-          String.fromCharCode(65 + index) + ". " + option;
-
-        button.addEventListener("click", function () {
-          checkAnswer(index);
-        });
-
-        optionsElement.appendChild(button);
-      });
+  // Sample quiz.
+  const questions = [
+    {
+      question: "Which organelle is a major site of ATP production during aerobic respiration?",
+      options: ["Nucleus", "Mitochondrion", "Ribosome", "Golgi apparatus"],
+      answer: 1,
+      explanation: "Mitochondria are major sites of aerobic respiration and ATP production."
+    },
+    {
+      question: "What is the SI unit of electric current?",
+      options: ["Volt", "Ohm", "Ampere", "Coulomb"],
+      answer: 2,
+      explanation: "The SI unit of electric current is the ampere (A)."
+    },
+    {
+      question: "What is the approximate value of the Avogadro constant?",
+      options: ["6.022 × 10²³ mol⁻¹", "3 × 10⁸ m/s", "9.8 m/s²", "1.6 × 10⁻¹⁹ C"],
+      answer: 0,
+      explanation: "The Avogadro constant is approximately 6.022 × 10²³ entities per mole."
+    },
+    {
+      question: "Which molecule carries genetic information in most living organisms?",
+      options: ["Glucose", "DNA", "Starch", "Cellulose"],
+      answer: 1,
+      explanation: "DNA stores hereditary information in most living organisms."
+    },
+    {
+      question: "What is the pH of a neutral aqueous solution at 25°C?",
+      options: ["1", "5", "7", "14"],
+      answer: 2,
+      explanation: "At 25°C, a neutral aqueous solution has a pH of 7."
     }
+  ];
 
-    function checkAnswer(selectedIndex) {
-      if (answered) return;
+  let currentQuestion = 0;
+  let score = 0;
+  let answered = false;
 
-      answered = true;
+  const questionText = document.getElementById("questionText");
+  const answerOptions = document.getElementById("answerOptions");
+  const feedback = document.getElementById("feedback");
+  const quizProgress = document.getElementById("quizProgress");
+  const nextButton = document.getElementById("nextButton");
 
-      const item = questions[currentQuestion];
-      const optionButtons = optionsElement.querySelectorAll("button");
+  function renderQuestion() {
+    answered = false;
 
-      optionButtons.forEach(function (button) {
-        button.disabled = true;
-      });
+    const question = questions[currentQuestion];
 
-      if (selectedIndex === item.answer) {
-        feedbackElement.textContent = "Correct! Well done.";
-        feedbackElement.style.color = "#16804a";
-      } else {
-        feedbackElement.textContent =
-          "Not quite. Correct answer: " + item.options[item.answer];
-        feedbackElement.style.color = "#c0392b";
+    quizProgress.textContent =
+      `Question ${currentQuestion + 1} of ${questions.length}`;
+
+    questionText.textContent = question.question;
+    answerOptions.innerHTML = "";
+    feedback.textContent = "";
+    nextButton.hidden = true;
+
+    question.options.forEach((option, index) => {
+      const button = document.createElement("button");
+
+      button.type = "button";
+      button.className = "answer";
+      button.textContent =
+        `${String.fromCharCode(65 + index)}. ${option}`;
+
+      button.addEventListener("click", () => selectAnswer(index));
+
+      answerOptions.appendChild(button);
+    });
+  }
+
+  function selectAnswer(selectedIndex) {
+    if (answered) return;
+
+    answered = true;
+
+    const question = questions[currentQuestion];
+    const buttons = answerOptions.querySelectorAll("button");
+
+    buttons.forEach((button, index) => {
+      button.disabled = true;
+
+      if (index === question.answer) {
+        button.classList.add("correct");
       }
 
-      explanationElement.textContent = item.explanation;
-
-      nextButton.textContent =
-        currentQuestion === questions.length - 1
-          ? "Finish Quiz"
-          : "Next Question →";
-
-      nextButton.hidden = false;
-    }
-
-    nextButton.addEventListener("click", function () {
-      if (currentQuestion < questions.length - 1) {
-        currentQuestion++;
-        showQuestion();
-      } else {
-        questionNumber.textContent = "Quiz completed!";
-        questionElement.textContent =
-          "Great work! You completed the sample quiz.";
-        optionsElement.innerHTML = "";
-        feedbackElement.textContent =
-          "This is a starter quiz. More chapter-wise questions can be added.";
-        explanationElement.textContent = "";
-        nextButton.hidden = true;
-
-        const restartButton = document.createElement("button");
-        restartButton.className = "button";
-        restartButton.textContent = "Try Again";
-        restartButton.addEventListener("click", function () {
-          currentQuestion = 0;
-          showQuestion();
-        });
-
-        optionsElement.appendChild(restartButton);
+      if (index === selectedIndex && index !== question.answer) {
+        button.classList.add("wrong");
       }
     });
 
-    showQuestion();
-  </script>
+    if (selectedIndex === question.answer) {
+      score++;
+      feedback.textContent =
+        "Correct! " + question.explanation;
+      feedback.style.color = "#13834b";
+    } else {
+      feedback.textContent =
+        "Not quite. " + question.explanation;
+      feedback.style.color = "#a52a2a";
+    }
+
+    nextButton.hidden = false;
+
+    nextButton.textContent =
+      currentQuestion === questions.length - 1
+        ? "View Final Score"
+        : "Next Question →";
+  }
+
+  nextButton.addEventListener("click", () => {
+    if (currentQuestion < questions.length - 1) {
+      currentQuestion++;
+      renderQuestion();
+    } else {
+      showResults();
+    }
+  });
+
+  function showResults() {
+    quizProgress.textContent = "Quiz Completed!";
+    questionText.textContent =
+      `Your score: ${score} out of ${questions.length}`;
+
+    answerOptions.innerHTML = "";
+
+    const result = document.createElement("p");
+
+    result.textContent =
+      score === questions.length
+        ? "Excellent work! You answered every question correctly."
+        : "Good practice! Review the explanations and try again.";
+
+    answerOptions.appendChild(result);
+
+    feedback.textContent =
+      `Percentage: ${Math.round(score / questions.length * 100)}%`;
+
+    feedback.style.color = "#0756c9";
+
+    nextButton.hidden = false;
+    nextButton.textContent = "Try Again";
+    nextButton.onclick = restartQuiz;
+  }
+
+  function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+
+    nextButton.onclick = null;
+    renderQuestion();
+  }
+
+  renderQuestion();
+</script>
 
 </body>
 </html>
-```
