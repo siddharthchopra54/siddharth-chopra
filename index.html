@@ -1,860 +1,136 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#155eef">
-<meta name="description" content="EasyMedStudy — detailed notes, short notes and chapter test series for PCB learners.">
-<title>EasyMedStudy | Notes & Test Series</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#135be8"><title>EasyMedStudy | NEET Learning Hub</title>
 <style>
-:root{--blue:#155eef;--navy:#12366e;--pale:#edf3ff;--bg:#f5f8fd;--card:#fff;--ink:#19263b;--muted:#68778e;--line:#dfe7f2;--green:#137a54;--red:#bd343e;--shadow:0 6px 24px rgba(20,42,79,.06)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Arial,Helvetica,sans-serif}
-button,input,select{font:inherit}
-button{cursor:pointer}
-button:disabled{cursor:not-allowed;opacity:.65}
-header{background:linear-gradient(125deg,#103982,#155eef,#438bff);color:white;padding:22px max(16px,calc((100% - 1180px)/2))}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{background:white;color:var(--blue);font-size:24px;font-weight:900;padding:8px 12px;border-radius:12px}
-.brand h1{margin:0;font-size:25px}
-.brand p{margin:0;color:#e6efff;font-size:14px}
-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-nav button{border:1px solid #ffffff66;background:#ffffff1c;color:white;padding:9px 12px;border-radius:9px;font-weight:bold}
-nav button:hover{background:#ffffff35}
-main{max-width:1180px;padding:22px 16px 48px;margin:auto}
-.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:25px}
-.hero h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:8px 0 10px}
-.hero p{color:var(--muted)}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.stat{background:var(--pale);border-radius:12px;padding:15px}
-.stat strong{font-size:26px;display:block;color:var(--blue)}
-.stat span{font-size:13px;color:#52647e}
-.badge{display:inline-block;border-radius:20px;background:var(--pale);color:#174eb6;font-size:12px;font-weight:bold;padding:4px 9px}
-.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.primary,.secondary,.danger{border-radius:9px;padding:10px 14px;font-weight:bold}
-.primary{background:var(--blue);border:1px solid var(--blue);color:white}
-.primary:hover{background:#0e45b9}
-.secondary{background:var(--card);border:1px solid var(--line);color:var(--ink)}
-.danger{background:#fff0f0;border:1px solid #f1caca;color:var(--red)}
-.layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:16px;margin-top:20px}
-.sidebar{align-self:start;position:sticky;top:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
-.sidebar h3{font-size:13px;letter-spacing:.6px;color:var(--muted);margin:9px 9px 4px}
-.sidebar button{width:100%;text-align:left;background:transparent;border:1px solid transparent;color:var(--ink);border-radius:8px;padding:10px;margin:2px 0}
-.sidebar button.active,.sidebar button:hover{background:var(--pale);border-color:#ccdcff;color:#174eb6}
-.panel{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}
-.panel h2{margin-top:0;line-height:1.3}
-.panel h3{margin-top:23px}
-.notes{line-height:1.85}
-.notes h3{color:var(--blue);border-bottom:1px solid var(--line);padding-bottom:6px}
-.notes li{margin:6px 0}
-.callout{background:var(--pale);border-left:4px solid var(--blue);border-radius:0 9px 9px 0;padding:13px 15px;margin:13px 0}
-.formula{background:#f0f5ff;border:1px solid #d7e3ff;padding:11px 14px;border-radius:9px;margin:10px 0;font-weight:bold;overflow-wrap:anywhere}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.test-card{border:1px solid var(--line);border-radius:12px;padding:16px}
-.test-card h3{margin:6px 0}
-.test-card p{color:var(--muted)}
-.progress{height:8px;background:#e8edf5;border-radius:20px;overflow:hidden}
-.progress span{display:block;height:100%;width:0;background:var(--blue)}
-.question{border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
-.question h3{margin:0 0 12px;font-size:17px}
-.option{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:9px;margin:8px 0;background:var(--card);color:var(--ink)}
-.option:hover:not(.locked){border-color:var(--blue);background:var(--pale)}
-.option.selected{border-color:var(--blue);background:var(--pale)}
-.feedback{padding:12px;border-radius:9px;margin-top:12px}
-.good{background:#e7f8ef;color:#0d6948}
-.bad{background:#fff0f0;color:#962c35}
-.review-item{border-top:1px solid var(--line);padding:14px 0}
-.small{font-size:13px}
-.hidden{display:none!important}
-footer{max-width:1180px;margin:auto;color:var(--muted);padding:18px 16px 35px;font-size:13px}
-body.dark{--bg:#101827;--card:#182338;--ink:#edf3ff;--muted:#adbad0;--line:#30405a;--pale:#223659;--shadow:0 6px 24px #0002}
-body.dark .formula{background:#223659;border-color:#36517d}
-body.dark .good{background:#173c32;color:#b9f3d7}
-body.dark .bad{background:#49272e;color:#ffd1d5}
-body.dark .option.selected{background:#223659}
-@media(max-width:800px){
- .hero{grid-template-columns:1fr}
- .layout{grid-template-columns:1fr}
- .sidebar{position:static;display:grid;grid-template-columns:1fr 1fr}
- .sidebar h3{grid-column:1/-1}
- .grid2{grid-template-columns:1fr}
-}
-@media(max-width:520px){
- .hero{padding:18px}
- .panel{padding:15px}
- .brand h1{font-size:21px}
-}
-@media print{
- header,nav,.sidebar,.toolbar,footer{display:none!important}
- body{background:white;color:black}
- .layout{display:block}
- .panel{border:0;box-shadow:none}
-}
-</style>
-</head>
-
-<body>
-<header>
- <div class="brand">
-  <div class="logo">EM</div>
-  <div>
-   <h1>EasyMedStudy</h1>
-   <p>Learn Easy. Think Smart. Achieve More.</p>
-  </div>
- </div>
- <nav>
-  <button onclick="goHome()">Home</button>
-  <button onclick="showMode('detailed')">Detailed Notes</button>
-  <button onclick="showMode('short')">Short Notes</button>
-  <button onclick="openSection('tests')">Test Series</button>
-  <button onclick="openSection('mistakes')">Mistake Notebook</button>
-  <button onclick="openSection('progress')">My Progress</button>
-  <button onclick="toggleTheme()">Dark Mode</button>
- </nav>
-</header>
-
-<main>
- <section class="hero" id="hero">
-  <div>
-   <span class="badge">CLASS 11 · PHYSICS</span>
-   <h2>Units and Measurements</h2>
-   <p>Read detailed topic-wise notes, switch to quick revision, then take four independent chapter tests with ten questions each.</p>
-   <div class="toolbar">
-    <button class="primary" onclick="showMode('detailed')">Study detailed notes</button>
-    <button class="secondary" onclick="openSection('tests')">Start test series</button>
-   </div>
-   <p class="small muted">This corrected version is a populated chapter pack. The rest of the Class 11–12 PCB chapter library still needs to be added and verified.</p>
-  </div>
-  <div class="stats">
-   <div class="stat"><strong id="attemptCount">0</strong><span>Tests submitted</span></div>
-   <div class="stat"><strong id="averageScore">—</strong><span>Average score</span></div>
-   <div class="stat"><strong id="mistakeCount">0</strong><span>Saved mistakes</span></div>
-   <div class="stat"><strong>40</strong><span>MCQs in this chapter pack</span></div>
-  </div>
- </section>
-
- <section class="layout" id="layout">
-  <aside class="sidebar">
-   <h3>STUDY MATERIAL</h3>
-   <button id="navDetailed" onclick="showMode('detailed')">📘 Detailed Notes</button>
-   <button id="navShort" onclick="showMode('short')">📝 Short Notes</button>
-   <button id="navFormula" onclick="showMode('formula')">∑ Formula Sheet</button>
-   <h3>PRACTICE</h3>
-   <button id="navTests" onclick="openSection('tests')">🎯 Test Series</button>
-   <button id="navMistakes" onclick="openSection('mistakes')">❌ Mistake Notebook</button>
-   <button id="navProgress" onclick="openSection('progress')">📈 My Progress</button>
-  </aside>
-  <section class="panel" id="panel" aria-live="polite"></section>
- </section>
-</main>
-
-<footer>
- <b>EasyMedStudy</b> · Independent educational resource, not affiliated with CBSE, NCERT, ALLEN or PW. Check official curriculum documents for the applicable academic year. Progress is stored locally in this browser.
-</footer>
-
+:root{--blue:#175fe8;--navy:#132343;--ink:#1a2940;--muted:#61718b;--bg:#f4f7fc;--card:#fff;--line:#e0e8f4;--green:#137a55;--red:#c43d4b;--soft:#eaf1ff;--shadow:0 12px 36px #14284a12}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}.top{background:linear-gradient(120deg,#102653,#1767f2);color:#fff;padding:18px max(20px,calc((100% - 1180px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-size:1.35rem;font-weight:850;letter-spacing:-.5px}.tag{font-size:.86rem;opacity:.85;margin-top:3px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.top button{border:1px solid #ffffff55;color:white;background:#ffffff18;border-radius:10px;padding:9px 12px}.wrap{max-width:1180px;margin:auto;padding:24px 18px 50px}.hero{background:linear-gradient(120deg,#e8f0ff,#fff);border:1px solid #d6e4ff;border-radius:22px;padding:30px;margin:8px 0 22px;display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:center}.hero h1{margin:0 0 10px;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.06;color:#122a56}.hero p{line-height:1.65;color:#4c5d79;margin:0 0 16px}.pill{display:inline-block;border-radius:99px;background:#d8e6ff;color:#184db1;font-size:.78rem;font-weight:800;padding:6px 10px}.hero-stat{border-radius:18px;background:#fff;padding:20px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{padding:13px;border:1px solid var(--line);border-radius:12px}.stat b{font-size:1.4rem;display:block;color:var(--blue)}.stat span{font-size:.8rem;color:var(--muted)}.screen{display:none}.screen.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:20px 0 15px}.section-head h2{margin:0;color:var(--navy)}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:0 5px 18px #13234306}.choice{transition:.18s;cursor:pointer}.choice:hover{transform:translateY(-2px);border-color:#9ebeff;box-shadow:var(--shadow)}.choice h3{margin:8px 0;color:var(--navy)}.choice p{color:var(--muted);line-height:1.5;margin-bottom:12px}.icon{width:42px;height:42px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:1.35rem}.btn{border:0;border-radius:10px;padding:11px 15px;background:var(--blue);color:white;font-weight:750}.btn.secondary{background:#eaf0fb;color:#233c65}.btn.ghost{background:transparent;color:var(--blue);border:1px solid #cbdcff}.btn.small{padding:8px 10px;font-size:.88rem}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.crumb{display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:15px}.crumb button{border:0;background:transparent;color:var(--blue);padding:0;font-weight:750}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.search{min-width:220px;flex:1;border:1px solid var(--line);border-radius:10px;background:#fff;padding:11px 13px}.subject-switch{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.subject-switch button,.tab{border:1px solid var(--line);border-radius:10px;background:#fff;color:#425471;padding:10px 13px;font-weight:750}.subject-switch button.active,.tab.active{background:var(--blue);border-color:var(--blue);color:#fff}.chapter-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.chapter-row h3{font-size:1rem;margin:0 0 5px}.chapter-row p{font-size:.86rem;margin:0;color:var(--muted)}.badge{background:#edf2fa;color:#526581;border-radius:999px;padding:5px 8px;font-size:.75rem;font-weight:750;white-space:nowrap}.lesson-head{background:linear-gradient(120deg,#e9f1ff,#fff);border:1px solid #d7e4ff;border-radius:18px;padding:22px;margin-bottom:16px}.lesson-head h2{margin:8px 0 6px;color:var(--navy)}.tabs{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin:15px 0}.tab-content{display:none}.tab-content.active{display:block}.note-block{border:1px solid var(--line);background:#fff;border-radius:14px;padding:18px;margin-bottom:13px;line-height:1.68}.note-block h3{margin:0 0 10px;color:#17428d}.note-block ul{padding-left:21px;margin:0}.note-block li{margin:7px 0}.flash-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.flash{border:1px solid #dbe6fb;background:linear-gradient(145deg,#fff,#f3f7ff);border-radius:14px;padding:15px;min-height:140px}.flash b{display:block;color:#174baf;margin-bottom:8px}.callout{background:#fff8e8;border:1px solid #f2dba6;border-radius:12px;padding:13px 15px;color:#785418;line-height:1.55}.test-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px;display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:10px}.qcard{background:#fff;border:1px solid var(--line);padding:20px;border-radius:15px;margin-bottom:14px}.q-title{font-weight:800;line-height:1.5;margin-bottom:13px}.option{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;cursor:pointer}.option:has(input:checked){border-color:#7fa7ff;background:#f2f6ff}.feedback{padding:12px;border-radius:10px;margin-top:10px;line-height:1.55}.correct{background:#e7f8ef;color:#145c3d}.wrong{background:#fff0f1;color:#8c2732}.progressbar{height:9px;background:#e5ebf4;border-radius:99px;overflow:hidden}.progressbar span{height:100%;display:block;background:var(--blue);width:0}.empty{text-align:center;padding:38px 18px;color:var(--muted)}.hidden{display:none!important}.footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var(--muted);font-size:.83rem}.dark{--bg:#101827;--card:#182338;--ink:#e8eef9;--navy:#e2eaff;--muted:#a0afc5;--line:#30405a;--soft:#243b63;--shadow:0 12px 36px #0003}.dark .hero,.dark .lesson-head{background:#182842;border-color:#304768}.dark .hero h1,.dark .hero p{color:#e5edff}.dark .note-block,.dark .qcard,.dark .test-card,.dark .flash,.dark .search,.dark .option,.dark .subject-switch button,.dark .tab{background:#182338;color:var(--ink)}.dark .stat{border-color:var(--line)}.dark .btn.secondary{background:#293953;color:#e7efff}.dark .callout{background:#3b321f;color:#ffdf9d;border-color:#645127}
+@media(max-width:780px){.hero{grid-template-columns:1fr;padding:21px}.grid{grid-template-columns:1fr}.flash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top{align-items:flex-start}.chapter-row{align-items:flex-start}.hero-stat{max-width:none}}@media(max-width:470px){.flash-grid{grid-template-columns:1fr}.test-card{align-items:flex-start;flex-direction:column}.top{padding:16px}.brand{font-size:1.15rem}}
+</style></head><body>
+<header class="top"><div><div class="brand">🩺 EasyMedStudy</div><div class="tag">Learn Easy. Think Smart. Achieve More.</div></div><div class="top-actions"><button id="darkBtn">☾ Theme</button><button id="homeBtn">⌂ Home</button></div></header>
+<main class="wrap">
+<section class="hero"><div><span class="pill">NEET • PCB • CLASS 11 + 12</span><h1>Your NEET learning hub,<br>one chapter at a time.</h1><p>Choose your class first, then Physics, Chemistry or Biology. Open detailed notes, quick-revision flashcards, formulas and chapter-wise test series separately.</p><button class="btn" id="startBtn">Choose Class →</button></div><div class="hero-stat"><div class="stat"><b>2</b><span>Classes</span></div><div class="stat"><b>3</b><span>PCB subjects</span></div><div class="stat"><b>4</b><span>Tests per chapter</span></div><div class="stat"><b>10+</b><span>Questions per test</span></div></div></section>
+<section id="homeScreen" class="screen active"><div class="section-head"><div><h2>Start with your class</h2><div class="muted">Class selection appears first — notes will not open automatically.</div></div></div><div class="grid"><article class="card choice" data-class="11"><div class="icon">📘</div><h3>Class 11</h3><p>Build strong foundations in Physics, Chemistry and Biology.</p><button class="btn">Explore Class 11 →</button></article><article class="card choice" data-class="12"><div class="icon">🎓</div><h3>Class 12</h3><p>Revise core concepts and practise NEET-style MCQs.</p><button class="btn">Explore Class 12 →</button></article><article class="card"><div class="icon">🧠</div><h3>Study pathway</h3><p>Detailed Notes → Flashcards → Formula Sheet → 4 Test Series. Your progress is saved on this device.</p><span class="badge">Local progress save</span></article></div><div class="callout" style="margin-top:17px">Content is organised around NCERT/NEET topics. Use the official NEET syllabus for the applicable exam year; chapter order and examinable scope can change.</div></section>
+<section id="classScreen" class="screen"><div class="crumb"><button data-go="homeScreen">Home</button> › Choose a subject</div><div class="section-head"><div><span class="pill" id="classPill">CLASS 11</span><h2 style="margin-top:10px">Select a subject</h2><div class="muted">Choose one of the three NEET subjects.</div></div></div><div class="grid"><article class="card choice" data-subject="Physics"><div class="icon">⚡</div><h3>Physics</h3><p>Concepts, derivations, equations and numerical practice.</p><button class="btn">Open Physics →</button></article><article class="card choice" data-subject="Chemistry"><div class="icon">🧪</div><h3>Chemistry</h3><p>Physical, inorganic and organic chemistry.</p><button class="btn">Open Chemistry →</button></article><article class="card choice" data-subject="Biology"><div class="icon">🌿</div><h3>Biology</h3><p>Botany, zoology, diagrams and NCERT-based revision.</p><button class="btn">Open Biology →</button></article></div></section>
+<section id="chapterScreen" class="screen"><div class="crumb"><button data-go="homeScreen">Home</button> › <button data-go="classScreen" id="crumbClass">Class 11</button> › <span id="crumbSubject">Physics</span></div><div class="section-head"><div><h2 id="chapterHeading">Class 11 Physics</h2><div class="muted">Pick a chapter to open the four study sections.</div></div><div class="toolbar"><input id="chapterSearch" class="search" placeholder="Search chapters..." aria-label="Search chapters"></div></div><div class="subject-switch" id="subjectSwitch"></div><div id="chapterList" class="grid"></div></section>
+<section id="lessonScreen" class="screen"><div class="crumb"><button data-go="homeScreen">Home</button> › <button data-go="classScreen" id="lessonClassCrumb">Class 11</button> › <button data-go="chapterScreen" id="lessonSubjectCrumb">Physics</button> › <span id="lessonChapterCrumb"></span></div><div class="lesson-head"><span class="pill" id="lessonMeta">CLASS 11 • PHYSICS</span><h2 id="lessonTitle"></h2><p id="lessonLead" class="muted" style="margin:0"></p></div><div class="tabs" id="lessonTabs"><button class="tab active" data-tab="detailed">📚 Detailed Notes</button><button class="tab" data-tab="short">🃏 Short Notes / Flashcards</button><button class="tab" data-tab="formula">∑ Formula Sheet</button><button class="tab" data-tab="tests">📝 Test Series</button></div><div id="tab-detailed" class="tab-content active"></div><div id="tab-short" class="tab-content"></div><div id="tab-formula" class="tab-content"></div><div id="tab-tests" class="tab-content"></div><div id="testRunner" class="hidden"></div></section>
+</main><footer class="footer">EasyMedStudy is an independent learning project. It is not affiliated with NTA, NMC, CBSE or NCERT. Always cross-check the official syllabus and textbooks.</footer>
 <script>
-'use strict';
-
-/* Detailed notes, short notes and formula sheet are maintained separately. */
-
-const detailedNotes = `
-<h2>Units and Measurements — Detailed Notes</h2>
-<p>Physics describes natural phenomena through measurable quantities. A measurement is expressed as a numerical value and a unit. For example, “length = 5” is incomplete unless the measurement unit is known.</p>
-
-<h3>1. Physical quantities</h3>
-<p>A physical quantity is a measurable property expressed numerically with a unit. Fundamental quantities form the selected base of a measurement system. Derived quantities are built from relationships between base quantities.</p>
-<ul>
-<li><b>Fundamental quantity:</b> one of the base quantities selected in a unit system.</li>
-<li><b>Derived quantity:</b> a quantity defined from other quantities, such as velocity, force, pressure or density.</li>
-<li><b>Magnitude and unit:</b> the number gives the scale; the unit tells what scale is being used.</li>
-</ul>
-
-<h3>2. The seven SI base quantities and units</h3>
-<p>The International System of Units (SI) defines seven base units.</p>
-<ul>
-<li>Length — metre (m)</li>
-<li>Mass — kilogram (kg)</li>
-<li>Time — second (s)</li>
-<li>Electric current — ampere (A)</li>
-<li>Thermodynamic temperature — kelvin (K)</li>
-<li>Amount of substance — mole (mol)</li>
-<li>Luminous intensity — candela (cd)</li>
-</ul>
-<p>Derived SI units are made by combining base units. Velocity is measured in m s⁻¹, acceleration in m s⁻², force in newtons (N), energy in joules (J), power in watts (W), and pressure in pascals (Pa).</p>
-<div class="callout"><b>Important distinction:</b> A unit expresses a chosen measurement scale. A dimension expresses how a quantity depends on base quantities such as mass, length and time.</div>
-
-<h3>3. Scientific notation and SI prefixes</h3>
-<p>Scientific notation writes a number as a coefficient multiplied by a power of ten. It helps communicate very large or very small values and can make significant figures clearer.</p>
-<div class="formula">kilo (k) = 10³ · centi (c) = 10⁻² · milli (m) = 10⁻³</div>
-<div class="formula">micro (μ) = 10⁻⁶ · nano (n) = 10⁻⁹ · mega (M) = 10⁶</div>
-<p>Examples: 1 km = 10³ m; 1 cm = 10⁻² m; 1 μm = 10⁻⁶ m; 1 nm = 10⁻⁹ m. Powers must be applied to the whole unit when converting areas or volumes: because 1 cm = 10⁻² m, 1 cm² = 10⁻⁴ m² and 1 cm³ = 10⁻⁶ m³.</p>
-
-<h3>4. Unit conversion</h3>
-<p>To convert a unit, multiply by a conversion factor equal to one. For speed, 1 km/h = 1000 m / 3600 s.</p>
-<div class="formula">36 km h⁻¹ = 36 × 1000/3600 m s⁻¹ = 10 m s⁻¹</div>
-<p>Track the units through the calculation. If the units do not cancel to the required unit, the conversion setup is probably incorrect.</p>
-
-<h3>5. Accuracy, precision and resolution</h3>
-<ul>
-<li><b>Accuracy:</b> closeness of a measured value to an accepted or reference value.</li>
-<li><b>Precision:</b> closeness of repeated readings to one another.</li>
-<li><b>Resolution:</b> the smallest change an instrument can meaningfully display or distinguish.</li>
-<li><b>Uncertainty:</b> a range or quantitative estimate describing the doubt associated with a measurement.</li>
-</ul>
-<p>Readings can be precise but inaccurate when a systematic effect shifts all readings similarly. Resolution is a property of the measuring instrument; accuracy also depends on calibration, method and conditions.</p>
-
-<h3>6. Significant figures</h3>
-<p>Significant figures communicate the meaningful precision of a recorded measured value.</p>
-<ul>
-<li>Every non-zero digit is significant.</li>
-<li>A zero between non-zero digits is significant.</li>
-<li>Leading zeros are not significant; they merely locate the decimal point.</li>
-<li>Trailing zeros to the right of a decimal point are significant.</li>
-<li>Scientific notation makes intended precision explicit.</li>
-</ul>
-<div class="callout"><b>Examples:</b> 0.00450 has three significant figures; 2.030 has four; 0.03060 has four; 5.0 × 10³ has two.</div>
-
-<h3>7. Rounding in calculations</h3>
-<p>In addition or subtraction, the answer is usually rounded to the least precise decimal place among the inputs. In multiplication or division, the result is usually reported with the significant-figure count of the least precise measured input. Avoid rounding too early during multi-step calculations.</p>
-<div class="formula">12.11 + 0.3 = 12.41 → 12.4 (one decimal place)</div>
-<div class="formula">2.0 × 3.00 = 6.0 (two significant figures)</div>
-<p>Exact counted quantities and defined conversion factors do not limit significant figures in the same way as measured quantities. Follow the precision explicitly requested in a problem.</p>
-
-<h3>8. Measurement error and uncertainty</h3>
-<p>A measurement may be written as x ± Δx. Here x is the measured estimate and Δx is the absolute uncertainty in the same units. Relative uncertainty is dimensionless, and percentage uncertainty expresses it as a percentage.</p>
-<div class="formula">Relative uncertainty = Δx / |x|</div>
-<div class="formula">Percentage uncertainty = (Δx / |x|) × 100%</div>
-<p>For 4.0 ± 0.2 units, the relative uncertainty is 0.2/4.0 = 0.05, giving a percentage uncertainty of 5%.</p>
-
-<h3>9. Combining uncertainties</h3>
-<p>Common introductory rules for small uncertainties are:</p>
-<ul>
-<li><b>Sum or difference:</b> add the absolute uncertainties.</li>
-<li><b>Product or quotient:</b> add the relative (fractional) uncertainties.</li>
-<li><b>Power:</b> if y = xⁿ, the approximate fractional uncertainty in y is |n| times the fractional uncertainty in x.</li>
-</ul>
-<p>For example, if x has a 1% fractional uncertainty and y = x², the approximate percentage uncertainty in y is 2%. These are commonly taught propagation rules; formal statistical uncertainty treatment may use different methods depending on assumptions.</p>
-
-<h3>10. Dimensions and dimensional formulae</h3>
-<p>Dimensions show the powers of fundamental dimensions needed to represent a physical quantity. In basic mechanics, M, L and T represent mass, length and time.</p>
-<div class="formula">Velocity: [v] = LT⁻¹</div>
-<div class="formula">Acceleration: [a] = LT⁻²</div>
-<div class="formula">Force: [F] = MLT⁻²</div>
-<div class="formula">Work or energy: [W] = ML²T⁻²</div>
-<div class="formula">Power: [P] = ML²T⁻³</div>
-<div class="formula">Pressure: [p] = ML⁻¹T⁻²</div>
-<div class="formula">Density: [ρ] = ML⁻³</div>
-<div class="formula">Universal gravitational constant: [G] = M⁻¹L³T⁻²</div>
-<div class="formula">Spring constant: [k] = MT⁻²</div>
-<p>Example: Newton’s second law gives F = ma. Thus [F] = M × LT⁻² = MLT⁻². For pressure, p = F/A, so [p] = (MLT⁻²)/L² = ML⁻¹T⁻².</p>
-
-<h3>11. Principle of dimensional homogeneity</h3>
-<p>In a dimensionally homogeneous equation, all terms that are added or subtracted have the same dimensions. Both sides of a physical equation must have matching dimensions. Numerical constants such as 2 or ½ do not carry dimensions.</p>
-<div class="formula">v² = u² + 2as</div>
-<p>The dimensions of v² and u² are L²T⁻². The dimensions of as are (LT⁻²)(L) = L²T⁻². The equation passes this dimensional check.</p>
-
-<h3>12. Uses of dimensional analysis</h3>
-<ul>
-<li>Checking dimensional consistency of equations.</li>
-<li>Finding the dimensions of an unknown constant or quantity.</li>
-<li>Converting units between systems.</li>
-<li>Deriving a possible power-law dependence among variables.</li>
-</ul>
-
-<h3>13. Deriving a pendulum-period relationship</h3>
-<p>Suppose the period T of an ideal simple pendulum depends on length l and gravitational acceleration g as T = k lᵃgᵇ, where k is dimensionless.</p>
-<div class="formula">[T] = Lᵃ(LT⁻²)ᵇ = Lᵃ⁺ᵇT⁻²ᵇ</div>
-<p>Equating powers of T gives −2b = 1, so b = −½. Equating powers of L gives a + b = 0, so a = ½.</p>
-<div class="formula">T = k √(l/g)</div>
-<p>Dimensional analysis cannot determine the numerical constant k. Under the ideal small-angle pendulum model, a separate physical derivation gives k = 2π.</p>
-
-<h3>14. Limitations of dimensional analysis</h3>
-<ul>
-<li>It cannot determine arbitrary dimensionless constants such as 2π.</li>
-<li>It cannot identify a function as sine, cosine, exponential or logarithmic.</li>
-<li>It cannot distinguish quantities with the same dimensions, such as work and torque.</li>
-<li>It cannot prove a dimensionally correct relationship is physically correct.</li>
-<li>It does not by itself determine additive terms or all details of a complex relationship.</li>
-</ul>
-
-<h3>15. Solved examples</h3>
-<p><b>Example A — Density:</b> density = mass/volume. Since volume has dimensions L³, the dimensional formula is [ρ] = ML⁻³.</p>
-<p><b>Example B — Power:</b> power = work/time. Since work has dimensions ML²T⁻², power has dimensions ML²T⁻³.</p>
-<p><b>Example C — Check v = u + at:</b> v and u have dimensions LT⁻¹. The product at has dimensions (LT⁻²)(T) = LT⁻¹, so the terms match.</p>
-<p><b>Example D — Check s = ut + ½at²:</b> ut has dimensions L and at² has dimensions L. Both match displacement s.</p>
-<div class="callout"><b>Exam tip:</b> Dimensional homogeneity is a useful consistency check, but it is not a complete proof of a physical law. State assumptions and use a consistent sign convention when solving physical problems.</div>
+// Content is structured per class, subject and chapter. Quiz answers and explanations are generated from the same fact record to keep them aligned.
+const raw = `
+11|Physics|Units and Measurements|Measurement, SI units, errors, significant figures and dimensional analysis|SI has seven base units: metre, kilogram, second, ampere, kelvin, mole and candela~Dimensional formula represents powers of base quantities such as M, L and T~Significant figures communicate measurement precision; uncertain digits should not be over-reported~Dimensional homogeneity requires every term in a valid physical equation to have the same dimensions~Percentage error is relative error multiplied by 100; independent errors are combined according to the operation
+11|Physics|Motion in a Straight Line|Position, displacement, velocity, acceleration and motion graphs|Displacement is the change in position and includes direction; distance is total path length~Average velocity equals displacement divided by elapsed time~Acceleration is the rate of change of velocity with time~Slope of a position-time graph gives velocity; slope of a velocity-time graph gives acceleration~Area under a velocity-time graph gives displacement
+11|Physics|Motion in a Plane|Vectors, projectile motion and uniform circular motion|A vector has magnitude and direction; components resolve a vector along chosen axes~For ideal projectile motion, horizontal acceleration is zero and vertical acceleration is −g~At the highest point of projectile motion, vertical velocity is zero but horizontal velocity remains constant~Centripetal acceleration points toward the centre and has magnitude v²/r~Vector addition follows triangle or parallelogram rules
+11|Physics|Laws of Motion|Newton's laws, momentum, friction and circular dynamics|Newton's first law describes inertia and motion at constant velocity when net force is zero~Newton's second law gives net force as the rate of change of momentum; for constant mass F = ma~Newton's third-law forces are equal and opposite and act on different bodies~Linear momentum equals mass multiplied by velocity~Static friction adjusts up to a maximum value; kinetic friction acts during sliding
+11|Physics|Work, Energy and Power|Work, kinetic energy, potential energy and conservation|Work by a constant force is F s cosθ~Kinetic energy is one-half mass times speed squared~Net work equals change in kinetic energy~Mechanical energy is conserved when only conservative forces do work~Power is the rate of doing work and can be written as force dot velocity
+11|Physics|System of Particles and Rotational Motion|Centre of mass, torque, angular momentum and rolling|Centre of mass is the mass-weighted mean position of a system~Torque magnitude is rF sinθ and depends on the perpendicular lever arm~Angular momentum for a rigid body about a fixed axis is Iω~Rotational dynamics about a fixed axis follows τ = Iα~For rolling without slipping, centre-of-mass speed equals radius multiplied by angular speed
+11|Physics|Gravitation|Universal gravitation, field, potential, satellites and escape speed|Newton's gravitational force is proportional to the product of masses and inversely proportional to r²~Gravitational field strength near a spherical body is GM/r² in magnitude~Gravitational potential for a point mass with zero at infinity is −GM/r~Orbital speed for a circular orbit is √(GM/r)~Escape speed from radius R is √(2GM/R), ignoring atmosphere and rotation
+11|Physics|Mechanical Properties of Solids|Stress, strain, elasticity and elastic moduli|Stress is restoring force per unit area~Longitudinal strain is change in length divided by original length~Young's modulus is longitudinal stress divided by longitudinal strain within the elastic limit~Hooke's law states stress is proportional to strain within the proportional limit~Elastic potential energy is stored when a solid is deformed elastically
+11|Physics|Mechanical Properties of Fluids|Pressure, buoyancy, continuity, Bernoulli and viscosity|Pressure is normal force per unit area~Hydrostatic pressure increase in a fluid at rest is ρgh~Archimedes' principle states buoyant force equals weight of displaced fluid~Continuity for incompressible steady flow gives A₁v₁ = A₂v₂~Bernoulli's relation connects pressure, speed and height along an ideal streamline
+11|Physics|Thermal Properties of Matter|Temperature, expansion, calorimetry and heat transfer|Heat is energy transferred because of a temperature difference~Linear expansion is approximately ΔL = αL₀ΔT for small temperature changes~Specific heat capacity is heat required per unit mass per unit temperature rise~Latent heat changes phase without changing temperature during the transition~Conduction, convection and radiation are three modes of heat transfer
+11|Physics|Thermodynamics|Thermal equilibrium, first law, processes and engines|Zeroth law establishes transitive thermal equilibrium and underlies temperature measurement~First law is ΔQ = ΔU + W when W is work done by the system~In an isochoric process volume stays constant and boundary work is zero~In an isothermal ideal-gas process internal energy change is zero~No heat engine can convert all absorbed heat into work in a complete cycle
+11|Physics|Kinetic Theory|Ideal gas model and molecular interpretation of temperature|Ideal-gas equation is pV = nRT~For an ideal gas, mean translational kinetic energy per molecule is 3kT/2~At the same temperature, different ideal gases have the same mean translational kinetic energy per molecule~Pressure arises from molecular collisions with container walls~Root-mean-square speed is proportional to the square root of absolute temperature for fixed molar mass
+11|Physics|Oscillations|Periodic motion, SHM, spring and pendulum|In SHM acceleration is proportional to displacement and directed toward equilibrium: a = −ω²x~For a mass-spring oscillator, angular frequency is √(k/m)~For a simple pendulum at small amplitude, period is 2π√(L/g)~In ideal SHM total mechanical energy remains constant while kinetic and potential energies exchange~Frequency is the reciprocal of period
+11|Physics|Waves|Wave motion, sound, superposition and standing waves|Wave speed equals frequency multiplied by wavelength~In a travelling wave, the medium oscillates while the disturbance transports energy~Sound in air is a longitudinal mechanical wave~Constructive interference occurs when waves reinforce; destructive interference occurs when they cancel partly or fully~For a stretched string fixed at both ends, allowed modes have nodes at both ends
+11|Chemistry|Some Basic Concepts of Chemistry|Mole concept, stoichiometry, concentration and laws of combination|One mole contains Avogadro's number of specified entities, approximately 6.022 × 10²³~Molar mass is mass per mole and is expressed in g mol⁻¹~Molarity is moles of solute per litre of solution~Limiting reagent is consumed first and determines the maximum amount of product~In a balanced equation, coefficients give mole ratios, not necessarily mass ratios
+11|Chemistry|Structure of Atom|Atomic models, quantum numbers, orbitals and electronic configuration|Atomic number Z equals proton number; a neutral atom has equal proton and electron numbers~Mass number A equals protons plus neutrons~Principal quantum number n describes shell and is a positive integer~An orbital can hold at most two electrons with opposite spins~Aufbau, Pauli exclusion and Hund's rule guide ground-state electronic configurations
+11|Chemistry|Classification of Elements and Periodicity|Periodic table, atomic size, ionisation enthalpy and trends|Modern periodic law relates properties periodically to atomic number~Across a period, atomic radius generally decreases due to increasing effective nuclear charge~First ionisation enthalpy generally increases across a period but has known exceptions~Electronegativity generally increases across a period and decreases down a group~Elements in a group often share valence-electron patterns and related chemical properties
+11|Chemistry|Chemical Bonding and Molecular Structure|Ionic/covalent bonds, VSEPR, hybridisation and molecular orbitals|Ionic bonding involves electrostatic attraction between oppositely charged ions~Covalent bonding involves sharing electron pairs between atoms~VSEPR theory predicts molecular shape from repulsions between electron domains~Hybridisation describes mixing of atomic orbitals to form equivalent hybrid orbitals~Hydrogen bonding is an attraction involving H bonded to highly electronegative atoms such as N, O or F
+11|Chemistry|Chemical Thermodynamics|System, enthalpy, entropy, Gibbs energy and spontaneity|Internal energy is a state function; heat and work depend on the path~At constant pressure, heat exchange equals enthalpy change when only pressure-volume work occurs~Entropy describes energy dispersal and the number of accessible microscopic arrangements~At constant temperature and pressure, ΔG = ΔH − TΔS~A process is thermodynamically spontaneous in the specified conditions when ΔG is negative
+11|Chemistry|Equilibrium|Chemical equilibrium, K, Le Chatelier and ionic equilibrium|At dynamic equilibrium, forward and reverse reaction rates are equal~The equilibrium constant expression uses equilibrium activities; dilute ideal systems often use concentrations or partial pressures~A catalyst changes the rate of reaching equilibrium but not the equilibrium constant~Le Chatelier's principle predicts a shift that tends to oppose an imposed change~pH is −log₁₀ of hydrogen-ion activity; in dilute solutions it is often approximated using concentration
+11|Chemistry|Redox Reactions|Oxidation number, oxidising/reducing agents and balancing|Oxidation is loss of electrons or an increase in oxidation number~Reduction is gain of electrons or a decrease in oxidation number~The oxidising agent is reduced while causing another species to be oxidised~The reducing agent is oxidised while causing another species to be reduced~In a balanced redox equation, total atoms and net charge are conserved
+11|Chemistry|Organic Chemistry: Basic Principles|Nomenclature, isomerism, electronic effects and reaction intermediates|A homologous series contains compounds with the same functional group and successive members differing by CH₂~Inductive effect is electron displacement through sigma bonds due to electronegativity differences~Resonance represents delocalisation using contributing structures, not rapidly switching structures~A carbocation is electron-deficient and commonly acts as an electrophile~IUPAC naming selects a suitable parent structure and numbers it to give required features low locants
+11|Chemistry|Hydrocarbons|Alkanes, alkenes, alkynes, aromaticity and reactions|Alkanes are saturated hydrocarbons with only carbon-carbon single bonds~Alkenes contain at least one carbon-carbon double bond and commonly undergo addition reactions~Alkynes contain a carbon-carbon triple bond~Benzene is aromatic due to a cyclic conjugated system with six π electrons~Combustion of hydrocarbons in excess oxygen gives carbon dioxide and water
+11|Chemistry|s-Block Elements|Alkali metals, alkaline earth metals and trends|Group 1 elements have one valence electron and commonly form +1 ions~Group 2 elements have two valence electrons and commonly form +2 ions~Reactivity of alkali metals generally increases down the group as the outer electron is removed more readily~Many alkali metals react vigorously with water to form hydroxides and hydrogen~Flame colours arise from electronic transitions in excited atoms or ions
+11|Chemistry|Some p-Block Elements|Group 13/14 trends and representative compounds|Valence-shell configuration helps explain periodic chemical behaviour~Across a period, metallic character generally decreases~Boron is a metalloid with distinctive electron-deficient compounds~Carbon shows strong catenation and forms many stable covalent compounds~Oxides may be acidic, basic or amphoteric depending on composition and bonding
+11|Chemistry|Hydrogen|Isotopes, hydrides, water and hydrogen peroxide|The common hydrogen isotopes are protium, deuterium and tritium~Ionic hydrides contain hydride ion H⁻, usually with highly electropositive metals~Water has a bent molecular shape and extensive hydrogen bonding~Hydrogen peroxide can act as an oxidising or reducing agent depending on the reaction~Electrolysis of water produces hydrogen at the cathode and oxygen at the anode under suitable conditions
+11|Chemistry|Environmental Chemistry|Pollutants, smog, ozone depletion and green chemistry|Primary pollutants are emitted directly while secondary pollutants form through atmospheric reactions~Photochemical smog forms in sunlight from nitrogen oxides and volatile organic compounds~Stratospheric ozone absorbs much harmful ultraviolet radiation~Acid rain is associated mainly with sulfur and nitrogen oxides forming acids in atmospheric moisture~Green chemistry aims to reduce hazardous substances and waste at the source
+11|Biology|The Living World|Characteristics of life, taxonomy and nomenclature|Taxonomy involves identification, nomenclature and classification of organisms~Binomial nomenclature uses a genus name followed by a specific epithet~A taxonomic hierarchy proceeds through categories such as species, genus, family, order, class, phylum/division and kingdom~Living systems show cellular organisation and metabolism~A taxonomic key helps identify organisms through paired contrasting statements
+11|Biology|Biological Classification|Five-kingdom framework, microbes, fungi and viruses|Whittaker's five kingdoms are Monera, Protista, Fungi, Plantae and Animalia~Bacteria are prokaryotic and lack a membrane-bound nucleus~Fungi are absorptive heterotrophs with chitin commonly present in cell walls~Viruses are acellular and replicate only inside suitable host cells~Cyanobacteria are photosynthetic prokaryotes
+11|Biology|Plant Kingdom|Algae, bryophytes, pteridophytes, gymnosperms and angiosperms|Bryophytes lack true vascular tissue and depend on water for fertilisation~Pteridophytes possess vascular tissue but reproduce by spores~Gymnosperms bear naked seeds not enclosed in fruits~Angiosperms produce flowers and seeds enclosed within fruits~In plant life cycles, gametophyte is haploid and sporophyte is diploid
+11|Biology|Animal Kingdom|Animal classification and major phyla|Porifera have pores and a canal system for water flow~Cnidarians possess cnidocytes used in prey capture and defence~Annelids show metameric segmentation~Arthropods have jointed appendages and a chitinous exoskeleton~Chordates show a notochord at least at some stage of development
+11|Biology|Morphology of Flowering Plants|Root, stem, leaf, flower, fruit and seed|Roots commonly anchor plants and absorb water and minerals~Leaves are major photosynthetic organs with a lamina and veins~A flower typically includes calyx, corolla, androecium and gynoecium~An ovary develops into fruit and ovules develop into seeds after fertilisation~Venation and floral characters help in plant identification
+11|Biology|Anatomy of Flowering Plants|Plant tissues and internal structure|Meristematic tissues divide actively and enable growth~Xylem primarily transports water and minerals; phloem transports organic solutes~Dicot stems commonly show vascular bundles arranged in a ring~Monocot stems commonly have scattered vascular bundles~Stomata regulate gas exchange and water loss through guard-cell movements
+11|Biology|Structural Organisation in Animals|Animal tissues and earthworm/cockroach/frog organisation|Epithelial tissue covers surfaces and lines cavities~Connective tissue supports, binds and transports materials~Muscle tissue contracts; nervous tissue conducts signals~Cockroaches have a chitinous exoskeleton and open circulatory system~Frogs are amphibians with moist skin and a three-chambered heart in adults
+11|Biology|Cell: The Unit of Life|Cell theory, organelles and prokaryotic/eukaryotic cells|Cell theory states that organisms consist of cells and cells arise from pre-existing cells~Prokaryotes lack a membrane-bound nucleus~Mitochondria carry out aerobic respiration and produce much cellular ATP~Ribosomes are sites of protein synthesis~The plasma membrane is selectively permeable and regulates exchange
+11|Biology|Biomolecules|Carbohydrates, proteins, lipids, nucleic acids and enzymes|Carbohydrates commonly serve as energy sources and structural materials~Proteins are polymers of amino acids linked by peptide bonds~DNA stores hereditary information; RNA participates in gene expression and protein synthesis~Enzymes lower activation energy without being consumed in the reaction~Enzyme activity is influenced by temperature, pH and substrate concentration
+11|Biology|Cell Cycle and Cell Division|Interphase, mitosis and meiosis|Interphase includes G₁, S and G₂ phases; DNA replication occurs in S phase~Mitosis usually produces two genetically similar daughter cells~Meiosis includes two successive divisions and reduces chromosome number by half~Crossing over occurs during prophase I of meiosis~Cell-cycle checkpoints help regulate progression and genome integrity
+11|Biology|Photosynthesis in Higher Plants|Light reactions, Calvin cycle and photorespiration|Chlorophyll in thylakoid membranes absorbs light energy~Water splitting in oxygenic photosynthesis releases oxygen, electrons and protons~ATP and NADPH from light reactions power carbon fixation~The Calvin cycle fixes CO₂ using RuBisCO in the stroma~C₄ plants spatially separate initial CO₂ fixation and the Calvin cycle, reducing photorespiration
+11|Biology|Respiration in Plants|Glycolysis, Krebs cycle and electron transport|Glycolysis occurs in the cytosol and converts glucose to pyruvate~Aerobic oxidation of pyruvate and the Krebs cycle occur in mitochondria in eukaryotes~The electron transport chain creates a proton gradient used for ATP synthesis~Fermentation regenerates NAD⁺ when oxygen-dependent respiration is unavailable~Respiratory quotient is CO₂ released divided by O₂ consumed
+11|Biology|Plant Growth and Development|Growth regulators, photoperiodism and vernalisation|Auxin promotes cell elongation in many tissues and participates in apical dominance~Gibberellins promote stem elongation and can break seed dormancy~Cytokinins promote cell division and delay leaf senescence in many contexts~Abscisic acid is associated with stress responses and stomatal closure~Ethylene promotes fruit ripening and several senescence responses
+11|Biology|Breathing and Exchange of Gases|Respiratory system, gas transport and regulation|Inspiration occurs when thoracic volume increases and intrapulmonary pressure falls~Most oxygen is transported bound to haemoglobin in red blood cells~Most carbon dioxide is transported as bicarbonate ions in blood~Oxygen dissociation from haemoglobin is influenced by pH, CO₂ and temperature~The respiratory rhythm is regulated by neural centres and chemical feedback
+11|Biology|Body Fluids and Circulation|Blood, heart, cardiac cycle and circulation|Plasma is the liquid matrix of blood containing proteins and dissolved substances~Red blood cells transport oxygen using haemoglobin~The human heart has four chambers and separate pulmonary and systemic circuits~The AV valves prevent backflow from ventricles to atria during ventricular contraction~Platelets contribute to haemostasis and clot formation
+11|Biology|Excretory Products and their Elimination|Kidney, nephron, urine formation and osmoregulation|The nephron is the structural and functional unit of the kidney~Urine formation includes filtration, selective reabsorption and tubular secretion~ADH increases water reabsorption in collecting ducts~The loop of Henle contributes to the medullary osmotic gradient~Urea is formed in the liver and excreted by the kidneys
+11|Biology|Locomotion and Movement|Muscle contraction, skeleton and joints|Actin and myosin interact during skeletal muscle contraction~Calcium ions expose myosin-binding sites on actin via the troponin-tropomyosin system~ATP is needed for cross-bridge cycling and relaxation processes~A joint connects bones and may permit different ranges of movement~Osteoporosis involves reduced bone mass and increased fracture risk
+11|Biology|Neural Control and Coordination|Neuron, synapse, CNS, eye and ear|A neuron conducts electrical signals and communicates at synapses~Action potentials depend on ion movements across the neuronal membrane~Chemical synapses use neurotransmitters released into the synaptic cleft~The CNS consists of the brain and spinal cord~The retina contains photoreceptors that convert light into neural signals
+11|Biology|Chemical Coordination and Integration|Endocrine glands and hormones|Hormones act as chemical messengers on target cells with appropriate receptors~Insulin lowers blood glucose by promoting uptake and storage processes~Glucagon raises blood glucose through hepatic glucose-mobilising effects~Thyroid hormones influence metabolic rate and development~Negative feedback helps maintain endocrine homeostasis
+12|Physics|Electric Charges and Fields|Coulomb's law, electric field and Gauss's law|Like charges repel and unlike charges attract~Coulomb force magnitude is proportional to abs(q1 × q2)/r² in vacuum~Electric field is force per unit positive test charge~Electric field lines start on positive charges and end on negative charges or infinity~Gauss's law relates electric flux through a closed surface to enclosed charge divided by ε₀
+12|Physics|Electrostatic Potential and Capacitance|Potential, potential energy and capacitors|Electric potential is potential energy per unit charge~Potential due to a point charge is kq/r with zero at infinity~Capacitance is charge stored per potential difference, C = Q/V~For parallel-plate vacuum capacitor C = ε₀A/d, neglecting edge effects~Dielectric insertion increases capacitance by reducing the effective field for a fixed free charge
+12|Physics|Current Electricity|Current, resistance, circuits and Kirchhoff rules|Current is charge flow per unit time~Ohm's law V = IR applies to an ohmic conductor under constant physical conditions~Series resistances add directly; parallel resistances combine through reciprocals~Kirchhoff's junction rule expresses charge conservation~Drift current depends on carrier density, charge, drift speed and cross-sectional area
+12|Physics|Moving Charges and Magnetism|Magnetic force, Biot-Savart, Ampere and galvanometer|Magnetic force on a charge is q(v × B) and is perpendicular to velocity and field~A moving charge in a uniform magnetic field can follow a circular path if velocity is perpendicular to the field~A current-carrying wire experiences force I(L × B)~A long straight wire produces magnetic field proportional to current and inversely proportional to distance~A galvanometer detects small currents and can be adapted as an ammeter or voltmeter
+12|Physics|Magnetism and Matter|Bar magnets, Earth's magnetism and magnetic materials|A bar magnet has north and south poles and its poles occur in pairs~Magnetic field lines form closed loops~Diamagnetic materials are weakly repelled by an applied magnetic field~Paramagnetic materials are weakly attracted and have positive susceptibility~Ferromagnetic materials can show domains and strong magnetisation
+12|Physics|Electromagnetic Induction|Magnetic flux, Faraday's law and Lenz's law|Magnetic flux through a flat area is BA cosθ for uniform field and area vector angle θ~Faraday's law says induced emf is related to the rate of change of magnetic flux~Lenz's law gives the direction that opposes the change producing induction~Induced current requires a closed conducting path~Self-inductance relates induced emf to the rate of change of current in the circuit
+12|Physics|Alternating Current|AC voltage/current, reactance, resonance and transformer|For sinusoidal current, RMS current is peak current divided by √2~Inductive reactance is ωL and capacitive reactance is 1/(ωC)~In a series RLC circuit, resonance occurs when inductive and capacitive reactances are equal~A transformer operates by mutual induction and requires changing magnetic flux~An ideal transformer approximately conserves power from primary to secondary
+12|Physics|Electromagnetic Waves|EM spectrum, wave properties and energy transport|Electromagnetic waves are transverse and can propagate in vacuum~In vacuum, all electromagnetic waves travel at speed c~The spectrum includes radio, microwave, infrared, visible, ultraviolet, X-rays and gamma rays~Increasing frequency corresponds to decreasing wavelength in vacuum~Electromagnetic waves carry energy and momentum
+12|Physics|Ray Optics and Optical Instruments|Reflection, refraction, lenses, mirrors and instruments|Snell's law relates refractive indices and angles: n₁sin i = n₂sin r~Total internal reflection requires travel from higher to lower refractive index and incidence above critical angle~For a thin lens, 1/f = 1/v − 1/u under the Cartesian sign convention~Power of a lens in dioptres is reciprocal focal length in metres~A convex mirror gives a virtual, erect and diminished image for a real object
+12|Physics|Wave Optics|Interference, diffraction and polarisation|Coherent sources maintain a constant phase difference~In Young's double-slit experiment, fringe width is λD/d~Constructive interference occurs for path difference mλ~Diffraction becomes prominent when an aperture or obstacle size is comparable to wavelength~Polarisation demonstrates the transverse nature of light
+12|Physics|Dual Nature of Radiation and Matter|Photoelectric effect, photons and de Broglie waves|Photon energy is E = hν~Photoelectric emission requires frequency at or above threshold frequency~Maximum photoelectron kinetic energy follows Kmax = hν − φ~Increasing light intensity above threshold increases photoelectric current but not the maximum kinetic energy at fixed frequency~The de Broglie wavelength is h/p
+12|Physics|Atoms|Rutherford model, Bohr model and spectra|Rutherford scattering supports a small dense positively charged nucleus~Bohr's model quantises allowed angular momentum for hydrogen-like atoms~Hydrogen energy levels vary as −1/n² in the Bohr model~Emission occurs when an electron moves from a higher to a lower energy level~Spectral lines correspond to discrete energy differences
+12|Physics|Nuclei|Nuclear size, mass defect, binding energy and decay|Nuclear radius approximately follows R = R₀A^(1/3)~Mass defect is the difference between the mass of separated nucleons and the bound nucleus~Binding energy equals mass defect times c²~Alpha decay emits a helium nucleus; beta decay changes neutron/proton balance~Radioactive decay follows an exponential law and has a constant half-life for a given nuclide
+12|Physics|Semiconductor Electronics|Semiconductors, p-n junction, diode and logic gates|Semiconductors have conductivity between conductors and insulators~Doping introduces donor or acceptor impurities and changes carrier concentration~A p-n junction diode conducts strongly in forward bias and weakly in reverse bias under normal conditions~A transistor can act as an amplifier or switch~Logic gates implement Boolean operations such as AND, OR and NOT
+12|Chemistry|Solutions|Concentration, solubility and colligative properties|Molarity is moles of solute per litre of solution~Molality is moles of solute per kilogram of solvent~Raoult's law relates partial vapour pressure to mole fraction for ideal solutions~Colligative properties depend on number of solute particles, not their chemical identity in dilute ideal cases~Osmotic pressure for a dilute solution is approximately π = CRT
+12|Chemistry|Electrochemistry|Electrochemical cells, Nernst equation and conductivity|Oxidation occurs at the anode and reduction at the cathode~In a galvanic cell, spontaneous redox chemistry converts chemical energy to electrical energy~Cell emf under standard conditions is linked to standard electrode potentials~Conductivity measures a solution's ability to carry current~Faraday's laws relate electrode reaction amount to electric charge passed
+12|Chemistry|Chemical Kinetics|Rate laws, order, activation energy and Arrhenius equation|Reaction rate describes concentration change per time~Rate law exponents are determined experimentally and are not automatically stoichiometric coefficients~For a first-order reaction, half-life is ln 2 divided by the rate constant~A catalyst provides an alternative pathway with lower activation energy~Arrhenius equation relates rate constant to temperature and activation energy
+12|Chemistry|The d- and f-Block Elements|Transition metals, oxidation states, complexes and lanthanoids|Transition elements often show variable oxidation states due to similar energies of d and s orbitals~Many transition-metal ions form coloured compounds due to electronic transitions~Transition metals often act as catalysts~Lanthanoid contraction results from imperfect shielding by 4f electrons~Potassium permanganate and potassium dichromate are important oxidising agents in suitable media
+12|Chemistry|Coordination Compounds|Ligands, coordination number, isomerism and bonding|A coordination entity contains a central metal atom or ion bonded to ligands~Coordination number counts donor atoms directly bonded to the central metal~Ligands donate lone pairs to a metal centre~Coordination compounds may show geometrical, optical or linkage isomerism~Crystal field splitting helps explain magnetic properties and colour in many complexes
+12|Chemistry|Haloalkanes and Haloarenes|C–X bonds, substitution, elimination and reactivity|Haloalkanes contain a halogen bonded to an sp³ carbon~SN1 reactions proceed through a carbocation intermediate; SN2 reactions occur in one concerted step~Primary haloalkanes commonly favour SN2 under suitable conditions~Aryl halides are less reactive toward ordinary nucleophilic substitution than many alkyl halides~Elimination reactions can form alkenes from haloalkanes
+12|Chemistry|Alcohols, Phenols and Ethers|Functional groups and characteristic reactions|Alcohols contain an –OH group attached to an sp³ carbon~Phenols have –OH directly attached to an aromatic ring and are more acidic than typical alcohols~Ethers contain an oxygen bonded to two carbon groups~Alcohol oxidation outcome depends on class and reagent conditions~Phenol activates the aromatic ring toward electrophilic substitution and directs mainly to ortho/para positions
+12|Chemistry|Aldehydes, Ketones and Carboxylic Acids|Carbonyl chemistry, nucleophilic addition and acidity|Aldehydes contain –CHO; ketones contain a carbonyl carbon attached to two carbon groups~Carbonyl carbon is electrophilic because the C=O bond is polarised~Aldehydes are generally more easily oxidised than ketones~Carboxylic acids contain –COOH and form resonance-stabilised carboxylate ions on deprotonation~Tollens' reagent can distinguish many aldehydes from ketones
+12|Chemistry|Amines|Basicity, preparation and reactions of amines|Amines are derivatives of ammonia in which one or more H atoms are replaced by carbon groups~Amines act as bases because nitrogen has a lone pair~Basicity depends on solvent, substitution and stabilisation of the conjugate acid~Aniline is less basic than many aliphatic amines because the nitrogen lone pair is delocalised into the ring~Diazonium salts from aromatic primary amines are useful synthetic intermediates
+12|Chemistry|Biomolecules|Carbohydrates, proteins, vitamins and nucleic acids|Glucose is an aldohexose and a common energy source~A peptide bond joins amino acids in proteins~Enzymes are biological catalysts and usually show substrate specificity~DNA contains deoxyribose and bases A, G, C and T; RNA contains ribose and usually U instead of T~Vitamins are required in small amounts and have diverse metabolic roles
+12|Chemistry|Principles Related to Practical Chemistry|Qualitative analysis, titration and laboratory methods|A titration uses a standard solution to determine an unknown concentration~An indicator changes colour over a characteristic pH range~Filtration separates insoluble solids from liquids~Chromatography separates substances through different affinities for stationary and mobile phases~Laboratory safety includes correct labelling, protective equipment and careful handling of reagents
+12|Biology|Sexual Reproduction in Flowering Plants|Flower structure, pollination, fertilisation and seed formation|Anther produces pollen grains while the ovule contains the female gametophyte~Pollination transfers pollen from anther to stigma~Double fertilisation in angiosperms produces a zygote and primary endosperm nucleus~The ovule usually develops into a seed and the ovary into a fruit~Endosperm commonly nourishes the developing embryo
+12|Biology|Human Reproduction|Male/female systems, gametogenesis, cycles and fertilisation|Spermatogenesis occurs in seminiferous tubules of testes~Oogenesis begins before birth and proceeds through stages with meiotic pauses~Ovulation is triggered by a surge in luteinising hormone~Fertilisation usually occurs in the ampullary-isthmic region of the oviduct~Placenta facilitates exchange between maternal and foetal systems and secretes hormones
+12|Biology|Reproductive Health|Contraception, STIs, infertility and population health|Contraception aims to prevent conception and/or implantation depending on the method~Barrier methods also reduce transmission risk for several sexually transmitted infections~Assisted reproductive technologies support some forms of infertility treatment~Sexually transmitted infections may be bacterial, viral or caused by other pathogens~Accurate reproductive-health education supports informed and responsible decisions
+12|Biology|Principles of Inheritance and Variation|Mendelian genetics, linkage, sex determination and disorders|Mendel's law of segregation states that allele pairs separate during gamete formation~A monohybrid cross of two heterozygotes gives a 3:1 dominant-to-recessive phenotype ratio under complete dominance~Independent assortment applies to genes that assort independently, commonly when unlinked~Linked genes tend to be inherited together more often than unlinked genes~Mutations create new alleles and contribute to genetic variation
+12|Biology|Molecular Basis of Inheritance|DNA replication, transcription, translation and gene regulation|DNA replication is semiconservative~Transcription synthesises RNA using a DNA template~Translation uses ribosomes to read mRNA codons and assemble polypeptides~The genetic code is degenerate because several codons can encode the same amino acid~In prokaryotes, the lac operon is regulated in response to lactose and glucose-related signals
+12|Biology|Evolution|Evidence, natural selection, speciation and human evolution|Evolution is change in heritable characteristics of populations across generations~Natural selection changes trait frequencies when heritable variants differ in reproductive success~Homologous structures indicate common ancestry despite different functions~Hardy-Weinberg equilibrium describes allele/genotype frequencies under idealised conditions without evolutionary forces~Speciation involves the development of reproductive isolation between populations
+12|Biology|Human Health and Disease|Immunity, pathogens, cancer, drugs and AIDS|Innate immunity provides broad, rapid defence while adaptive immunity is antigen-specific~B cells can produce antibodies; T cells mediate several cellular immune responses~Vaccination trains adaptive immunity to respond more quickly on later exposure~Malaria is caused by Plasmodium parasites transmitted by female Anopheles mosquitoes~Antibiotics act against susceptible bacteria and do not treat viral infections
+12|Biology|Microbes in Human Welfare|Food, industrial products, sewage and biogas|Lactobacillus helps convert milk into curd~Yeast fermentation is used in bread-making and alcoholic beverage production~Activated sludge contains microbial communities that reduce organic load in sewage~Methanogens produce methane in anaerobic conditions and are used in biogas systems~Microbes produce industrial products including enzymes, organic acids and antibiotics
+12|Biology|Biotechnology: Principles and Processes|Recombinant DNA, enzymes, vectors and PCR|Restriction endonucleases cut DNA at specific recognition sequences~DNA ligase joins DNA fragments by forming phosphodiester bonds~Plasmids can serve as vectors to carry inserted DNA into host cells~PCR amplifies a selected DNA region through repeated denaturation, annealing and extension~Gel electrophoresis separates DNA fragments largely by size through a matrix
+12|Biology|Biotechnology and its Applications|GM organisms, insulin, gene therapy and biosafety|Recombinant human insulin can be produced using genetically engineered microorganisms~Bt crops express proteins derived from Bacillus thuringiensis that affect certain insect pests~Gene therapy aims to treat disease by introducing, modifying or regulating genetic material~Transgenic organisms can be used in research, agriculture and medicine~Biosafety assessment evaluates possible risks to health and the environment
+12|Biology|Organisms and Populations|Population attributes, interactions and adaptations|Population density, natality, mortality and age structure describe population attributes~Exponential growth occurs under ideal unlimited-resource conditions~Logistic growth includes environmental carrying capacity~Mutualism benefits both interacting species; parasitism benefits one and harms the host~Adaptations are traits that improve survival or reproduction in a particular environment
+12|Biology|Ecosystem|Energy flow, productivity, decomposition and nutrient cycles|Producers convert external energy into chemical energy in organic matter~Energy transfer between trophic levels is inefficient and energy flow is unidirectional~Gross primary productivity includes all organic production by producers; net productivity subtracts respiration~Decomposition involves fragmentation, leaching, catabolism, humification and mineralisation~Nutrient cycles move elements between organisms and abiotic reservoirs
+12|Biology|Biodiversity and Conservation|Diversity patterns, threats and conservation|Biodiversity includes genetic, species and ecosystem diversity~Species richness is generally higher in tropical than polar regions~Habitat loss and fragmentation are major drivers of biodiversity decline~In-situ conservation protects species in natural habitats; ex-situ conservation occurs outside them~Biodiversity hotspots have high endemism and substantial habitat loss
+12|Biology|Environmental Issues|Pollution, climate change, ozone and waste management|Greenhouse gases absorb and re-emit infrared radiation, affecting Earth's energy balance~Eutrophication results from nutrient enrichment of water and can reduce dissolved oxygen~Biomagnification increases concentrations of certain persistent pollutants at higher trophic levels~Stratospheric ozone depletion has been linked to chlorine- and bromine-containing compounds~Waste reduction, reuse, recycling and treatment limit environmental impacts
 `;
-
-const shortNotes = `
-<h2>Units and Measurements — Short Notes</h2>
-<h3>Seven SI base units</h3>
-<ul>
-<li>Length — metre (m)</li>
-<li>Mass — kilogram (kg)</li>
-<li>Time — second (s)</li>
-<li>Electric current — ampere (A)</li>
-<li>Temperature — kelvin (K)</li>
-<li>Amount of substance — mole (mol)</li>
-<li>Luminous intensity — candela (cd)</li>
-</ul>
-<h3>Important dimensions</h3>
-<div class="formula">Velocity [v] = LT⁻¹</div>
-<div class="formula">Acceleration [a] = LT⁻²</div>
-<div class="formula">Force [F] = MLT⁻²</div>
-<div class="formula">Work / Energy = ML²T⁻²</div>
-<div class="formula">Power = ML²T⁻³</div>
-<div class="formula">Pressure = ML⁻¹T⁻²</div>
-<div class="formula">Density = ML⁻³</div>
-<div class="formula">G = M⁻¹L³T⁻²</div>
-<div class="formula">Spring constant k = MT⁻²</div>
-<h3>Significant figures</h3>
-<ul>
-<li>Non-zero digits count.</li>
-<li>Zeros between non-zero digits count.</li>
-<li>Leading zeros do not count.</li>
-<li>Trailing zeros after a decimal count.</li>
-<li>Add/subtract: round to least precise decimal place.</li>
-<li>Multiply/divide: round to fewest significant figures in measured inputs.</li>
-</ul>
-<h3>Uncertainty</h3>
-<div class="formula">Relative uncertainty = Δx / |x|</div>
-<div class="formula">Percentage uncertainty = (Δx / |x|) × 100%</div>
-<ul>
-<li>Sum/difference: add absolute uncertainties.</li>
-<li>Product/quotient: add relative uncertainties.</li>
-<li>For y = xⁿ, fractional uncertainty ≈ |n| times fractional uncertainty in x.</li>
-</ul>
-<h3>Prefixes and conversions</h3>
-<div class="formula">kilo = 10³ · centi = 10⁻² · milli = 10⁻³ · micro = 10⁻⁶ · nano = 10⁻⁹</div>
-<div class="formula">1 cm³ = 10⁻⁶ m³ · 36 km/h = 10 m/s</div>
-<h3>Dimensional analysis</h3>
-<ul>
-<li>Every term in an additive homogeneous equation must have matching dimensions.</li>
-<li>Useful for checking equations, deriving dimensions and possible power-law relationships.</li>
-<li>Cannot determine unknown dimensionless constants or prove a physical equation completely correct.</li>
-</ul>
-`;
-
-const formulaNotes = `
-<h2>Formula Sheet — Units and Measurements</h2>
-<h3>Dimensions</h3>
-<div class="formula">[v] = LT⁻¹</div>
-<div class="formula">[a] = LT⁻²</div>
-<div class="formula">[F] = MLT⁻²</div>
-<div class="formula">[W] = ML²T⁻²</div>
-<div class="formula">[P] = ML²T⁻³</div>
-<div class="formula">[p] = ML⁻¹T⁻²</div>
-<div class="formula">[ρ] = ML⁻³</div>
-<div class="formula">[G] = M⁻¹L³T⁻²</div>
-<div class="formula">[k spring] = MT⁻²</div>
-<h3>Measurement uncertainty</h3>
-<div class="formula">Relative uncertainty = Δx / |x|</div>
-<div class="formula">Percentage uncertainty = (Δx / |x|) × 100%</div>
-<h3>Pendulum relationship using dimensional analysis</h3>
-<p>If T = k lᵃgᵇ, dimensional matching gives a = ½ and b = −½.</p>
-<div class="formula">T = k√(l/g)</div>
-<p>Dimensional analysis alone does not determine k; the ideal small-angle pendulum gives k = 2π through physical derivation.</p>
-<h3>Remember</h3>
-<p>Check units in every step, convert squared/cubed units with the conversion factor raised to the same power, and do not treat dimensional consistency as proof that a formula is physically correct.</p>
-`;
-
-function Q(question, options, answer, explanation) {
-  return {question, options, answer, explanation};
-}
-
-/* Each question stores its options, correct answer index, and explanation together. */
-const tests = [
- {
-  id:"t1",
-  title:"Test 1 — SI Units and Basic Dimensions",
-  description:"Base units, prefixes, derived quantities and basic dimensions.",
-  questions:[
-   Q("What is the SI base unit of thermodynamic temperature?",["Celsius","Kelvin","Joule","Fahrenheit"],1,"The kelvin (K) is the SI base unit for thermodynamic temperature."),
-   Q("What is the SI base unit of amount of substance?",["Kilogram","Candela","Mole","Ampere"],2,"The mole (mol) is the SI base unit of amount of substance."),
-   Q("Which is the dimensional formula of force?",["MLT⁻²","ML²T⁻²","MLT⁻¹","M⁻¹LT²"],0,"From F = ma, dimensions are M × LT⁻² = MLT⁻²."),
-   Q("The SI prefix micro (μ) represents:",["10⁻³","10⁻⁹","10³","10⁻⁶"],3,"Micro represents a factor of 10⁻⁶."),
-   Q("Which is the SI derived unit of pressure?",["Joule","Pascal","Watt","Coulomb"],1,"Pressure is force per area and its SI derived unit is the pascal (Pa)."),
-   Q("One kilometre equals:",["10 m","100 m","1000 m","10,000 m"],2,"Kilo represents 10³, so one kilometre is 1000 metres."),
-   Q("Which is the dimensional formula of velocity?",["LT⁻¹","LT⁻²","L²T⁻¹","MLT⁻¹"],0,"Velocity is displacement divided by time, giving dimensions LT⁻¹."),
-   Q("The SI unit of volume is:",["metre","square metre","litre","cubic metre"],3,"The SI derived unit for volume is cubic metre (m³)."),
-   Q("How many significant figures are in 0.00450?",["2","4","3","5"],2,"Leading zeros are not significant; the digits 4, 5 and the final 0 give three significant figures."),
-   Q("Which is the dimensional formula of density?",["ML³","ML⁻³","M⁻¹L³","ML⁻²"],1,"Density is mass divided by volume, so its dimensions are ML⁻³.")
-  ]
- },
- {
-  id:"t2",
-  title:"Test 2 — Significant Figures and Errors",
-  description:"Precision, rounding and uncertainty propagation.",
-  questions:[
-   Q("How many significant figures are in 2.030?",["2","3","4","5"],2,"The zero between non-zero digits and the trailing decimal zero are significant; there are four significant figures."),
-   Q("How many significant figures are in 0.03060?",["2","3","4","5"],2,"Leading zeros do not count. The digits 3, 0, 6 and the final 0 give four significant figures."),
-   Q("Report 12.11 + 0.3 using appropriate decimal-place precision.",["12.4","12.41","12","12.410"],0,"The sum is 12.41, but the least precise input has one decimal place, so the result is 12.4."),
-   Q("Report 2.0 × 3.00 using appropriate significant figures.",["6","6.00","6.000","6.0"],3,"The raw product is 6.000, but the first factor has two significant figures, so report 6.0."),
-   Q("A measured value is 4.0 ± 0.2 units. What is its percentage uncertainty?",["0.5%","2%","5%","20%"],2,"Percentage uncertainty = (0.2/4.0) × 100% = 5%."),
-   Q("If x has a 1% fractional uncertainty and y = x², what is the approximate percentage uncertainty in y?",["0.5%","2%","1%","4%"],1,"For y = xⁿ, fractional uncertainty is approximately |n| times that of x. With n = 2, it is approximately 2%."),
-   Q("For the sum of two measured quantities, which introductory uncertainty rule is commonly used?",["Add their absolute uncertainties","Multiply their absolute uncertainties","Subtract all uncertainties","Set uncertainty to zero"],0,"For addition or subtraction, the common introductory rule is to add absolute uncertainties."),
-   Q("Round 17.654 to three significant figures.",["17.6","17.65","17.7","18.0"],2,"The first three significant digits are 1, 7 and 6. The next digit is 5, so the result rounds to 17.7."),
-   Q("A measurement is 3.0 ± 0.1 cm. What is its approximate percentage uncertainty?",["3.3%","0.3%","30%","0.03%"],0,"Percentage uncertainty = (0.1/3.0) × 100% ≈ 3.3%."),
-   Q("Repeated readings are close to one another but far from an accepted value. What best describes them?",["Accurate but not precise","Both accurate and precise","Neither precise nor accurate","Precise but not accurate"],3,"Closely grouped readings are precise. If they are far from the accepted value, they are not accurate.")
-  ]
- },
- {
-  id:"t3",
-  title:"Test 3 — Dimensional Formulae",
-  description:"Dimensions of mechanical quantities and equation checks.",
-  questions:[
-   Q("What are the dimensions of force?",["ML²T⁻²","MLT⁻²","MLT⁻¹","MT⁻¹"],1,"Using F = ma, dimensions are M × LT⁻² = MLT⁻²."),
-   Q("What are the dimensions of work?",["ML²T⁻²","MLT⁻²","ML²T⁻³","M⁻¹LT⁻²"],0,"Work is force times displacement, giving ML²T⁻²."),
-   Q("What are the dimensions of power?",["ML²T⁻²","MLT⁻¹","ML²T⁻³","ML⁻¹T⁻²"],2,"Power is work divided by time, so dimensions are ML²T⁻³."),
-   Q("What is the dimensional formula of the universal gravitational constant G?",["MLT⁻²","ML²T⁻¹","M⁻¹L³T⁻²","ML⁻³"],2,"From F = Gm₁m₂/r², dimensions of G are M⁻¹L³T⁻²."),
-   Q("For a spring, F = kx. What are the dimensions of spring constant k?",["MLT⁻²","MT⁻²","ML⁻¹T⁻²","M⁻¹T²"],1,"Since k = F/x, dimensions are (MLT⁻²)/L = MT⁻²."),
-   Q("What are the dimensions of pressure?",["ML⁻¹T⁻²","MLT⁻²","ML²T⁻²","M⁻¹L³T⁻²"],0,"Pressure equals force divided by area, giving ML⁻¹T⁻²."),
-   Q("Is v = u + at dimensionally homogeneous?",["No; at has dimensions of velocity squared","No; u is dimensionless","Yes; every term has dimensions LT⁻¹","No; acceleration has dimensions L"],2,"v and u have dimensions LT⁻¹; at has dimensions LT⁻² × T = LT⁻¹."),
-   Q("Is s = ut + ½at² dimensionally homogeneous?",["Yes; every term has dimensions of length","No; ut has dimensions of time","No; at² is dimensionless","No; s is velocity"],0,"Both ut and at² have dimensions L, matching displacement s."),
-   Q("Is v² = u² + 2as dimensionally homogeneous?",["No; velocity squared has dimensions LT⁻¹","Yes; every term has dimensions L²T⁻²","No; displacement is dimensionless","No; acceleration is LT⁻¹"],1,"v² and u² have dimensions L²T⁻², and as has dimensions (LT⁻²)(L) = L²T⁻²."),
-   Q("A dimensionally correct equation must always be physically correct.",["True in every case","Only if it contains no constants","Only in mechanics","False; dimensional correctness alone is insufficient"],3,"Dimensional homogeneity is a useful check, but it does not prove that the equation represents the correct physics.")
-  ]
- },
- {
-  id:"t4",
-  title:"Test 4 — Dimensional Analysis and Applications",
-  description:"Dimensional reasoning, conversion and limitations.",
-  questions:[
-   Q("The period T of a pendulum depends on length l and gravitational acceleration g. Which form is dimensionally consistent?",["T = k√(g/l)","T = klg","T = k√(l/g)","T = kl/g"],2,"The dimensions of l/g are L/(LT⁻²) = T², so √(l/g) has dimensions of time."),
-   Q("If T = k lᵃgᵇ and k is dimensionless, what exponents fit dimensional consistency?",["a = −½, b = ½","a = ½, b = −½","a = 1, b = −1","a = 0, b = −1"],1,"Matching powers gives −2b = 1 and a + b = 0, hence b = −½ and a = ½."),
-   Q("Which item cannot be determined from dimensional analysis alone?",["Dimensions of force","Whether dimensions on both sides match","A possible power-law dependence","The value of a dimensionless constant"],3,"Dimensional analysis cannot determine arbitrary dimensionless constants such as 2 or 2π."),
-   Q("Dimensional analysis alone generally cannot distinguish between which pair of functions?",["Sine and cosine","Length and area","Mass and time","Pressure and force"],0,"Sine and cosine are both dimensionless; dimensions alone cannot establish which function describes a phenomenon."),
-   Q("Convert 72 km/h into m/s.",["10 m/s","20 m/s","36 m/s","25 m/s"],1,"72 × 1000/3600 = 20 m/s."),
-   Q("One micrometre equals:",["10⁻³ m","10⁻⁹ m","10⁻⁶ m","10⁶ m"],2,"Micro represents a factor of 10⁻⁶, so one micrometre is 10⁻⁶ m."),
-   Q("One nanometre equals:",["10⁻⁹ m","10⁻⁶ m","10⁻³ m","10⁹ m"],0,"Nano represents a factor of 10⁻⁹."),
-   Q("A quantity is mass divided by volume. What are its dimensions?",["ML³","M⁻¹L³","ML⁻²","ML⁻³"],3,"Volume has dimensions L³; mass divided by volume gives ML⁻³."),
-   Q("Pressure is force divided by area. What are its dimensions?",["MLT⁻²","ML⁻¹T⁻²","ML²T⁻²","M⁻¹L³T⁻²"],1,"Force has dimensions MLT⁻² and area has L², giving ML⁻¹T⁻²."),
-   Q("In x = vt + kt², x is displacement and v is velocity. What are the dimensions of k?",["LT⁻²","LT⁻¹","L²T⁻²","T⁻²"],0,"The term kt² must have dimensions of length, so [k] = LT⁻², the dimensions of acceleration.")
-  ]
- }
-];
-
-/* ================= APPLICATION ENGINE ================= */
-
-const $ = id => document.getElementById(id);
-
-function load(key, fallback) {
-  try {
-    const value = localStorage.getItem(key);
-    return value === null ? fallback : JSON.parse(value);
-  } catch (error) {
-    return fallback;
-  }
-}
-
-function save(key, value) {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-  } catch (error) {
-    console.warn("Could not save progress.", error);
-  }
-}
-
-let history = load("ems_corrected_history", []);
-let mistakes = load("ems_corrected_mistakes", []);
-let activeTest = null;
-let answers = {};
-let submitted = false;
-
-function activateNav(id) {
-  document.querySelectorAll(".sidebar button").forEach(button => {
-    button.classList.remove("active");
-  });
-  if ($(id)) $(id).classList.add("active");
-}
-
-function goHome() {
-  showMode("detailed");
-  window.scrollTo({top:0, behavior:"smooth"});
-}
-
-function showMode(mode) {
-  activateNav(
-    mode === "detailed" ? "navDetailed" :
-    mode === "short" ? "navShort" : "navFormula"
-  );
-
-  let content;
-  if (mode === "detailed") content = detailedNotes;
-  else if (mode === "short") content = shortNotes;
-  else content = formulaNotes;
-
-  const buttons = `
-    <div class="toolbar">
-      <button class="${mode==="detailed"?"primary":"secondary"}" onclick="showMode('detailed')">Detailed Notes</button>
-      <button class="${mode==="short"?"primary":"secondary"}" onclick="showMode('short')">Short Notes</button>
-      <button class="${mode==="formula"?"primary":"secondary"}" onclick="showMode('formula')">Formula Sheet</button>
-      <button class="secondary" onclick="window.print()">Print / Save PDF</button>
-    </div>`;
-
-  $("panel").innerHTML =
-    buttons +
-    '<div class="notes">' + content + '</div>' +
-    '<div class="toolbar"><button class="primary" onclick="openSection(\'tests\')">Practise this chapter →</button></div>';
-}
-
-function openSection(which) {
-  if (which === "tests") {
-    activateNav("navTests");
-    renderTestList();
-  } else if (which === "mistakes") {
-    activateNav("navMistakes");
-    renderMistakes();
-  } else if (which === "progress") {
-    activateNav("navProgress");
-    renderProgress();
-  }
-}
-
-function renderTestList() {
-  let html = `
-    <h2>Test Series — Units and Measurements</h2>
-    <p class="muted">Four separate tests · 10 single-correct MCQs each · 40 questions total.</p>
-    <div class="callout">Choose one option for every question. The correct option and its explanation are linked in the same question record and are shown after submission.</div>
-    <div class="grid2">`;
-
-  tests.forEach((test, index) => {
-    html += `
-      <article class="test-card">
-        <span class="badge">TEST ${index+1}</span>
-        <h3>${test.title}</h3>
-        <p>${test.description}</p>
-        <p><b>${test.questions.length} questions</b></p>
-        <button class="primary" onclick="startTest('${test.id}')">Start test →</button>
-      </article>`;
-  });
-
-  html += `</div><div class="toolbar"><button class="secondary" onclick="showMode('short')">Revise short notes</button></div>`;
-  $("panel").innerHTML = html;
-}
-
-function startTest(id) {
-  activeTest = tests.find(test => test.id === id);
-  if (!activeTest) return;
-  answers = {};
-  submitted = false;
-  renderTest();
-  window.scrollTo({top:$("layout").offsetTop-10, behavior:"smooth"});
-}
-
-function renderTest() {
-  if (!activeTest) return;
-
-  let html = `
-    <button class="secondary" onclick="openSection('tests')">← Back to test series</button>
-    <h2 style="margin-top:18px">${activeTest.title}</h2>
-    <p class="muted">Select one answer for every question, then submit the test.</p>
-    <div class="progress"><span style="width:${Object.keys(answers).length/activeTest.questions.length*100}%"></span></div>
-    <p class="small muted">${Object.keys(answers).length} of ${activeTest.questions.length} answered</p>`;
-
-  activeTest.questions.forEach((question, index) => {
-    html += `<article class="question"><h3>${index+1}. ${question.question}</h3>`;
-
-    question.options.forEach((option, optionIndex) => {
-      const selected = answers[index] === optionIndex;
-      html += `
-        <label class="option ${selected ? "selected" : ""}">
-          <input type="radio" name="q${index}" value="${optionIndex}"
-            ${selected ? "checked" : ""}
-            ${submitted ? "disabled" : ""}
-            onchange="setAnswer(${index},${optionIndex})">
-          <span><b>${String.fromCharCode(65+optionIndex)}.</b> ${option}</span>
-        </label>`;
-    });
-
-    if (submitted) html += feedbackHtml(question, index);
-    html += `</article>`;
-  });
-
-  if (submitted) {
-    const score = scoreTest();
-    const percent = Math.round(score / activeTest.questions.length * 100);
-    html += `
-      <h3>Result: ${score}/${activeTest.questions.length} (${percent}%)</h3>
-      <div class="toolbar">
-        <button class="primary" onclick="startTest('${activeTest.id}')">Retry test</button>
-        <button class="secondary" onclick="openSection('tests')">Back to tests</button>
-      </div>`;
-  } else {
-    html += `
-      <div class="toolbar">
-        <button class="primary" onclick="submitTest()">Submit test</button>
-        <button class="secondary" onclick="clearAnswers()">Clear answers</button>
-      </div>`;
-  }
-
-  $("panel").innerHTML = html;
-}
-
-function setAnswer(questionIndex, optionIndex) {
-  if (submitted) return;
-  answers[questionIndex] = optionIndex;
-  renderTest();
-}
-
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, character => ({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
-  }[character]));
-}
-
-function feedbackHtml(question, index) {
-  const chosen = answers[index];
-  const correct = chosen === question.answer;
-  const yourAnswer = chosen === undefined ? "Not answered" : question.options[chosen];
-
-  return `
-    <div class="feedback ${correct ? "good" : "bad"}">
-      <b>${correct ? "Correct answer" : "Review this answer"}</b>
-      <p><b>Your answer:</b> ${escapeHtml(yourAnswer)}</p>
-      <p><b>Correct answer:</b> ${escapeHtml(question.options[question.answer])}</p>
-      <p><b>Explanation:</b> ${escapeHtml(question.explanation)}</p>
-    </div>`;
-}
-
-function scoreTest() {
-  return activeTest.questions.reduce((score, question, index) => {
-    return score + (answers[index] === question.answer ? 1 : 0);
-  }, 0);
-}
-
-function submitTest() {
-  if (submitted || !activeTest) return;
-
-  const unanswered = activeTest.questions.filter((question, index) => answers[index] === undefined).length;
-  if (unanswered > 0 && !confirm("You left " + unanswered + " question(s) unanswered. Submit anyway?")) return;
-
-  submitted = true;
-  const score = scoreTest();
-  const total = activeTest.questions.length;
-
-  history.push({
-    testId: activeTest.id,
-    title: activeTest.title,
-    score,
-    total,
-    percent: Math.round(score/total*100),
-    date: new Date().toISOString()
-  });
-
-  activeTest.questions.forEach((question, index) => {
-    if (answers[index] === question.answer) return;
-
-    const item = {
-      id: activeTest.id + "-" + index,
-      title: activeTest.title,
-      question: question.question,
-      options: question.options,
-      correct: question.answer,
-      chosen: answers[index] === undefined ? null : answers[index],
-      explanation: question.explanation
-    };
-
-    const existingIndex = mistakes.findIndex(mistake => mistake.id === item.id);
-    if (existingIndex >= 0) mistakes[existingIndex] = item;
-    else mistakes.push(item);
-  });
-
-  save("ems_corrected_history", history);
-  save("ems_corrected_mistakes", mistakes);
-  updateStats();
-  renderTest();
-  window.scrollTo({top:$("layout").offsetTop-10, behavior:"smooth"});
-}
-
-function clearAnswers() {
-  if (submitted) return;
-  answers = {};
-  renderTest();
-}
-
-function renderMistakes() {
-  let html = `
-    <h2>Mistake Notebook</h2>
-    <p class="muted">Incorrect and unanswered questions from submitted tests are collected here.</p>`;
-
-  if (mistakes.length === 0) {
-    html += `<div class="callout">No saved mistakes yet. Complete a test and your incorrect answers will appear here.</div>`;
-  } else {
-    html += `<div class="toolbar"><button class="danger" onclick="clearMistakes()">Clear notebook</button></div>`;
-
-    mistakes.forEach((mistake, index) => {
-      const yourAnswer = mistake.chosen === null ? "Not answered" : mistake.options[mistake.chosen];
-      html += `
-        <article class="review-item">
-          <span class="badge">${escapeHtml(mistake.title)}</span>
-          <h3>${index+1}. ${escapeHtml(mistake.question)}</h3>
-          <p><b>Your answer:</b> ${escapeHtml(yourAnswer)}</p>
-          <p><b>Correct answer:</b> ${escapeHtml(mistake.options[mistake.correct])}</p>
-          <p><b>Explanation:</b> ${escapeHtml(mistake.explanation)}</p>
-        </article>`;
-    });
-  }
-
-  $("panel").innerHTML = html;
-}
-
-function clearMistakes() {
-  if (!confirm("Clear all saved mistakes?")) return;
-  mistakes = [];
-  save("ems_corrected_mistakes", mistakes);
-  updateStats();
-  renderMistakes();
-}
-
-function renderProgress() {
-  const average = history.length
-    ? Math.round(history.reduce((sum, result) => sum + result.percent, 0) / history.length)
-    : null;
-
-  let html = `
-    <h2>My Progress</h2>
-    <div class="stats">
-      <div class="stat"><strong>${history.length}</strong><span>Test attempts</span></div>
-      <div class="stat"><strong>${average === null ? "—" : average + "%"}</strong><span>Average score</span></div>
-      <div class="stat"><strong>${history.filter(result => result.percent === 100).length}</strong><span>Perfect tests</span></div>
-      <div class="stat"><strong>${mistakes.length}</strong><span>Saved mistakes</span></div>
-    </div>
-    <h3>Test history</h3>`;
-
-  if (history.length === 0) {
-    html += `<p class="muted">No tests attempted yet.</p>`;
-  } else {
-    history.slice().reverse().forEach(result => {
-      html += `
-        <article class="review-item">
-          <b>${escapeHtml(result.title)}</b>
-          <p>Score: ${result.score}/${result.total} (${result.percent}%)</p>
-          <p class="small muted">${new Date(result.date).toLocaleString()}</p>
-          <div class="progress"><span style="width:${result.percent}%"></span></div>
-        </article>`;
-    });
-  }
-
-  html += `
-    <div class="toolbar">
-      <button class="primary" onclick="openSection('tests')">Continue testing</button>
-      <button class="secondary" onclick="exportProgress()">Export backup</button>
-      <button class="secondary" onclick="importProgress()">Import backup</button>
-      <button class="danger" onclick="resetProgress()">Reset progress</button>
-    </div>
-    <p class="small muted">Progress is saved in this browser only. Export a backup before clearing browser data or switching devices.</p>`;
-
-  $("panel").innerHTML = html;
-}
-
-function exportProgress() {
-  const data = {history, mistakes};
-  const blob = new Blob([JSON.stringify(data, null, 2)], {type:"application/json"});
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "easymedstudy-progress.json";
-  link.click();
-  URL.revokeObjectURL(url);
-}
-
-function importProgress() {
-  const input = document.createElement("input");
-  input.type = "file";
-  input.accept = ".json,application/json";
-
-  input.onchange = async () => {
-    const file = input.files && input.files[0];
-    if (!file) return;
-
-    try {
-      const data = JSON.parse(await file.text());
-      if (!Array.isArray(data.history) || !Array.isArray(data.mistakes)) {
-        throw new Error("Invalid backup");
-      }
-
-      history = data.history;
-      mistakes = data.mistakes;
-      save("ems_corrected_history", history);
-      save("ems_corrected_mistakes", mistakes);
-      updateStats();
-      renderProgress();
-      alert("Backup imported.");
-    } catch (error) {
-      alert("This is not a valid EasyMedStudy progress backup.");
-    }
-  };
-
-  input.click();
-}
-
-function resetProgress() {
-  if (!confirm("Reset all test history and mistakes in this browser?")) return;
-
-  history = [];
-  mistakes = [];
-  save("ems_corrected_history", history);
-  save("ems_corrected_mistakes", mistakes);
-  updateStats();
-  renderProgress();
-}
-
-function updateStats() {
-  $("attemptCount").textContent = history.length;
-  $("mistakeCount").textContent = mistakes.length;
-
-  const average = history.length
-    ? Math.round(history.reduce((sum, result) => sum + result.percent, 0) / history.length) + "%"
-    : "—";
-
-  $("averageScore").textContent = average;
-}
-
-function toggleTheme() {
-  document.body.classList.toggle("dark");
-  save("ems_corrected_dark", document.body.classList.contains("dark"));
-}
-
-function validateQuestionBank() {
-  const errors = [];
-
-  tests.forEach(test => {
-    if (test.questions.length < 10) errors.push(test.title + ": fewer than 10 questions");
-
-    test.questions.forEach((question, index) => {
-      if (
-        !question.question ||
-        !Array.isArray(question.options) ||
-        question.options.length !== 4 ||
-        !Number.isInteger(question.answer) ||
-        question.answer < 0 ||
-        question.answer > 3 ||
-        !question.explanation
-      ) {
-        errors.push(test.title + " question " + (index+1) + ": invalid data");
-      }
-
-      if (question.options && new Set(question.options).size !== question.options.length) {
-        errors.push(test.title + " question " + (index+1) + ": duplicate options");
-      }
-    });
-  });
-
-  if (errors.length) console.error("EasyMedStudy validation errors:", errors);
-  return errors.length === 0;
-}
-
-(function initialise() {
-  if (load("ems_corrected_dark", false)) document.body.classList.add("dark");
-  validateQuestionBank();
-  updateStats();
-  showMode("detailed");
-})();
-</script>
-</body>
-</html>
+const chapters = raw.trim().split('\n').map(line=>{let p=line.split('|');return {cls:p[0],subject:p[1],title:p[2],focus:p[3],facts:p[4].split('~').map(x=>{let s=x.split(':');return {term:s[0]||x.split(' is ')[0]||x.split(' equals ')[0],desc:x}})}});
+// Derive terms from each fact for flashcards and matched-concept quiz items.
+chapters.forEach(c=>c.facts=c.facts.map(f=>{let d=f.desc;let term=d.split(/ is | are | equals | occurs | contains | involves | includes | states | gives | relates | describes | has | have | follows | requires | uses | means | can /i)[0]; if(term.length>70)term=term.slice(0,66)+'…';return {term:term.trim(),desc:d}}));
+let currentClass='11', currentSubject='Physics', currentChapter=null, activeTest=null, picked={}, testQuestions=[], testSubmitted=false;
+const $=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id===id));window.scrollTo({top:0,behavior:'smooth'})}
+function openClass(n){currentClass=n; $('classPill').textContent='CLASS '+n; $('crumbClass').textContent='Class '+n; $('lessonClassCrumb').textContent='Class '+n;show('classScreen')}
+function openSubject(s){currentSubject=s;$('chapterHeading').textContent='Class '+currentClass+' '+s;$('crumbSubject').textContent=s; $('lessonSubjectCrumb').textContent=s;renderChapters();show('chapterScreen')}
+function renderChapters(){let subs=['Physics','Chemistry','Biology'];$('subjectSwitch').innerHTML=subs.map(s=>`<button class="${s===currentSubject?'active':''}" data-s="${s}">${s}</button>`).join('');$('subjectSwitch').querySelectorAll('button').forEach(b=>b.onclick=()=>openSubject(b.dataset.s));let term=$('chapterSearch').value.toLowerCase();let list=chapters.filter(c=>c.cls===currentClass&&c.subject===currentSubject&&c.title.toLowerCase().includes(term));$('chapterList').innerHTML=list.length?list.map(c=>`<article class="card choice" data-ch="${esc(c.title)}"><div class="chapter-row"><div><span class="badge">Chapter</span><h3 style="margin-top:9px">${esc(c.title)}</h3><p>${esc(c.focus)}</p></div><span style="font-size:1.4rem">›</span></div><div class="row" style="margin-top:15px"><span class="badge">Detailed notes</span><span class="badge">Flashcards</span><span class="badge">4 tests × 10 MCQs</span></div></article>`).join(''):'<div class="card empty">No matching chapter. Try another search.</div>';$('chapterList').querySelectorAll('[data-ch]').forEach(el=>el.onclick=()=>openChapter(list.find(c=>c.title===el.dataset.ch)));}
+function openChapter(c){currentChapter=c;$('lessonTitle').textContent=c.title;$('lessonMeta').textContent='CLASS '+c.cls+' • '+c.subject.toUpperCase()+' • NEET FOCUS';$('lessonLead').textContent=c.focus;$('lessonChapterCrumb').textContent=c.title;renderNotes();switchTab('detailed');$('testRunner').classList.add('hidden');show('lessonScreen')}
+function renderNotes(){let c=currentChapter;let facts=c.facts;$('tab-detailed').innerHTML=`<div class="note-block"><h3>1. Chapter overview</h3><p>${esc(c.focus)}. This chapter page is arranged for concept learning and NEET-style revision. Learn the underlying reasoning, then practise questions without looking at notes.</p></div><div class="note-block"><h3>2. Core concepts explained</h3><ul>${facts.map(f=>`<li><b>${esc(f.term)}:</b> ${esc(f.desc)}</li>`).join('')}</ul></div><div class="note-block"><h3>3. NEET exam approach</h3><ul><li>Read the NCERT statements and definitions carefully, especially terms that differ by a single word.</li><li>Make a one-page map connecting the concepts listed above; do not memorise a formula without its conditions.</li><li>Attempt the four practice tests separately. Review explanations for every incorrect and guessed answer.</li><li>For numerical chapters, keep units, sign conventions and limiting conditions visible while solving.</li></ul></div><div class="callout">Study accuracy note: this is a compact chapter-learning pack, not a substitute for the complete NCERT textbook or the official exam-year syllabus. Use NCERT and official NEET/NTA syllabus documents to cross-check the full examinable scope.</div>`;
+$('tab-short').innerHTML=`<div class="section-head"><div><h2>Flashcards</h2><div class="muted">Tap a card to reveal its reverse side. Use these for quick recall.</div></div><button id="flipAll" class="btn secondary small">Flip all</button></div><div class="flash-grid">${facts.map((f,i)=>`<div class="flash" tabindex="0" data-flash="${i}"><b>${esc(f.term)}</b><span>${esc(f.desc)}</span></div>`).join('')}</div><div class="note-block" style="margin-top:14px"><h3>30-second recall</h3><ul>${facts.map(f=>`<li>${esc(f.desc)}</li>`).join('')}</ul></div>`;
+$('tab-short').querySelectorAll('[data-flash]').forEach((el,i)=>{let f=facts[i], front=true;const flip=()=>{front=!front;el.innerHTML=front?`<b>${esc(f.term)}</b><span>${esc(f.desc)}</span>`:`<b>Remember this</b><span>${esc(f.term)}</span>`};el.onclick=flip;el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}}});$('flipAll').onclick=()=>$('tab-short').querySelectorAll('[data-flash]').forEach(el=>el.click());
+$('tab-formula').innerHTML=`<div class="note-block"><h3>Formula / fact sheet</h3><p>Only relationships directly represented by this chapter's content are listed. For chapters that are primarily descriptive, this sheet becomes a key-facts checklist.</p><ul>${facts.map(f=>`<li><b>${esc(f.term)}:</b> ${esc(f.desc)}</li>`).join('')}</ul></div><button class="btn secondary" onclick="window.print()">Print / Save as PDF</button>`;
+$('tab-tests').innerHTML=[1,2,3,4].map(n=>`<div class="test-card"><div><b>Test Series ${n}</b><p class="muted" style="margin:5px 0 0">10 MCQs • Single correct option • +4/−1 practice scoring</p></div><button class="btn" data-test="${n}">Start Test ${n} →</button></div>`).join('')+`<div class="callout">The four test versions use the chapter's key-concept bank in different question formats and orders. Question explanations are linked to the same fact record as the correct option.</div>`;$('tab-tests').querySelectorAll('[data-test]').forEach(b=>b.onclick=()=>startTest(+b.dataset.test));}
+function switchTab(tab){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('.tab-content').forEach(el=>el.classList.toggle('active',el.id==='tab-'+tab));$('testRunner').classList.add('hidden');}
+function stableShuffle(arr,seed){let a=arr.slice(),x=seed*9301+49297;for(let i=a.length-1;i>0;i--){x=(x*233280+49297)%233280;let j=Math.floor(x/233280*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function buildQuestions(testNum){let fs=currentChapter.facts;let result=[];for(let i=0;i<10;i++){let idx=(i+testNum*2-2)%fs.length;let f=fs[idx];let others=fs.filter((_,j)=>j!==idx);let wrong=stableShuffle(others,(+currentChapter.cls)*777+testNum*23+i).slice(0,3);let type=(i+testNum)%3, options, stem, correct;
+if(type===0){let all=[{text:f.desc,ok:true},...wrong.map(w=>({text:w.desc,ok:false}))];all=stableShuffle(all,testNum*43+i*7);options=all.map(x=>x.text);correct=all.findIndex(x=>x.ok);stem=`Which statement best matches the concept “${f.term}”?`}
+else if(type===1){let all=[{text:f.term,ok:true},...wrong.map(w=>({text:w.term,ok:false}))];all=stableShuffle(all,testNum*47+i*11);options=all.map(x=>x.text);correct=all.findIndex(x=>x.ok);stem=`Identify the term/concept described by: “${f.desc}”`}
+else{let all=[{text:`${f.term} — ${f.desc}`,ok:true},...wrong.map(w=>({text:`${w.term} — ${w.desc}`,ok:false}))];all=stableShuffle(all,testNum*53+i*13);options=all.map(x=>x.text);correct=all.findIndex(x=>x.ok);stem='Choose the correctly matched concept and statement.'}
+result.push({stem,options,correct,explanation:`Correct concept: ${f.term}. ${f.desc}`})}return result}
+function startTest(n){activeTest=n;picked={};testSubmitted=false;testQuestions=buildQuestions(n);$('testRunner').classList.remove('hidden');$('testRunner').innerHTML=`<div class="section-head"><div><h2>Test Series ${n}</h2><div class="muted">${esc(currentChapter.title)} • 10 questions • +4 correct, −1 incorrect, 0 unattempted</div></div><button class="btn secondary" id="closeTest">Back to test list</button></div><div class="progressbar"><span id="testProgress"></span></div><div id="questionArea" style="margin-top:14px"></div><button class="btn" id="submitTest">Submit Test</button><div id="testResult"></div>`;$('closeTest').onclick=()=>{$('testRunner').classList.add('hidden')};renderTestQuestions();$('submitTest').onclick=submitTest;setTimeout(()=>$('testRunner').scrollIntoView({behavior:'smooth',block:'start'}),50)}
+function renderTestQuestions(){let area=$('questionArea');area.innerHTML=testQuestions.map((q,i)=>`<article class="qcard"><div class="q-title">Q${i+1}. ${esc(q.stem)}</div>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" ${picked[i]===j?'checked':''} ${testSubmitted?'disabled':''}><span>${String.fromCharCode(65+j)}. ${esc(o)}</span></label>`).join('')}${testSubmitted?`<div class="feedback ${picked[i]===q.correct?'correct':'wrong'}"><b>${picked[i]===q.correct?'Correct!':picked[i]===undefined?'Not attempted.':`Correct answer: ${String.fromCharCode(65+q.correct)}.`}</b> ${esc(q.explanation)}</div>`:''}</article>`).join('');area.querySelectorAll('input[type=radio]').forEach(inp=>inp.onchange=()=>{picked[+inp.name.slice(1)]=+inp.value;$('testProgress').style.width=(Object.keys(picked).length/10*100)+'%'});$('testProgress').style.width=(Object.keys(picked).length/10*100)+'%'}
+function submitTest(){if(testSubmitted)return;testSubmitted=true;let correct=0,wrong=0;testQuestions.forEach((q,i)=>{if(picked[i]===q.correct)correct++;else if(picked[i]!==undefined)wrong++});let score=correct*4-wrong;let history=JSON.parse(localStorage.getItem('ems-history')||'[]');history.push({date:new Date().toISOString(),cls:currentChapter.cls,subject:currentChapter.subject,chapter:currentChapter.title,test:activeTest,correct,wrong,score});localStorage.setItem('ems-history',JSON.stringify(history.slice(-200)));renderTestQuestions();$('submitTest').classList.add('hidden');$('testResult').innerHTML=`<div class="note-block"><h3>Test result</h3><p style="font-size:1.1rem"><b>${score}/40 marks</b> • ${correct}/10 correct • ${wrong} incorrect • ${10-correct-wrong} unattempted</p><div class="progressbar"><span style="width:${correct*10}%"></span></div><p>Review every explanation above, including answers you guessed correctly. Your attempt is saved on this device.</p><button class="btn" id="retryTest">Retry test</button> <button class="btn secondary" id="printResult">Print result</button></div>`;$('retryTest').onclick=()=>startTest(activeTest);$('printResult').onclick=()=>window.print()}
+function showHome(){show('homeScreen')}
+document.querySelectorAll('[data-class]').forEach(el=>el.onclick=()=>openClass(el.dataset.class));document.querySelectorAll('[data-subject]').forEach(el=>el.onclick=()=>openSubject(el.dataset.subject));document.querySelectorAll('[data-go]').forEach(el=>el.onclick=()=>show(el.dataset.go));$('startBtn').onclick=()=>show('homeScreen');$('homeBtn').onclick=showHome;$('darkBtn').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('ems-dark',document.body.classList.contains('dark')?'1':'0')};if(localStorage.getItem('ems-dark')==='1')document.body.classList.add('dark');$('chapterSearch').addEventListener('input',renderChapters);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
+// Render all class-subject-chapter navigation first; never jumps directly into a notes page.
+if(!chapters.length)console.error('No chapter data loaded');
+</script></body></html>
